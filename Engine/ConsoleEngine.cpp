@@ -96,12 +96,14 @@ namespace Engine {
 
         window->PushRenderCall(RenderCall{
             COORD {x, 0},
+            1,
             COORD {3, 3},
             renderData2
         });
 
         window->PushRenderCall(RenderCall{
             COORD {99, 24},
+            1,
             COORD {1, 1},
             renderData
         });

@@ -53,7 +53,7 @@ namespace Engine
 
                     if (Index.X < 0)
                         continue;
-
+                    //todo use WriteConsoleOutputCharacterA
                     SetConsoleCursorPosition(hConsole, Index);
 
                     if (!WriteConsoleA(hConsole, call.data[call.dataDimensions.Y - y][x],
@@ -140,10 +140,7 @@ namespace Engine
         }
     }
 
-    void Window::InitRenderBuffer()
-    {
 
-    }
 
     void Window::ClearConsole()
     {
@@ -160,8 +157,47 @@ namespace Engine
         }
     }
 
+    void Window::InitRenderBuffer()
+    {
+        char*** renderBuffer = new char**[windowSize.Y];
+
+        // Allocate memory for the second dimension (array of arrays)
+        for (int i = 0; i < height; ++i) {
+            renderBuffer[i] = new char*[width];
+
+            // Allocate memory for the third dimension (array of characters)
+            for (int j = 0; j < width; ++j) {
+                renderBuffer[i][j] = new char[depth];
+            }
+        }
+    }
+
     void Window::PushRenderCall(RenderCall call)
     {
-        renderBufferOld.push_back(call);
+        COORD Index;
+
+        for (int y = call.dataDimensions.Y; y > 0; --y)
+        {
+            Index.Y = windowSize.Y - call.position.Y - y;
+
+            if (Index.Y < 0)
+                break;
+
+            if (Index.Y > windowSize.Y - 1)
+                continue;
+
+            for (int x = 0; x < call.dataDimensions.X; ++x)
+            {
+                Index.X = x + call.position.X;
+
+                if (Index.X > windowSize.X - 1)
+                    break;
+
+                if (Index.X < 0)
+                    continue;
+
+                renderBuffer[Index.Y][Index.X] = call.data[y - 1][x];
+            }
+        }
     }
 } // Engine

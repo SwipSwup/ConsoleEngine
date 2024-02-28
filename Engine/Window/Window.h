@@ -11,6 +11,7 @@ namespace Engine
 {
     struct RenderCall {
         COORD position;
+        int zIndex;
         COORD dataDimensions;
         char*** data;
     };
@@ -40,9 +41,12 @@ namespace Engine
 
         void PushRenderCall(RenderCall call);
 
+//[][][][]
+//[][][][]
+//[][][][]
+//x + y * windowSize.Y
+        //[][][][][][]
     private:
-        std::list<RenderCall> renderBufferOld;
-
         char*** previousRenderBuffer;
         char*** renderBuffer;
         int** zBufferIndex;
