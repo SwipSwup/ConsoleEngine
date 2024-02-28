@@ -27,6 +27,8 @@ namespace Engine
     //TODO implement buffer that gets initalized with " " and then adds the render calls so its possible to reduce the flicker
     void Window::Render()
     {
+        ClearConsole();
+
         DWORD charsWritten;
         COORD Index;
 
@@ -63,9 +65,10 @@ namespace Engine
                 }
             }
         }
+        renderBufferOld.clear();
 
-        ConsumeRenderBuffer();
-        ClearConsole();
+        //ConsumeRenderBuffer();
+
     }
 
     void Window::UpdateConsoleMode(DWORD mode, bool enable)
@@ -82,7 +85,6 @@ namespace Engine
         if (!SetConsoleMode(hConsole, dwMode))
         {
             std::cerr << "Error setting console mode" << std::endl;
-            return;
         }
     }
 
@@ -127,7 +129,20 @@ namespace Engine
 
     void Window::ConsumeRenderBuffer()
     {
-        renderBufferOld.clear();
+        //renderBufferOld.clear();
+
+        for (int y = 0; y < windowSize.Y; ++y)
+        {
+            for (int x = 0; x < windowSize.X; ++x)
+            {
+                renderBuffer[y][x] = (char*)" ";
+            }
+        }
+    }
+
+    void Window::InitRenderBuffer()
+    {
+
     }
 
     void Window::ClearConsole()

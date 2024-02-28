@@ -29,7 +29,6 @@ int main()
     Engine::ConsoleEngine engine = Engine::ConsoleEngine();
     Engine::Scene* scene = new Engine::Scene((char*)"untitled");
 
-
     engine.LoadScene(scene);
     engine.Start();
 

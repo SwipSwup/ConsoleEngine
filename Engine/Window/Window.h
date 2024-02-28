@@ -39,13 +39,17 @@ namespace Engine
         void UpdateConsoleMode(DWORD mode, bool enable);
 
         void PushRenderCall(RenderCall call);
+
     private:
         std::list<RenderCall> renderBufferOld;
 
+        char*** previousRenderBuffer;
         char*** renderBuffer;
         int** zBufferIndex;
 
         void ConsumeRenderBuffer();
+
+        void InitRenderBuffer();
 
         void ClearConsole();
 

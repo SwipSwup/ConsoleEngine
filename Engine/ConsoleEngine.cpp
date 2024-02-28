@@ -16,7 +16,7 @@ namespace Engine {
     {
         this->window = new Window(100, 25, true);
 
-        ticksPerSecond = 1;
+        ticksPerSecond = 10;
 
 
 
@@ -70,6 +70,16 @@ namespace Engine {
     {
         activeScene->Tick(deltaTime);
 
+
+
+    }
+
+    void ConsoleEngine::FixTickScene()
+    {
+
+
+        x++;
+
         char*** renderData = new char**[1]
         {
             new char*[1] {(char*) "A"},
@@ -78,7 +88,7 @@ namespace Engine {
         char*** renderData2 = new char**[3]
         {
             new char*[3] {(char*) "+", (char*) "^", (char*) "+"},
-            new char*[3] {(char*) "|", (char*) " ", (char*) "|"},
+            new char*[3] {(char*) "|", (char*) " ", (char*) ">"},
             new char*[3] {(char*) "+", (char*) "-", (char*) "+"}
         };
 
@@ -97,14 +107,6 @@ namespace Engine {
         });
 
         window->Render();
-
-    }
-
-    void ConsoleEngine::FixTickScene()
-    {
-
-
-        x++;
 
     }
 
