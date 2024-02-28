@@ -30,7 +30,7 @@ namespace Engine
         bool bDrawBorder;
         Vector2D* windowDimensions;
 
-        HANDLE console;
+        HANDLE hConsole;
 
     public:
         void Render();

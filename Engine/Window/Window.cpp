@@ -42,41 +42,24 @@ namespace Engine
 
     void Window::Render()
     {
-        if (bDrawBorder)
-            DrawHorizontalBorder(windowDimensions->x);
 
-        for (int y = 0; y < windowDimensions->y; ++y)
-        {
-            if (bDrawBorder)
-                std::cout << "|";
-
-            for (int x = 0; x < windowDimensions->x; ++x)
-            {
-                std::cout << renderBuffer[y][x];
-            }
-
-            if (bDrawBorder)
-                std::cout << "|";
-            std::cout << std::endl;
-        }
-
-        if (bDrawBorder)
-            DrawHorizontalBorder(windowDimensions->x);
-
-        ClearRenderBuffer();
     }
 
     void Window::Init(Vector2D size)
     {
-        InitRenderBuffer();
+        AllocConsole();
+        hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
 
-        HWND console = GetConsoleWindow();
-        RECT rect;
-        GetWindowRect(console, &rect);
+        if(hConsole == INVALID_HANDLE_VALUE)
+        {
+            //todo print error
+            //todo close engine
 
-        // Set the size of the console window
-        // todo fix
-        MoveWindow(console, rect.left, rect.top, 1000, 1000, TRUE);
+            return;
+        }
+
+
+
     }
 
     void Window::InitRenderBuffer()
