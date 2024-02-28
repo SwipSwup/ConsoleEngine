@@ -1,14 +1,12 @@
 #include "Engine/ConsoleEngine.h"
 #include "Engine/Scene/Scene.h"
-#include "Engine/Utility/Sprite.h"
 #include "Engine/Utility/Vector2D.h"
 #include "Engine/Window/Window.h"
 
 int main()
 {
-    Engine::Window w = Engine::Window(Engine::Vector2D(100, 25), true);
-
-
+    //Engine::Window w = Engine::Window(100, 25, true);
+    //w.Render();
 
     /*char*** renderData = new char**[1]
     {
@@ -28,12 +26,12 @@ int main()
     w.PushRenderData(renderData, Engine::Vector2D(1, 1), Engine::Vector2D(1, 1));
     w.Render();*/
 
-    /*Engine::ConsoleEngine engine = Engine::ConsoleEngine();
+    Engine::ConsoleEngine engine = Engine::ConsoleEngine();
     Engine::Scene* scene = new Engine::Scene((char*)"untitled");
 
 
     engine.LoadScene(scene);
-    engine.Start();*/
+    engine.Start();
 
     //TODO temporary so external window doesnt close;
     while(true);

@@ -7,50 +7,91 @@
 #include <iostream>
 #include <windows.h>
 
-#include "../Utility/Sprite.h"
-#include "../Utility/Vector2D.h"
-
 namespace Engine
 {
-    Window::Window(Vector2D dimensions, bool bDrawBorder)
+    Window::Window(SHORT x, SHORT y, bool bDrawBorder)
     {
-        this->windowDimensions = new Vector2D(dimensions.x, dimensions.y);
+        this->windowSize = COORD{x, y};
+
         this->bDrawBorder = bDrawBorder;
 
-        Init(dimensions);
+        Init();
     }
 
     Window::~Window()
     {
-        delete windowDimensions;
+        delete cursorInfo;
     }
 
-    Vector2D Window::GetDimensions()
-    {
-        return *windowDimensions;
-    }
-
-    void DrawHorizontalBorder(int windowWidth)
-    {
-        std::cout << "+";
-        for (int i = 0; i < windowWidth; ++i)
-        {
-            std::cout << "-";
-        }
-        std::cout << "+" << std::endl;
-    }
-
+    //TODO implement Z value
+    //TODO implement buffer that gets initalized with " " and then adds the render calls so its possible to reduce the flicker
     void Window::Render()
     {
+        DWORD charsWritten;
+        COORD Index;
 
+        for (RenderCall call : renderBufferOld)
+        {
+            for (int y = call.dataDimensions.Y; y > 0; --y)
+            {
+                Index.Y = windowSize.Y - call.position.Y - y;
+
+                if (Index.Y < 0)
+                    break;
+
+                if (Index.Y > windowSize.Y - 1)
+                    continue;
+
+                for (int x = 0; x < call.dataDimensions.X; ++x)
+                {
+                    Index.X = x + call.position.X;
+
+                    if (Index.X > windowSize.X - 1)
+                        break;
+
+                    if (Index.X < 0)
+                        continue;
+
+                    SetConsoleCursorPosition(hConsole, Index);
+
+                    if (!WriteConsoleA(hConsole, call.data[call.dataDimensions.Y - y][x],
+                                       strlen(call.data[call.dataDimensions.Y - y][x]), &charsWritten, nullptr))
+                    {
+                        std::cerr << "Error writing to console" << std::endl;
+                        return;
+                    }
+                }
+            }
+        }
+
+        ConsumeRenderBuffer();
+        ClearConsole();
     }
 
-    void Window::Init(Vector2D size)
+    void Window::UpdateConsoleMode(DWORD mode, bool enable)
+    {
+        if (enable)
+        {
+            dwMode |= mode;
+        }
+        else
+        {
+            dwMode &= ~mode;
+        }
+
+        if (!SetConsoleMode(hConsole, dwMode))
+        {
+            std::cerr << "Error setting console mode" << std::endl;
+            return;
+        }
+    }
+
+    void Window::Init()
     {
         AllocConsole();
         hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
 
-        if(hConsole == INVALID_HANDLE_VALUE)
+        if (hConsole == INVALID_HANDLE_VALUE)
         {
             //todo print error
             //todo close engine
@@ -58,56 +99,54 @@ namespace Engine
             return;
         }
 
+        InitCursor();
 
+        // Set text color to red
+        //SetConsoleTextAttribute(hConsole, FOREGROUND_RED);
 
-    }
-
-    void Window::InitRenderBuffer()
-    {
-        renderBuffer = new char**[windowDimensions->y];
-        for (int i = 0; i < windowDimensions->y; ++i)
+        // Enable ANSI escape code support
+        if (!GetConsoleMode(hConsole, &dwMode))
         {
-            renderBuffer[i] = new char*[windowDimensions->x];
+            std::cerr << "Error getting console mode" << std::endl;
+            return;
         }
-
-        ClearRenderBuffer();
+        UpdateConsoleMode(ENABLE_VIRTUAL_TERMINAL_PROCESSING, true);
     }
 
-    void Window::ClearRenderBuffer()
+    void Window::InitCursor()
     {
-        for (int y = 0; y < windowDimensions->y; ++y)
+        cursorInfo = new CONSOLE_CURSOR_INFO;
+        cursorInfo->bVisible = FALSE;
+        cursorInfo->dwSize = 1;
+
+        if (!SetConsoleCursorInfo(hConsole, cursorInfo))
         {
-            for (int x = 0; x < windowDimensions->x; ++x)
+            std::cerr << "Error setting console cursor info" << std::endl;
+        }
+    }
+
+    void Window::ConsumeRenderBuffer()
+    {
+        renderBufferOld.clear();
+    }
+
+    void Window::ClearConsole()
+    {
+        DWORD charsWritten;
+        for (short y = 0; y < windowSize.Y; ++y)
+        {
+            for (short x = 0; x < windowSize.X; ++x)
             {
-                renderBuffer[y][x] = (char*)" ";
+                if (!WriteConsoleOutputCharacterA(hConsole, " ", 2, COORD{x, y}, &charsWritten)) {
+                    std::cerr << "Error writing to console" << std::endl;
+                    return;
+                }
             }
         }
     }
 
-    void Window::PushRenderData(char*** data, Vector2D size, Vector2D origin)
+    void Window::PushRenderCall(RenderCall call)
     {
-        for (int y = size.y; y > 0; --y)
-        {
-            int yIndex = windowDimensions->y - origin.y - y;
-
-            if(yIndex < 0)
-                break;
-
-            if(yIndex > windowDimensions->y - 1)
-                continue;
-
-            for (int x = 0; x < size.x; ++x)
-            {
-                int xIndex = x + origin.x;
-
-                if(xIndex > windowDimensions->x - 1)
-                    break;
-
-                if(xIndex < 0)
-                    continue;
-
-                renderBuffer[yIndex][xIndex] = data[y - 1][x];
-            }
-        }
+        renderBufferOld.push_back(call);
     }
 } // Engine

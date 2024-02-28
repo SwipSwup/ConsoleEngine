@@ -5,6 +5,7 @@
 #include "ConsoleEngine.h"
 
 #include <chrono>
+#include <iostream>
 
 #include "Scene/Scene.h"
 #include "Utility/Vector2D.h"
@@ -13,26 +14,12 @@
 namespace Engine {
     ConsoleEngine::ConsoleEngine()
     {
-        this->window = new Window(Vector2D(100, 25), true);
+        this->window = new Window(100, 25, true);
 
-        ticksPerSecond = 10;
+        ticksPerSecond = 1;
 
-        char*** renderData = new char**[1]
-        {
-            new char*[1] {(char*) "A"},
-        };
 
-        char*** renderData2 = new char**[3]
-        {
-            new char*[3] {(char*) "+", (char*) "-", (char*) "+"},
-            new char*[3] {(char*) "|", (char*) " ", (char*) "|"},
-            new char*[3] {(char*) "+", (char*) "-", (char*) "+"}
-        };
 
-        //Engine::Sprite sprite = Engine::Sprite(texture, new Engine::Vector2D(1, 1));
-
-        window->PushRenderData(renderData2, Engine::Vector2D(3, 3), Engine::Vector2D(0, 0));
-        window->PushRenderData(renderData, Engine::Vector2D(1, 1), Engine::Vector2D(1, 1));
     }
 
     std::chrono::steady_clock::time_point previousTimePoint;
@@ -53,8 +40,6 @@ namespace Engine {
         while(true)
         {
             Tick();
-
-            window->Render();
         }
     }
 
@@ -62,19 +47,65 @@ namespace Engine {
     void ConsoleEngine::Tick()
     {
         std::chrono::steady_clock::time_point currentTimePoint = std::chrono::steady_clock::now();
-        if(60.f / (float) ticksPerSecond > (float) (currentTimePoint - previousTimePoint).count())
+        TickScene((float) (currentTimePoint - previousTimePoint).count());
+
+        if((currentTimePoint - previousTimePoint).count() < std::chrono::duration_cast<std::chrono::steady_clock::duration>(std::chrono::duration<float>(1.0f / ticksPerSecond)).count())
         {
             return;
         }
 
         previousTimePoint = currentTimePoint;
+        FixTickScene();
+        //std::cout << currentTimePoint.time_since_epoch().count();
 
-        TickScene((float) (currentTimePoint - previousTimePoint).count());
     }
 
+    void ConsoleEngine::FixedTick()
+    {
+        FixTickScene();
+    }
+
+    short x = 0;
     void ConsoleEngine::TickScene(float deltaTime)
     {
         activeScene->Tick(deltaTime);
+
+        char*** renderData = new char**[1]
+        {
+            new char*[1] {(char*) "A"},
+        };
+
+        char*** renderData2 = new char**[3]
+        {
+            new char*[3] {(char*) "+", (char*) "^", (char*) "+"},
+            new char*[3] {(char*) "|", (char*) " ", (char*) "|"},
+            new char*[3] {(char*) "+", (char*) "-", (char*) "+"}
+        };
+
+        //Engine::Sprite sprite = Engine::Sprite(texture, new Engine::Vector2D(1, 1));
+
+        window->PushRenderCall(RenderCall{
+            COORD {x, 0},
+            COORD {3, 3},
+            renderData2
+        });
+
+        window->PushRenderCall(RenderCall{
+            COORD {99, 24},
+            COORD {1, 1},
+            renderData
+        });
+
+        window->Render();
+
+    }
+
+    void ConsoleEngine::FixTickScene()
+    {
+
+
+        x++;
+
     }
 
     void ConsoleEngine::SetTicksPerSecond(int tps)
@@ -88,8 +119,6 @@ namespace Engine {
         {
             return false;
         }
-
-        window->ClearRenderBuffer();
 
         scene->OnSceneLoad(this);
         activeScene = scene;

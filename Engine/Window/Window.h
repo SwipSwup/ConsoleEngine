@@ -4,46 +4,50 @@
 
 #ifndef WINDOW_H
 #define WINDOW_H
-#include <bemapiset.h>
+#include <list>
+#include <windows.h>
 
 namespace Engine
 {
-    struct Sprite;
-}
+    struct RenderCall {
+        COORD position;
+        COORD dataDimensions;
+        char*** data;
+    };
 
-namespace Engine
-{
-    class Vector2D;
-}
-
-namespace Engine
-{
     class Window
     {
     public:
-        Window(Vector2D dimensions, bool bDrawBoarder);
+        Window(SHORT x, SHORT y, bool bDrawBoarder);
         virtual ~Window();
-
-        Vector2D GetDimensions();
 
     private:
         bool bDrawBorder;
-        Vector2D* windowDimensions;
+        COORD windowSize;
 
         HANDLE hConsole;
+        CONSOLE_CURSOR_INFO* cursorInfo;
+        DWORD dwMode;
+
+        void Init();
+
+        void InitCursor();
 
     public:
         void Render();
 
-        void ClearRenderBuffer();
+        void UpdateConsoleMode(DWORD mode, bool enable);
 
-        void PushRenderData(char*** data, Vector2D size, Vector2D origin);
-
+        void PushRenderCall(RenderCall call);
     private:
-        void Init(Vector2D size);
+        std::list<RenderCall> renderBufferOld;
 
-        void InitRenderBuffer();
         char*** renderBuffer;
+        int** zBufferIndex;
+
+        void ConsumeRenderBuffer();
+
+        void ClearConsole();
 
     };
 } // Engine

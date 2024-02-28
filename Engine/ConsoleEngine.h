@@ -33,7 +33,10 @@ private:
     int ticksPerSecond;
     void Tick();
 
+    void FixedTick();
+
     void TickScene(float deltaTime);
+    void FixTickScene();
 
 public:
     void SetTicksPerSecond(int tps);
