@@ -25,6 +25,11 @@ namespace Engine
         delete windowDimensions;
     }
 
+    Vector2D Window::GetDimensions()
+    {
+        return *windowDimensions;
+    }
+
     void DrawHorizontalBorder(int windowWidth)
     {
         std::cout << "+";
@@ -57,6 +62,8 @@ namespace Engine
 
         if (bDrawBorder)
             DrawHorizontalBorder(windowDimensions->x);
+
+        ClearRenderBuffer();
     }
 
     void Window::Init(Vector2D size)
@@ -94,13 +101,29 @@ namespace Engine
         }
     }
 
-    void Window::PushSpriteIntoRenderBuffer(Sprite* sprite, Vector2D origin)
+    void Window::PushRenderData(char*** data, Vector2D size, Vector2D origin)
     {
-        for (int y = origin.y; y < origin.y + sprite->size->y; ++y)
+        for (int y = size.y; y > 0; --y)
         {
-            for (int x = origin.x; x < origin.x + sprite->size->x; ++x)
+            int yIndex = windowDimensions->y - origin.y - y;
+
+            if(yIndex < 0)
+                break;
+
+            if(yIndex > windowDimensions->y - 1)
+                continue;
+
+            for (int x = 0; x < size.x; ++x)
             {
-                renderBuffer[y][x] = sprite->GetTextureAndColorData(x, y);
+                int xIndex = x + origin.x;
+
+                if(xIndex > windowDimensions->x - 1)
+                    break;
+
+                if(xIndex < 0)
+                    continue;
+
+                renderBuffer[yIndex][xIndex] = data[y - 1][x];
             }
         }
     }

@@ -4,6 +4,7 @@
 
 #ifndef WINDOW_H
 #define WINDOW_H
+#include <bemapiset.h>
 
 namespace Engine
 {
@@ -23,16 +24,21 @@ namespace Engine
         Window(Vector2D dimensions, bool bDrawBoarder);
         virtual ~Window();
 
+        Vector2D GetDimensions();
+
     private:
         bool bDrawBorder;
         Vector2D* windowDimensions;
+
+        HANDLE console;
 
     public:
         void Render();
 
         void ClearRenderBuffer();
 
-        void PushSpriteIntoRenderBuffer(Sprite* sprite, Vector2D origin);
+        void PushRenderData(char*** data, Vector2D size, Vector2D origin);
+
     private:
         void Init(Vector2D size);
 

@@ -16,6 +16,23 @@ namespace Engine {
         this->window = new Window(Vector2D(100, 25), true);
 
         ticksPerSecond = 10;
+
+        char*** renderData = new char**[1]
+        {
+            new char*[1] {(char*) "A"},
+        };
+
+        char*** renderData2 = new char**[3]
+        {
+            new char*[3] {(char*) "+", (char*) "-", (char*) "+"},
+            new char*[3] {(char*) "|", (char*) " ", (char*) "|"},
+            new char*[3] {(char*) "+", (char*) "-", (char*) "+"}
+        };
+
+        //Engine::Sprite sprite = Engine::Sprite(texture, new Engine::Vector2D(1, 1));
+
+        window->PushRenderData(renderData2, Engine::Vector2D(3, 3), Engine::Vector2D(0, 0));
+        window->PushRenderData(renderData, Engine::Vector2D(1, 1), Engine::Vector2D(1, 1));
     }
 
     std::chrono::steady_clock::time_point previousTimePoint;
@@ -35,9 +52,9 @@ namespace Engine {
     {
         while(true)
         {
-
-
             Tick();
+
+            window->Render();
         }
     }
 
