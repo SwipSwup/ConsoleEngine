@@ -27,9 +27,9 @@ namespace Engine
         Window(SHORT x, SHORT y, bool bDrawBoarder);
         virtual ~Window();
 
-
     private:
         bool bDrawBorder;
+        bool bHighlightUnchangedPositions;
         COORD windowSize;
 
         HANDLE hConsole;
@@ -40,19 +40,16 @@ namespace Engine
 
         void InitCursor();
 
-        int twoToOneDIndex(int x, int y, int xDimension);
+        int TwoToOneDIndex(int x, int y, int xDimension);
+
+        bool HasRenderObjectUpdated(int xy);
     public:
         void Render();
 
         void UpdateConsoleMode(DWORD mode, bool enable);
 
-        void PushSprite(int originX, int originY, int z, Sprite* sprite);
+        void HighlightUnchangedPositions(bool bHighlight);
 
-        //[][][][]
-        //[][][][]
-        //[][][][]
-        //x + y * windowSize.Y
-        //[][][][][][]
     private:
         RenderObject* previousRenderBuffer;
         RenderObject* renderBuffer;
@@ -65,6 +62,9 @@ namespace Engine
         void WriteRawIntoRenderBuffer(int xy, int z, char data, Color color);
 
         void ForceWriteRawIntoRenderBuffer(int xy, int z, char data, Color color);
+
+    public:
+        void PushSprite(int originX, int originY, int z, Sprite* sprite);
     };
 } // Engine
 

@@ -29,6 +29,8 @@ namespace Engine
 
         this->bDrawBorder = bDrawBorder;
 
+        bHighlightUnchangedPositions = false;
+
         Init();
     }
 
@@ -37,9 +39,15 @@ namespace Engine
         delete cursorInfo;
     }
 
-    int Window::twoToOneDIndex(int x, int y, int xDimension)
+    int Window::TwoToOneDIndex(int x, int y, int xDimension)
     {
         return x + y * xDimension;
+    }
+
+    bool Window::HasRenderObjectUpdated(int xy)
+    {
+        return previousRenderBuffer[xy].data == renderBuffer[xy].data &&
+            !strcmp(previousRenderBuffer[xy].color.escapeCode, renderBuffer[xy].color.escapeCode);
     }
 
     //TODO implement Z value
@@ -52,17 +60,22 @@ namespace Engine
         {
             for (int x = 0; x < windowSize.X; ++x)
             {
-                RenderObject obj = renderBuffer[twoToOneDIndex(x, y, windowSize.X)];
+                int bufferIndex = TwoToOneDIndex(x, y, windowSize.X);
+                RenderObject obj = renderBuffer[bufferIndex];
 
                 Color c = obj.color;
-                if (previousRenderBuffer[twoToOneDIndex(x, y, windowSize.X)].data == renderBuffer[
-                    twoToOneDIndex(x, y, windowSize.X)].data && !strcmp(
-                    previousRenderBuffer[twoToOneDIndex(x, y, windowSize.X)].color.escapeCode,
-                    renderBuffer[twoToOneDIndex(x, y, windowSize.X)].color.escapeCode))
+
+                if (HasRenderObjectUpdated(bufferIndex))
                 {
-                    //c = Color::WHT;
-                    continue;
+                    if(bHighlightUnchangedPositions)
+                    {
+                        c = Color::GRNHB;
+                    } else
+                    {
+                        continue;
+                    }
                 }
+
                 //std::cout << "a";twoToOneDIndex(x, y, windowSize.X)
                 SetConsoleCursorPosition(hConsole, COORD{(SHORT)x, (SHORT)y});
                 //std::cout << obj.color.escapeCode << obj.data;
@@ -125,6 +138,11 @@ namespace Engine
         }
     }
 
+    void Window::HighlightUnchangedPositions(bool bHighlight)
+    {
+        bHighlightUnchangedPositions = bHighlight;
+    }
+
     void Window::PushSprite(int originX, int originY, int z, Sprite* sprite)
     {
         COORD bufferIndex;
@@ -152,7 +170,7 @@ namespace Engine
 
                 //std::cout << "x: " <<bufferIndex.X << " y: " << bufferIndex.Y << " index:" << twoToOneDIndex(bufferIndex.X, bufferIndex.Y, windowSize.X) << std::endl;
 
-                WriteRawIntoRenderBuffer(twoToOneDIndex(bufferIndex.X, bufferIndex.Y, windowSize.X), z,
+                WriteRawIntoRenderBuffer(TwoToOneDIndex(bufferIndex.X, bufferIndex.Y, windowSize.X), z,
                                          sprite->texture[y][x],
                                          sprite->color[y][x]);
             }
@@ -173,13 +191,7 @@ namespace Engine
         }
 
 
-         InitCursor();
-
-        // Set text color to red
-        //SetConsoleTextAttribute(hConsole, FOREGROUND_RED);
-
-        // Enable ANSI escape code support
-        dwMode = 0;
+        InitCursor();
 
         if (!GetConsoleMode(hConsole, &dwMode))
         {
@@ -210,9 +222,7 @@ namespace Engine
 
     void Window::WriteRawIntoRenderBuffer(int xy, int z, char data, Color color)
     {
-        if (previousRenderBuffer[xy].data == data &&
-            !strcmp(previousRenderBuffer[xy].color.escapeCode, color.escapeCode) ||
-            zBufferIndex[xy] > z)
+        if (zBufferIndex[xy] > z)
         {
             return;
         }

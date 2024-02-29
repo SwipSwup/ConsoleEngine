@@ -83,12 +83,7 @@ namespace Engine {
     void ConsoleEngine::TickScene(float deltaTime)
     {
         activeScene->Tick(deltaTime);
-
-
     }
-
-
-
 
     void ConsoleEngine::FixTickScene()
     {
@@ -123,9 +118,8 @@ namespace Engine {
             {
                 Engine::Color** color = new Engine::Color*[1]
                 {
-                    new Engine::Color[1] {colors[i % 5]},
+                    new Engine::Color[1] {colors[((x + i)/25)  % 5]},
                 };
-
 
                 sprite->Load2DColor(color);
                 window->PushSprite(x, y, 1, sprite);

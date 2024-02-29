@@ -14,7 +14,6 @@ add_executable(ConsoleEngine main.cpp
         Engine/Window/Window.h
         Engine/Utility/Vector2D.cpp
         Engine/Utility/Vector2D.h
-        Engine/Utility/Colors.h
         Engine/Utility/Sprites/Sprite.cpp
         Engine/Utility/Sprites/Sprite.h
         Engine/Utility/Color.cpp
