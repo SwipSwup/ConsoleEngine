@@ -85,8 +85,20 @@ build CMakeFiles/ConsoleEngine.dir/Engine/Utility/Vector2D.cpp.obj: CXX_COMPILER
   OBJECT_DIR = CMakeFiles\ConsoleEngine.dir
   OBJECT_FILE_DIR = CMakeFiles\ConsoleEngine.dir\Engine\Utility
 
-build CMakeFiles/ConsoleEngine.dir/Engine/Utility/Sprite.cpp.obj: CXX_COMPILER__ConsoleEngine_unscanned_Debug G$:/FH/Sem2/PROGR/ConsoleEngine/Engine/Utility/Sprite.cpp || cmake_object_order_depends_target_ConsoleEngine
-  DEP_FILE = CMakeFiles\ConsoleEngine.dir\Engine\Utility\Sprite.cpp.obj.d
+build CMakeFiles/ConsoleEngine.dir/Engine/Utility/Sprites/Sprite.cpp.obj: CXX_COMPILER__ConsoleEngine_unscanned_Debug G$:/FH/Sem2/PROGR/ConsoleEngine/Engine/Utility/Sprites/Sprite.cpp || cmake_object_order_depends_target_ConsoleEngine
+  DEP_FILE = CMakeFiles\ConsoleEngine.dir\Engine\Utility\Sprites\Sprite.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\ConsoleEngine.dir
+  OBJECT_FILE_DIR = CMakeFiles\ConsoleEngine.dir\Engine\Utility\Sprites
+
+build CMakeFiles/ConsoleEngine.dir/Engine/Utility/Color.cpp.obj: CXX_COMPILER__ConsoleEngine_unscanned_Debug G$:/FH/Sem2/PROGR/ConsoleEngine/Engine/Utility/Color.cpp || cmake_object_order_depends_target_ConsoleEngine
+  DEP_FILE = CMakeFiles\ConsoleEngine.dir\Engine\Utility\Color.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\ConsoleEngine.dir
+  OBJECT_FILE_DIR = CMakeFiles\ConsoleEngine.dir\Engine\Utility
+
+build CMakeFiles/ConsoleEngine.dir/Engine/Utility/Vector3D.cpp.obj: CXX_COMPILER__ConsoleEngine_unscanned_Debug G$:/FH/Sem2/PROGR/ConsoleEngine/Engine/Utility/Vector3D.cpp || cmake_object_order_depends_target_ConsoleEngine
+  DEP_FILE = CMakeFiles\ConsoleEngine.dir\Engine\Utility\Vector3D.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\ConsoleEngine.dir
   OBJECT_FILE_DIR = CMakeFiles\ConsoleEngine.dir\Engine\Utility
@@ -99,7 +111,7 @@ build CMakeFiles/ConsoleEngine.dir/Engine/Utility/Sprite.cpp.obj: CXX_COMPILER__
 #############################################
 # Link the executable ConsoleEngine.exe
 
-build ConsoleEngine.exe: CXX_EXECUTABLE_LINKER__ConsoleEngine_Debug CMakeFiles/ConsoleEngine.dir/main.cpp.obj CMakeFiles/ConsoleEngine.dir/Engine/Scene/Scene.cpp.obj CMakeFiles/ConsoleEngine.dir/Engine/Objects/GameObject.cpp.obj CMakeFiles/ConsoleEngine.dir/Engine/ConsoleEngine.cpp.obj CMakeFiles/ConsoleEngine.dir/Engine/Window/Window.cpp.obj CMakeFiles/ConsoleEngine.dir/Engine/Utility/Vector2D.cpp.obj CMakeFiles/ConsoleEngine.dir/Engine/Utility/Sprite.cpp.obj
+build ConsoleEngine.exe: CXX_EXECUTABLE_LINKER__ConsoleEngine_Debug CMakeFiles/ConsoleEngine.dir/main.cpp.obj CMakeFiles/ConsoleEngine.dir/Engine/Scene/Scene.cpp.obj CMakeFiles/ConsoleEngine.dir/Engine/Objects/GameObject.cpp.obj CMakeFiles/ConsoleEngine.dir/Engine/ConsoleEngine.cpp.obj CMakeFiles/ConsoleEngine.dir/Engine/Window/Window.cpp.obj CMakeFiles/ConsoleEngine.dir/Engine/Utility/Vector2D.cpp.obj CMakeFiles/ConsoleEngine.dir/Engine/Utility/Sprites/Sprite.cpp.obj CMakeFiles/ConsoleEngine.dir/Engine/Utility/Color.cpp.obj CMakeFiles/ConsoleEngine.dir/Engine/Utility/Vector3D.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\ConsoleEngine.dir

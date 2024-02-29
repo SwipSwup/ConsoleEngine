@@ -5,10 +5,10 @@
 #include "ConsoleEngine.h"
 
 #include <chrono>
-#include <iostream>
 
 #include "Scene/Scene.h"
 #include "Utility/Vector2D.h"
+#include "Utility/Sprites/Sprite.h"
 #include "Window/Window.h"
 
 namespace Engine {
@@ -16,10 +16,7 @@ namespace Engine {
     {
         this->window = new Window(100, 25, true);
 
-        ticksPerSecond = 10;
-
-
-
+        ticksPerSecond = 60;
     }
 
     std::chrono::steady_clock::time_point previousTimePoint;
@@ -40,6 +37,8 @@ namespace Engine {
         while(true)
         {
             Tick();
+
+            window->Render();
         }
     }
 
@@ -55,7 +54,7 @@ namespace Engine {
         }
 
         previousTimePoint = currentTimePoint;
-        FixTickScene();
+        FixedTick();
         //std::cout << currentTimePoint.time_since_epoch().count();
 
     }
@@ -63,53 +62,75 @@ namespace Engine {
     void ConsoleEngine::FixedTick()
     {
         FixTickScene();
+
     }
 
-    short x = 0;
+    Engine::Color colors[5] = {Engine::Color::RED, Engine::Color::GRN, Engine::Color::YEL, Engine::Color::BLU, Engine::Color::MAG};
+
+    Engine::Color** color = new Engine::Color*[1]
+    {
+        new Engine::Color[1] {Engine::Color::BLU},
+    };
+
+    char** texture = new char*[1]
+    {
+        new char[1] {'#'},
+    };
+
+    Engine::Sprite* sprite = new Engine::Sprite(texture, color, Engine::Vector2D(1, 1));
+
+    int i = 0;
     void ConsoleEngine::TickScene(float deltaTime)
     {
         activeScene->Tick(deltaTime);
 
 
-
     }
+
+
+
 
     void ConsoleEngine::FixTickScene()
     {
+        /*char** texture = new char*[3]
+            {
+                new char[3] {'+', '^', '+',},
+                new char[3] {'|', ' ', '>',},
+                new char[3] {'+', '-', '+',}
+            };
+
+            Engine::Color** color = new Engine::Color*[3]
+            {
+                new Engine::Color[3] {Engine::Color::BLU, Engine::Color::RED, Engine::Color::BLU},
+                new Engine::Color[3] {Engine::Color::BLU, Engine::Color::BLU, Engine::Color::GRN},
+                new Engine::Color[3] {Engine::Color::BLU, Engine::Color::BLU, Engine::Color::BLU},
+            };
+
+            Engine::Color** color2 = new Engine::Color*[3]
+            {
+                new Engine::Color[3] {Engine::Color::WHT, Engine::Color::WHT, Engine::Color::WHT},
+                new Engine::Color[3] {Engine::Color::WHT, Engine::Color::WHT, Engine::Color::WHT},
+                new Engine::Color[3] {Engine::Color::WHT, Engine::Color::WHT, Engine::Color::WHT},
+            };*/
 
 
-        x++;
+        //window->PushSprite(0, 0, 1, sprite);
 
-        char*** renderData = new char**[1]
+        i++;
+        for (int x = 0; x < 100; ++x)
         {
-            new char*[1] {(char*) "A"},
-        };
+            for (int y = 0; y < 25; ++y)
+            {
+                Engine::Color** color = new Engine::Color*[1]
+                {
+                    new Engine::Color[1] {colors[i % 5]},
+                };
 
-        char*** renderData2 = new char**[3]
-        {
-            new char*[3] {(char*) "+", (char*) "^", (char*) "+"},
-            new char*[3] {(char*) "|", (char*) " ", (char*) ">"},
-            new char*[3] {(char*) "+", (char*) "-", (char*) "+"}
-        };
 
-        //Engine::Sprite sprite = Engine::Sprite(texture, new Engine::Vector2D(1, 1));
-
-        window->PushRenderCall(RenderCall{
-            COORD {x, 0},
-            1,
-            COORD {3, 3},
-            renderData2
-        });
-
-        window->PushRenderCall(RenderCall{
-            COORD {99, 24},
-            1,
-            COORD {1, 1},
-            renderData
-        });
-
-        window->Render();
-
+                sprite->Load2DColor(color);
+                window->PushSprite(x, y, 1, sprite);
+            }
+        }
     }
 
     void ConsoleEngine::SetTicksPerSecond(int tps)

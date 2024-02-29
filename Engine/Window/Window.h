@@ -4,23 +4,29 @@
 
 #ifndef WINDOW_H
 #define WINDOW_H
-#include <list>
 #include <windows.h>
+#include "../Utility/Color.h"
 
 namespace Engine
 {
-    struct RenderCall {
-        COORD position;
-        int zIndex;
-        COORD dataDimensions;
-        char*** data;
+    struct Sprite;
+
+    struct RenderObject
+    {
+        RenderObject();
+        RenderObject(char data, Color color);
+
+        char data;
+        Color color;
     };
+
 
     class Window
     {
     public:
         Window(SHORT x, SHORT y, bool bDrawBoarder);
         virtual ~Window();
+
 
     private:
         bool bDrawBorder;
@@ -34,29 +40,31 @@ namespace Engine
 
         void InitCursor();
 
+        int twoToOneDIndex(int x, int y, int xDimension);
     public:
         void Render();
 
         void UpdateConsoleMode(DWORD mode, bool enable);
 
-        void PushRenderCall(RenderCall call);
+        void PushSprite(int originX, int originY, int z, Sprite* sprite);
 
-//[][][][]
-//[][][][]
-//[][][][]
-//x + y * windowSize.Y
+        //[][][][]
+        //[][][][]
+        //[][][][]
+        //x + y * windowSize.Y
         //[][][][][][]
     private:
-        char*** previousRenderBuffer;
-        char*** renderBuffer;
-        int** zBufferIndex;
+        RenderObject* previousRenderBuffer;
+        RenderObject* renderBuffer;
+        int* zBufferIndex;
 
         void ConsumeRenderBuffer();
 
         void InitRenderBuffer();
 
-        void ClearConsole();
+        void WriteRawIntoRenderBuffer(int xy, int z, char data, Color color);
 
+        void ForceWriteRawIntoRenderBuffer(int xy, int z, char data, Color color);
     };
 } // Engine
 
