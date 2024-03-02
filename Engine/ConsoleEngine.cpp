@@ -38,7 +38,6 @@ namespace Engine
     }
 
     std::chrono::steady_clock::time_point previousTimePoint;
-
     void ConsoleEngine::Start()
     {
         previousTimePoint = std::chrono::steady_clock::now();
@@ -148,16 +147,13 @@ namespace Engine
         {
             for (int y = 0; y < window->GetWindowYDimension(); ++y)
             {
-                // Calculate the distances to each seed point
                 double minDistance = DBL_MAX;
                 int closestSeedIndex = -1;
 
                 for (size_t i = 0; i < seedPoints.size(); ++i)
                 {
-                    // Add time component to the seed point coordinates
                     Vector2D modifiedSeedPoint = seedPoints[i];
                     modifiedSeedPoint.x += (0.5 + 5.0 * sin(t * .1 + 6.2831 * 0.3 + modifiedSeedPoint.x));
-                    // You can adjust how time affects the seed points
                     modifiedSeedPoint.y += (0.5 + 5.0 * sin(t * .1 + 6.2831 * 0.7 + modifiedSeedPoint.y));
 
                     double distance = Vector2D(x, y).Distance(modifiedSeedPoint);
@@ -168,18 +164,15 @@ namespace Engine
                     }
                 }
 
-                // Assign the cell to the region corresponding to the closest seed point
                 Engine::Color** color3 = new Engine::Color*[1];
                 color3[0] = new Engine::Color[1]{
                     colors[(closestSeedIndex + (std::hash<int>()(seedPoints[closestSeedIndex].x) ^ std::hash<int>()(
                         seedPoints[closestSeedIndex].y)) / (MAXINT / 2)) % 12]
                 };
 
-                // Draw the cell with the assigned color
                 sprite2->Load2DColor(color3);
                 window->WDrawSprite(sprite2, x, y, 1);
 
-                // Debug: Show the closest seed index
                 std::ostringstream ostr;
                 ostr << "Seed Index: " << closestSeedIndex;
                 window->WDrawText(ostr.str().c_str(), 0, 0, 2);
