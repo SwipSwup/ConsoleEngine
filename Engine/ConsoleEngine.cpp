@@ -31,8 +31,8 @@ namespace Engine
 
         for (int i = 0; i < numSeedPoints; ++i)
         {
-            int randX = rand() % window->GetWindowXDimension();
-            int randY = rand() % window->GetWindowYDimension();
+            int randX = (rand() % (window->GetWindowXDimension() + 20)) - 10;
+            int randY = (rand() % (window->GetWindowYDimension() + 20)) - 10;
             seedPoints.push_back(Vector2D(randX, randY));
         }
     }

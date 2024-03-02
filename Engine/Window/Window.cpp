@@ -29,7 +29,7 @@ namespace Engine
 
         this->bDrawBorder = bDrawBorder;
 
-        bHighlightUnchangedPositions = true;
+        bHighlightUnchangedPositions = false;
 
         Init();
     }
