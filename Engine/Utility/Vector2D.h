@@ -9,9 +9,12 @@ namespace Engine {
 
 struct Vector2D {
 public:
+    Vector2D() = default;
     Vector2D(int x, int y);
 
     int x, y;
+
+    double Distance(Vector2D vec);
 
     static Vector2D zero;
 };

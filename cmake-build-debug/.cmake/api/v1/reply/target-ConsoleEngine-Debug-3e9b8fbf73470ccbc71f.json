@@ -27,7 +27,7 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 6,
+				"line" : 7,
 				"parent" : 0
 			}
 		]
@@ -38,7 +38,7 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : "-g -fdiagnostics-color=always"
+					"fragment" : " -static-libstdc++ -static-libgcc -g -fdiagnostics-color=always"
 				}
 			],
 			"language" : "CXX",
@@ -60,7 +60,8 @@
 				9,
 				11,
 				13,
-				15
+				15,
+				17
 			]
 		}
 	],
@@ -70,7 +71,7 @@
 		"commandFragments" : 
 		[
 			{
-				"fragment" : "-g",
+				"fragment" : "-static-libstdc++ -static-libgcc -g",
 				"role" : "flags"
 			},
 			{
@@ -105,7 +106,8 @@
 				9,
 				11,
 				13,
-				15
+				15,
+				17
 			]
 		},
 		{
@@ -119,7 +121,8 @@
 				10,
 				12,
 				14,
-				16
+				16,
+				18
 			]
 		}
 	],
@@ -217,6 +220,17 @@
 		{
 			"backtrace" : 1,
 			"path" : "Engine/Utility/Vector3D.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "Engine/Debug/Debug.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "Engine/Debug/Debug.h",
 			"sourceGroupIndex" : 1
 		}
 	],

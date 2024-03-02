@@ -5,6 +5,8 @@
 
 int main()
 {
+    srand (time(nullptr));
+
     Engine::ConsoleEngine engine = Engine::ConsoleEngine();
     Engine::Scene* scene = new Engine::Scene((char*)"untitled");
 

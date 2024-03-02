@@ -51,6 +51,7 @@ namespace Engine
         void HighlightUnchangedPositions(bool bHighlight);
 
         int GetWindowXDimension();
+
         int GetWindowYDimension();
 
     private:

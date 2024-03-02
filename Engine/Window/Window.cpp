@@ -29,7 +29,7 @@ namespace Engine
 
         this->bDrawBorder = bDrawBorder;
 
-        bHighlightUnchangedPositions = false;
+        bHighlightUnchangedPositions = true;
 
         Init();
     }
@@ -155,7 +155,51 @@ namespace Engine
             return;
         }
 
-        InitCursor();
+
+
+
+        // Set the size of the screen buffer
+        /*if (!SetConsoleScreenBufferSize(hConsole, windowSize)) {
+            std::cerr << "Error setting console screen buffer size" << std::endl;
+            return;
+        }*/
+        // Define the size of the console window
+
+        // Set the size of the console window
+
+        CONSOLE_FONT_INFOEX fontInfo;
+        fontInfo.cbSize = sizeof(CONSOLE_FONT_INFOEX);
+
+        if (!GetCurrentConsoleFontEx(hConsole, FALSE, &fontInfo)) {
+            std::cerr << "Error getting current console font" << std::endl;
+            return;
+        }
+
+        // Retrieve the font size
+        DWORD fontIndex = fontInfo.nFont;
+        COORD fontSize = GetConsoleFontSize(hConsole, fontIndex);
+
+        // Define the desired number of characters for width and height
+        int desiredWidthInChars = 80; // Change this value as needed
+        int desiredHeightInChars = 24; // Change this value as needed
+
+        // Calculate the desired console window size based on font size and character dimensions
+        COORD desiredSize;
+        std::cout << fontInfo.dwFontSize.X;
+
+        desiredSize.X = fontInfo.dwFontSize.X * windowSize.X + 33;
+        desiredSize.Y = fontInfo.dwFontSize.Y * windowSize.Y + 39;
+
+        // Set the console window size
+        if (!SetConsoleScreenBufferSize(hConsole, desiredSize)) {
+            std::cerr << "Error setting console screen buffer size" << std::endl;
+            return;
+        }
+        HWND console = GetConsoleWindow();
+        RECT rect;
+        GetWindowRect(console, &rect);
+
+        MoveWindow(console, rect.left, rect.top, desiredSize.X, desiredSize.Y, TRUE);
 
         if (!GetConsoleMode(hConsole, &dwMode))
         {
@@ -164,20 +208,7 @@ namespace Engine
         }
         UpdateConsoleMode(ENABLE_VIRTUAL_TERMINAL_PROCESSING, true);
 
-        // Set the size of the screen buffer
-        if (!SetConsoleScreenBufferSize(hConsole, windowSize)) {
-            std::cerr << "Error setting console screen buffer size" << std::endl;
-            return;
-        }
-        // Define the size of the console window
-
-        // Set the size of the console window
-        SMALL_RECT{ 0, 0, (SHORT) windowSize.X - 1, windowSize.Y - 1 };
-
-        if (!SetConsoleWindowInfo(hConsole, TRUE, & )) {
-            std::cerr << "Error setting console window size" << std::endl;
-            return 1;
-        }
+        InitCursor();
 
         InitRenderBuffer();
     }

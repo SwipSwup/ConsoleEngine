@@ -51,57 +51,63 @@ build cmake_object_order_depends_target_ConsoleEngine: phony || CMakeFiles/Conso
 
 build CMakeFiles/ConsoleEngine.dir/main.cpp.obj: CXX_COMPILER__ConsoleEngine_unscanned_Debug G$:/FH/Sem2/PROGR/ConsoleEngine/main.cpp || cmake_object_order_depends_target_ConsoleEngine
   DEP_FILE = CMakeFiles\ConsoleEngine.dir\main.cpp.obj.d
-  FLAGS = -g -fdiagnostics-color=always
+  FLAGS = -static-libstdc++ -static-libgcc -g -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\ConsoleEngine.dir
   OBJECT_FILE_DIR = CMakeFiles\ConsoleEngine.dir
 
 build CMakeFiles/ConsoleEngine.dir/Engine/Scene/Scene.cpp.obj: CXX_COMPILER__ConsoleEngine_unscanned_Debug G$:/FH/Sem2/PROGR/ConsoleEngine/Engine/Scene/Scene.cpp || cmake_object_order_depends_target_ConsoleEngine
   DEP_FILE = CMakeFiles\ConsoleEngine.dir\Engine\Scene\Scene.cpp.obj.d
-  FLAGS = -g -fdiagnostics-color=always
+  FLAGS = -static-libstdc++ -static-libgcc -g -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\ConsoleEngine.dir
   OBJECT_FILE_DIR = CMakeFiles\ConsoleEngine.dir\Engine\Scene
 
 build CMakeFiles/ConsoleEngine.dir/Engine/Objects/GameObject.cpp.obj: CXX_COMPILER__ConsoleEngine_unscanned_Debug G$:/FH/Sem2/PROGR/ConsoleEngine/Engine/Objects/GameObject.cpp || cmake_object_order_depends_target_ConsoleEngine
   DEP_FILE = CMakeFiles\ConsoleEngine.dir\Engine\Objects\GameObject.cpp.obj.d
-  FLAGS = -g -fdiagnostics-color=always
+  FLAGS = -static-libstdc++ -static-libgcc -g -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\ConsoleEngine.dir
   OBJECT_FILE_DIR = CMakeFiles\ConsoleEngine.dir\Engine\Objects
 
 build CMakeFiles/ConsoleEngine.dir/Engine/ConsoleEngine.cpp.obj: CXX_COMPILER__ConsoleEngine_unscanned_Debug G$:/FH/Sem2/PROGR/ConsoleEngine/Engine/ConsoleEngine.cpp || cmake_object_order_depends_target_ConsoleEngine
   DEP_FILE = CMakeFiles\ConsoleEngine.dir\Engine\ConsoleEngine.cpp.obj.d
-  FLAGS = -g -fdiagnostics-color=always
+  FLAGS = -static-libstdc++ -static-libgcc -g -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\ConsoleEngine.dir
   OBJECT_FILE_DIR = CMakeFiles\ConsoleEngine.dir\Engine
 
 build CMakeFiles/ConsoleEngine.dir/Engine/Window/Window.cpp.obj: CXX_COMPILER__ConsoleEngine_unscanned_Debug G$:/FH/Sem2/PROGR/ConsoleEngine/Engine/Window/Window.cpp || cmake_object_order_depends_target_ConsoleEngine
   DEP_FILE = CMakeFiles\ConsoleEngine.dir\Engine\Window\Window.cpp.obj.d
-  FLAGS = -g -fdiagnostics-color=always
+  FLAGS = -static-libstdc++ -static-libgcc -g -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\ConsoleEngine.dir
   OBJECT_FILE_DIR = CMakeFiles\ConsoleEngine.dir\Engine\Window
 
 build CMakeFiles/ConsoleEngine.dir/Engine/Utility/Vector2D.cpp.obj: CXX_COMPILER__ConsoleEngine_unscanned_Debug G$:/FH/Sem2/PROGR/ConsoleEngine/Engine/Utility/Vector2D.cpp || cmake_object_order_depends_target_ConsoleEngine
   DEP_FILE = CMakeFiles\ConsoleEngine.dir\Engine\Utility\Vector2D.cpp.obj.d
-  FLAGS = -g -fdiagnostics-color=always
+  FLAGS = -static-libstdc++ -static-libgcc -g -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\ConsoleEngine.dir
   OBJECT_FILE_DIR = CMakeFiles\ConsoleEngine.dir\Engine\Utility
 
 build CMakeFiles/ConsoleEngine.dir/Engine/Utility/Sprites/Sprite.cpp.obj: CXX_COMPILER__ConsoleEngine_unscanned_Debug G$:/FH/Sem2/PROGR/ConsoleEngine/Engine/Utility/Sprites/Sprite.cpp || cmake_object_order_depends_target_ConsoleEngine
   DEP_FILE = CMakeFiles\ConsoleEngine.dir\Engine\Utility\Sprites\Sprite.cpp.obj.d
-  FLAGS = -g -fdiagnostics-color=always
+  FLAGS = -static-libstdc++ -static-libgcc -g -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\ConsoleEngine.dir
   OBJECT_FILE_DIR = CMakeFiles\ConsoleEngine.dir\Engine\Utility\Sprites
 
 build CMakeFiles/ConsoleEngine.dir/Engine/Utility/Color.cpp.obj: CXX_COMPILER__ConsoleEngine_unscanned_Debug G$:/FH/Sem2/PROGR/ConsoleEngine/Engine/Utility/Color.cpp || cmake_object_order_depends_target_ConsoleEngine
   DEP_FILE = CMakeFiles\ConsoleEngine.dir\Engine\Utility\Color.cpp.obj.d
-  FLAGS = -g -fdiagnostics-color=always
+  FLAGS = -static-libstdc++ -static-libgcc -g -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\ConsoleEngine.dir
   OBJECT_FILE_DIR = CMakeFiles\ConsoleEngine.dir\Engine\Utility
 
 build CMakeFiles/ConsoleEngine.dir/Engine/Utility/Vector3D.cpp.obj: CXX_COMPILER__ConsoleEngine_unscanned_Debug G$:/FH/Sem2/PROGR/ConsoleEngine/Engine/Utility/Vector3D.cpp || cmake_object_order_depends_target_ConsoleEngine
   DEP_FILE = CMakeFiles\ConsoleEngine.dir\Engine\Utility\Vector3D.cpp.obj.d
-  FLAGS = -g -fdiagnostics-color=always
+  FLAGS = -static-libstdc++ -static-libgcc -g -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\ConsoleEngine.dir
   OBJECT_FILE_DIR = CMakeFiles\ConsoleEngine.dir\Engine\Utility
+
+build CMakeFiles/ConsoleEngine.dir/Engine/Debug/Debug.cpp.obj: CXX_COMPILER__ConsoleEngine_unscanned_Debug G$:/FH/Sem2/PROGR/ConsoleEngine/Engine/Debug/Debug.cpp || cmake_object_order_depends_target_ConsoleEngine
+  DEP_FILE = CMakeFiles\ConsoleEngine.dir\Engine\Debug\Debug.cpp.obj.d
+  FLAGS = -static-libstdc++ -static-libgcc -g -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\ConsoleEngine.dir
+  OBJECT_FILE_DIR = CMakeFiles\ConsoleEngine.dir\Engine\Debug
 
 
 # =============================================================================
@@ -111,8 +117,8 @@ build CMakeFiles/ConsoleEngine.dir/Engine/Utility/Vector3D.cpp.obj: CXX_COMPILER
 #############################################
 # Link the executable ConsoleEngine.exe
 
-build ConsoleEngine.exe: CXX_EXECUTABLE_LINKER__ConsoleEngine_Debug CMakeFiles/ConsoleEngine.dir/main.cpp.obj CMakeFiles/ConsoleEngine.dir/Engine/Scene/Scene.cpp.obj CMakeFiles/ConsoleEngine.dir/Engine/Objects/GameObject.cpp.obj CMakeFiles/ConsoleEngine.dir/Engine/ConsoleEngine.cpp.obj CMakeFiles/ConsoleEngine.dir/Engine/Window/Window.cpp.obj CMakeFiles/ConsoleEngine.dir/Engine/Utility/Vector2D.cpp.obj CMakeFiles/ConsoleEngine.dir/Engine/Utility/Sprites/Sprite.cpp.obj CMakeFiles/ConsoleEngine.dir/Engine/Utility/Color.cpp.obj CMakeFiles/ConsoleEngine.dir/Engine/Utility/Vector3D.cpp.obj
-  FLAGS = -g
+build ConsoleEngine.exe: CXX_EXECUTABLE_LINKER__ConsoleEngine_Debug CMakeFiles/ConsoleEngine.dir/main.cpp.obj CMakeFiles/ConsoleEngine.dir/Engine/Scene/Scene.cpp.obj CMakeFiles/ConsoleEngine.dir/Engine/Objects/GameObject.cpp.obj CMakeFiles/ConsoleEngine.dir/Engine/ConsoleEngine.cpp.obj CMakeFiles/ConsoleEngine.dir/Engine/Window/Window.cpp.obj CMakeFiles/ConsoleEngine.dir/Engine/Utility/Vector2D.cpp.obj CMakeFiles/ConsoleEngine.dir/Engine/Utility/Sprites/Sprite.cpp.obj CMakeFiles/ConsoleEngine.dir/Engine/Utility/Color.cpp.obj CMakeFiles/ConsoleEngine.dir/Engine/Utility/Vector3D.cpp.obj CMakeFiles/ConsoleEngine.dir/Engine/Debug/Debug.cpp.obj
+  FLAGS = -static-libstdc++ -static-libgcc -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\ConsoleEngine.dir
   POST_BUILD = cd .
@@ -126,7 +132,7 @@ build ConsoleEngine.exe: CXX_EXECUTABLE_LINKER__ConsoleEngine_Debug CMakeFiles/C
 # Utility command for edit_cache
 
 build CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = C:\WINDOWS\system32\cmd.exe /C "cd /D G:\FH\Sem2\PROGR\ConsoleEngine\cmake-build-debug && G:\IDEs\JetBrains\apps\CLion-Nova\ch-0\241.11109\bin\cmake\win\x64\bin\cmake.exe -E echo "No interactive CMake dialog available.""
+  COMMAND = C:\WINDOWS\system32\cmd.exe /C "cd /D G:\FH\Sem2\PROGR\ConsoleEngine\cmake-build-debug && G:\IDEs\JetBrains\apps\CLion-Nova\ch-0\241.14024.27\bin\cmake\win\x64\bin\cmake.exe -E echo "No interactive CMake dialog available.""
   DESC = No interactive CMake dialog available...
   restat = 1
 
@@ -137,7 +143,7 @@ build edit_cache: phony CMakeFiles/edit_cache.util
 # Utility command for rebuild_cache
 
 build CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = C:\WINDOWS\system32\cmd.exe /C "cd /D G:\FH\Sem2\PROGR\ConsoleEngine\cmake-build-debug && G:\IDEs\JetBrains\apps\CLion-Nova\ch-0\241.11109\bin\cmake\win\x64\bin\cmake.exe --regenerate-during-build -SG:\FH\Sem2\PROGR\ConsoleEngine -BG:\FH\Sem2\PROGR\ConsoleEngine\cmake-build-debug"
+  COMMAND = C:\WINDOWS\system32\cmd.exe /C "cd /D G:\FH\Sem2\PROGR\ConsoleEngine\cmake-build-debug && G:\IDEs\JetBrains\apps\CLion-Nova\ch-0\241.14024.27\bin\cmake\win\x64\bin\cmake.exe --regenerate-during-build -SG:\FH\Sem2\PROGR\ConsoleEngine -BG:\FH\Sem2\PROGR\ConsoleEngine\cmake-build-debug"
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -166,14 +172,14 @@ build all: phony ConsoleEngine.exe
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja: RERUN_CMAKE | CMakeCache.txt CMakeFiles/3.28.1/CMakeCCompiler.cmake CMakeFiles/3.28.1/CMakeCXXCompiler.cmake CMakeFiles/3.28.1/CMakeRCCompiler.cmake CMakeFiles/3.28.1/CMakeSystem.cmake G$:/FH/Sem2/PROGR/ConsoleEngine/CMakeLists.txt G$:/IDEs/JetBrains/apps/CLion-Nova/ch-0/241.11109/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeCInformation.cmake G$:/IDEs/JetBrains/apps/CLion-Nova/ch-0/241.11109/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeCXXInformation.cmake G$:/IDEs/JetBrains/apps/CLion-Nova/ch-0/241.11109/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeCommonLanguageInclude.cmake G$:/IDEs/JetBrains/apps/CLion-Nova/ch-0/241.11109/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeGenericSystem.cmake G$:/IDEs/JetBrains/apps/CLion-Nova/ch-0/241.11109/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeInitializeConfigs.cmake G$:/IDEs/JetBrains/apps/CLion-Nova/ch-0/241.11109/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeLanguageInformation.cmake G$:/IDEs/JetBrains/apps/CLion-Nova/ch-0/241.11109/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeRCInformation.cmake G$:/IDEs/JetBrains/apps/CLion-Nova/ch-0/241.11109/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeSystemSpecificInformation.cmake G$:/IDEs/JetBrains/apps/CLion-Nova/ch-0/241.11109/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeSystemSpecificInitialize.cmake G$:/IDEs/JetBrains/apps/CLion-Nova/ch-0/241.11109/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/CMakeCommonCompilerMacros.cmake G$:/IDEs/JetBrains/apps/CLion-Nova/ch-0/241.11109/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/GNU-C.cmake G$:/IDEs/JetBrains/apps/CLion-Nova/ch-0/241.11109/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/GNU-CXX.cmake G$:/IDEs/JetBrains/apps/CLion-Nova/ch-0/241.11109/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/GNU.cmake G$:/IDEs/JetBrains/apps/CLion-Nova/ch-0/241.11109/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/Windows-GNU-C-ABI.cmake G$:/IDEs/JetBrains/apps/CLion-Nova/ch-0/241.11109/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/Windows-GNU-C.cmake G$:/IDEs/JetBrains/apps/CLion-Nova/ch-0/241.11109/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/Windows-GNU-CXX-ABI.cmake G$:/IDEs/JetBrains/apps/CLion-Nova/ch-0/241.11109/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/Windows-GNU-CXX.cmake G$:/IDEs/JetBrains/apps/CLion-Nova/ch-0/241.11109/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/Windows-GNU.cmake G$:/IDEs/JetBrains/apps/CLion-Nova/ch-0/241.11109/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/Windows-Initialize.cmake G$:/IDEs/JetBrains/apps/CLion-Nova/ch-0/241.11109/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/Windows-windres.cmake G$:/IDEs/JetBrains/apps/CLion-Nova/ch-0/241.11109/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/Windows.cmake G$:/IDEs/JetBrains/apps/CLion-Nova/ch-0/241.11109/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/WindowsPaths.cmake
+build build.ninja: RERUN_CMAKE | CMakeCache.txt CMakeFiles/3.28.1/CMakeCCompiler.cmake CMakeFiles/3.28.1/CMakeCXXCompiler.cmake CMakeFiles/3.28.1/CMakeRCCompiler.cmake CMakeFiles/3.28.1/CMakeSystem.cmake G$:/FH/Sem2/PROGR/ConsoleEngine/CMakeLists.txt G$:/IDEs/JetBrains/apps/CLion-Nova/ch-0/241.14024.27/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeCInformation.cmake G$:/IDEs/JetBrains/apps/CLion-Nova/ch-0/241.14024.27/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeCXXInformation.cmake G$:/IDEs/JetBrains/apps/CLion-Nova/ch-0/241.14024.27/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeCommonLanguageInclude.cmake G$:/IDEs/JetBrains/apps/CLion-Nova/ch-0/241.14024.27/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeGenericSystem.cmake G$:/IDEs/JetBrains/apps/CLion-Nova/ch-0/241.14024.27/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeInitializeConfigs.cmake G$:/IDEs/JetBrains/apps/CLion-Nova/ch-0/241.14024.27/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeLanguageInformation.cmake G$:/IDEs/JetBrains/apps/CLion-Nova/ch-0/241.14024.27/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeRCInformation.cmake G$:/IDEs/JetBrains/apps/CLion-Nova/ch-0/241.14024.27/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeSystemSpecificInformation.cmake G$:/IDEs/JetBrains/apps/CLion-Nova/ch-0/241.14024.27/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeSystemSpecificInitialize.cmake G$:/IDEs/JetBrains/apps/CLion-Nova/ch-0/241.14024.27/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/CMakeCommonCompilerMacros.cmake G$:/IDEs/JetBrains/apps/CLion-Nova/ch-0/241.14024.27/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/GNU-C.cmake G$:/IDEs/JetBrains/apps/CLion-Nova/ch-0/241.14024.27/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/GNU-CXX.cmake G$:/IDEs/JetBrains/apps/CLion-Nova/ch-0/241.14024.27/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/GNU.cmake G$:/IDEs/JetBrains/apps/CLion-Nova/ch-0/241.14024.27/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/Windows-GNU-C-ABI.cmake G$:/IDEs/JetBrains/apps/CLion-Nova/ch-0/241.14024.27/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/Windows-GNU-C.cmake G$:/IDEs/JetBrains/apps/CLion-Nova/ch-0/241.14024.27/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/Windows-GNU-CXX-ABI.cmake G$:/IDEs/JetBrains/apps/CLion-Nova/ch-0/241.14024.27/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/Windows-GNU-CXX.cmake G$:/IDEs/JetBrains/apps/CLion-Nova/ch-0/241.14024.27/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/Windows-GNU.cmake G$:/IDEs/JetBrains/apps/CLion-Nova/ch-0/241.14024.27/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/Windows-Initialize.cmake G$:/IDEs/JetBrains/apps/CLion-Nova/ch-0/241.14024.27/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/Windows-windres.cmake G$:/IDEs/JetBrains/apps/CLion-Nova/ch-0/241.14024.27/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/Windows.cmake G$:/IDEs/JetBrains/apps/CLion-Nova/ch-0/241.14024.27/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/WindowsPaths.cmake
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build CMakeCache.txt CMakeFiles/3.28.1/CMakeCCompiler.cmake CMakeFiles/3.28.1/CMakeCXXCompiler.cmake CMakeFiles/3.28.1/CMakeRCCompiler.cmake CMakeFiles/3.28.1/CMakeSystem.cmake G$:/FH/Sem2/PROGR/ConsoleEngine/CMakeLists.txt G$:/IDEs/JetBrains/apps/CLion-Nova/ch-0/241.11109/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeCInformation.cmake G$:/IDEs/JetBrains/apps/CLion-Nova/ch-0/241.11109/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeCXXInformation.cmake G$:/IDEs/JetBrains/apps/CLion-Nova/ch-0/241.11109/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeCommonLanguageInclude.cmake G$:/IDEs/JetBrains/apps/CLion-Nova/ch-0/241.11109/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeGenericSystem.cmake G$:/IDEs/JetBrains/apps/CLion-Nova/ch-0/241.11109/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeInitializeConfigs.cmake G$:/IDEs/JetBrains/apps/CLion-Nova/ch-0/241.11109/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeLanguageInformation.cmake G$:/IDEs/JetBrains/apps/CLion-Nova/ch-0/241.11109/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeRCInformation.cmake G$:/IDEs/JetBrains/apps/CLion-Nova/ch-0/241.11109/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeSystemSpecificInformation.cmake G$:/IDEs/JetBrains/apps/CLion-Nova/ch-0/241.11109/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeSystemSpecificInitialize.cmake G$:/IDEs/JetBrains/apps/CLion-Nova/ch-0/241.11109/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/CMakeCommonCompilerMacros.cmake G$:/IDEs/JetBrains/apps/CLion-Nova/ch-0/241.11109/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/GNU-C.cmake G$:/IDEs/JetBrains/apps/CLion-Nova/ch-0/241.11109/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/GNU-CXX.cmake G$:/IDEs/JetBrains/apps/CLion-Nova/ch-0/241.11109/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/GNU.cmake G$:/IDEs/JetBrains/apps/CLion-Nova/ch-0/241.11109/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/Windows-GNU-C-ABI.cmake G$:/IDEs/JetBrains/apps/CLion-Nova/ch-0/241.11109/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/Windows-GNU-C.cmake G$:/IDEs/JetBrains/apps/CLion-Nova/ch-0/241.11109/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/Windows-GNU-CXX-ABI.cmake G$:/IDEs/JetBrains/apps/CLion-Nova/ch-0/241.11109/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/Windows-GNU-CXX.cmake G$:/IDEs/JetBrains/apps/CLion-Nova/ch-0/241.11109/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/Windows-GNU.cmake G$:/IDEs/JetBrains/apps/CLion-Nova/ch-0/241.11109/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/Windows-Initialize.cmake G$:/IDEs/JetBrains/apps/CLion-Nova/ch-0/241.11109/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/Windows-windres.cmake G$:/IDEs/JetBrains/apps/CLion-Nova/ch-0/241.11109/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/Windows.cmake G$:/IDEs/JetBrains/apps/CLion-Nova/ch-0/241.11109/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/WindowsPaths.cmake: phony
+build CMakeCache.txt CMakeFiles/3.28.1/CMakeCCompiler.cmake CMakeFiles/3.28.1/CMakeCXXCompiler.cmake CMakeFiles/3.28.1/CMakeRCCompiler.cmake CMakeFiles/3.28.1/CMakeSystem.cmake G$:/FH/Sem2/PROGR/ConsoleEngine/CMakeLists.txt G$:/IDEs/JetBrains/apps/CLion-Nova/ch-0/241.14024.27/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeCInformation.cmake G$:/IDEs/JetBrains/apps/CLion-Nova/ch-0/241.14024.27/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeCXXInformation.cmake G$:/IDEs/JetBrains/apps/CLion-Nova/ch-0/241.14024.27/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeCommonLanguageInclude.cmake G$:/IDEs/JetBrains/apps/CLion-Nova/ch-0/241.14024.27/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeGenericSystem.cmake G$:/IDEs/JetBrains/apps/CLion-Nova/ch-0/241.14024.27/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeInitializeConfigs.cmake G$:/IDEs/JetBrains/apps/CLion-Nova/ch-0/241.14024.27/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeLanguageInformation.cmake G$:/IDEs/JetBrains/apps/CLion-Nova/ch-0/241.14024.27/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeRCInformation.cmake G$:/IDEs/JetBrains/apps/CLion-Nova/ch-0/241.14024.27/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeSystemSpecificInformation.cmake G$:/IDEs/JetBrains/apps/CLion-Nova/ch-0/241.14024.27/bin/cmake/win/x64/share/cmake-3.28/Modules/CMakeSystemSpecificInitialize.cmake G$:/IDEs/JetBrains/apps/CLion-Nova/ch-0/241.14024.27/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/CMakeCommonCompilerMacros.cmake G$:/IDEs/JetBrains/apps/CLion-Nova/ch-0/241.14024.27/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/GNU-C.cmake G$:/IDEs/JetBrains/apps/CLion-Nova/ch-0/241.14024.27/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/GNU-CXX.cmake G$:/IDEs/JetBrains/apps/CLion-Nova/ch-0/241.14024.27/bin/cmake/win/x64/share/cmake-3.28/Modules/Compiler/GNU.cmake G$:/IDEs/JetBrains/apps/CLion-Nova/ch-0/241.14024.27/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/Windows-GNU-C-ABI.cmake G$:/IDEs/JetBrains/apps/CLion-Nova/ch-0/241.14024.27/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/Windows-GNU-C.cmake G$:/IDEs/JetBrains/apps/CLion-Nova/ch-0/241.14024.27/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/Windows-GNU-CXX-ABI.cmake G$:/IDEs/JetBrains/apps/CLion-Nova/ch-0/241.14024.27/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/Windows-GNU-CXX.cmake G$:/IDEs/JetBrains/apps/CLion-Nova/ch-0/241.14024.27/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/Windows-GNU.cmake G$:/IDEs/JetBrains/apps/CLion-Nova/ch-0/241.14024.27/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/Windows-Initialize.cmake G$:/IDEs/JetBrains/apps/CLion-Nova/ch-0/241.14024.27/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/Windows-windres.cmake G$:/IDEs/JetBrains/apps/CLion-Nova/ch-0/241.14024.27/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/Windows.cmake G$:/IDEs/JetBrains/apps/CLion-Nova/ch-0/241.14024.27/bin/cmake/win/x64/share/cmake-3.28/Modules/Platform/WindowsPaths.cmake: phony
 
 
 #############################################

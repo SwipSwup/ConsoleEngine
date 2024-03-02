@@ -8,6 +8,11 @@
 
 namespace Engine
 {
+    class Debug;
+}
+
+namespace Engine
+{
     struct Vector2D;
 }
 
@@ -49,6 +54,7 @@ public:
 
 private:
     Window* window;
+    Debug* debugConsole;
 
 public:
     Vector2D GetWindowDimensions();
