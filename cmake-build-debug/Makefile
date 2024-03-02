@@ -200,29 +200,53 @@ Engine/Scene/Scene.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ConsoleEngine.dir\build.make CMakeFiles/ConsoleEngine.dir/Engine/Scene/Scene.cpp.s
 .PHONY : Engine/Scene/Scene.cpp.s
 
-Engine/Utility/Sprite.obj: Engine/Utility/Sprite.cpp.obj
-.PHONY : Engine/Utility/Sprite.obj
+Engine/Utility/Color.obj: Engine/Utility/Color.cpp.obj
+.PHONY : Engine/Utility/Color.obj
 
 # target to build an object file
-Engine/Utility/Sprite.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\ConsoleEngine.dir\build.make CMakeFiles/ConsoleEngine.dir/Engine/Utility/Sprite.cpp.obj
-.PHONY : Engine/Utility/Sprite.cpp.obj
+Engine/Utility/Color.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ConsoleEngine.dir\build.make CMakeFiles/ConsoleEngine.dir/Engine/Utility/Color.cpp.obj
+.PHONY : Engine/Utility/Color.cpp.obj
 
-Engine/Utility/Sprite.i: Engine/Utility/Sprite.cpp.i
-.PHONY : Engine/Utility/Sprite.i
+Engine/Utility/Color.i: Engine/Utility/Color.cpp.i
+.PHONY : Engine/Utility/Color.i
 
 # target to preprocess a source file
-Engine/Utility/Sprite.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\ConsoleEngine.dir\build.make CMakeFiles/ConsoleEngine.dir/Engine/Utility/Sprite.cpp.i
-.PHONY : Engine/Utility/Sprite.cpp.i
+Engine/Utility/Color.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ConsoleEngine.dir\build.make CMakeFiles/ConsoleEngine.dir/Engine/Utility/Color.cpp.i
+.PHONY : Engine/Utility/Color.cpp.i
 
-Engine/Utility/Sprite.s: Engine/Utility/Sprite.cpp.s
-.PHONY : Engine/Utility/Sprite.s
+Engine/Utility/Color.s: Engine/Utility/Color.cpp.s
+.PHONY : Engine/Utility/Color.s
 
 # target to generate assembly for a file
-Engine/Utility/Sprite.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\ConsoleEngine.dir\build.make CMakeFiles/ConsoleEngine.dir/Engine/Utility/Sprite.cpp.s
-.PHONY : Engine/Utility/Sprite.cpp.s
+Engine/Utility/Color.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ConsoleEngine.dir\build.make CMakeFiles/ConsoleEngine.dir/Engine/Utility/Color.cpp.s
+.PHONY : Engine/Utility/Color.cpp.s
+
+Engine/Utility/Sprites/Sprite.obj: Engine/Utility/Sprites/Sprite.cpp.obj
+.PHONY : Engine/Utility/Sprites/Sprite.obj
+
+# target to build an object file
+Engine/Utility/Sprites/Sprite.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ConsoleEngine.dir\build.make CMakeFiles/ConsoleEngine.dir/Engine/Utility/Sprites/Sprite.cpp.obj
+.PHONY : Engine/Utility/Sprites/Sprite.cpp.obj
+
+Engine/Utility/Sprites/Sprite.i: Engine/Utility/Sprites/Sprite.cpp.i
+.PHONY : Engine/Utility/Sprites/Sprite.i
+
+# target to preprocess a source file
+Engine/Utility/Sprites/Sprite.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ConsoleEngine.dir\build.make CMakeFiles/ConsoleEngine.dir/Engine/Utility/Sprites/Sprite.cpp.i
+.PHONY : Engine/Utility/Sprites/Sprite.cpp.i
+
+Engine/Utility/Sprites/Sprite.s: Engine/Utility/Sprites/Sprite.cpp.s
+.PHONY : Engine/Utility/Sprites/Sprite.s
+
+# target to generate assembly for a file
+Engine/Utility/Sprites/Sprite.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ConsoleEngine.dir\build.make CMakeFiles/ConsoleEngine.dir/Engine/Utility/Sprites/Sprite.cpp.s
+.PHONY : Engine/Utility/Sprites/Sprite.cpp.s
 
 Engine/Utility/Vector2D.obj: Engine/Utility/Vector2D.cpp.obj
 .PHONY : Engine/Utility/Vector2D.obj
@@ -247,6 +271,30 @@ Engine/Utility/Vector2D.s: Engine/Utility/Vector2D.cpp.s
 Engine/Utility/Vector2D.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ConsoleEngine.dir\build.make CMakeFiles/ConsoleEngine.dir/Engine/Utility/Vector2D.cpp.s
 .PHONY : Engine/Utility/Vector2D.cpp.s
+
+Engine/Utility/Vector3D.obj: Engine/Utility/Vector3D.cpp.obj
+.PHONY : Engine/Utility/Vector3D.obj
+
+# target to build an object file
+Engine/Utility/Vector3D.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ConsoleEngine.dir\build.make CMakeFiles/ConsoleEngine.dir/Engine/Utility/Vector3D.cpp.obj
+.PHONY : Engine/Utility/Vector3D.cpp.obj
+
+Engine/Utility/Vector3D.i: Engine/Utility/Vector3D.cpp.i
+.PHONY : Engine/Utility/Vector3D.i
+
+# target to preprocess a source file
+Engine/Utility/Vector3D.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ConsoleEngine.dir\build.make CMakeFiles/ConsoleEngine.dir/Engine/Utility/Vector3D.cpp.i
+.PHONY : Engine/Utility/Vector3D.cpp.i
+
+Engine/Utility/Vector3D.s: Engine/Utility/Vector3D.cpp.s
+.PHONY : Engine/Utility/Vector3D.s
+
+# target to generate assembly for a file
+Engine/Utility/Vector3D.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ConsoleEngine.dir\build.make CMakeFiles/ConsoleEngine.dir/Engine/Utility/Vector3D.cpp.s
+.PHONY : Engine/Utility/Vector3D.cpp.s
 
 Engine/Window/Window.obj: Engine/Window/Window.cpp.obj
 .PHONY : Engine/Window/Window.obj
@@ -314,12 +362,18 @@ help:
 	@echo ... Engine/Scene/Scene.obj
 	@echo ... Engine/Scene/Scene.i
 	@echo ... Engine/Scene/Scene.s
-	@echo ... Engine/Utility/Sprite.obj
-	@echo ... Engine/Utility/Sprite.i
-	@echo ... Engine/Utility/Sprite.s
+	@echo ... Engine/Utility/Color.obj
+	@echo ... Engine/Utility/Color.i
+	@echo ... Engine/Utility/Color.s
+	@echo ... Engine/Utility/Sprites/Sprite.obj
+	@echo ... Engine/Utility/Sprites/Sprite.i
+	@echo ... Engine/Utility/Sprites/Sprite.s
 	@echo ... Engine/Utility/Vector2D.obj
 	@echo ... Engine/Utility/Vector2D.i
 	@echo ... Engine/Utility/Vector2D.s
+	@echo ... Engine/Utility/Vector3D.obj
+	@echo ... Engine/Utility/Vector3D.i
+	@echo ... Engine/Utility/Vector3D.s
 	@echo ... Engine/Window/Window.obj
 	@echo ... Engine/Window/Window.i
 	@echo ... Engine/Window/Window.s

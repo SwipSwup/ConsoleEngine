@@ -39,8 +39,9 @@ namespace Engine
         delete cursorInfo;
     }
 
-    int Window::TwoToOneDIndex(int x, int y, int xDimension)
+    int Window::TranslateToBufferIndex(int x, int y, int xDimension)
     {
+        //return (x + windowSize.X / 2) + y * xDimension;
         return x + y * xDimension;
     }
 
@@ -50,27 +51,27 @@ namespace Engine
             !strcmp(previousRenderBuffer[xy].color.escapeCode, renderBuffer[xy].color.escapeCode);
     }
 
-    //TODO implement Z value
-    //TODO implement buffer that gets initalized with " " and then adds the render calls so its possible to reduce the flicker
     void Window::Render()
     {
         DWORD charsWritten;
 
+        //todo propably possible with just one loop
         for (int y = 0; y < windowSize.Y; ++y)
         {
             for (int x = 0; x < windowSize.X; ++x)
             {
-                int bufferIndex = TwoToOneDIndex(x, y, windowSize.X);
+                int bufferIndex = TranslateToBufferIndex(x, y, windowSize.X);
                 RenderObject obj = renderBuffer[bufferIndex];
 
                 Color c = obj.color;
 
                 if (HasRenderObjectUpdated(bufferIndex))
                 {
-                    if(bHighlightUnchangedPositions)
+                    if (bHighlightUnchangedPositions)
                     {
                         c = Color::GRNHB;
-                    } else
+                    }
+                    else
                     {
                         continue;
                     }
@@ -103,27 +104,15 @@ namespace Engine
                     std::cerr << "Error writing to console" << std::endl;
                     return;
                 }
-
-                /*if (!WriteConsoleA(
-                    hConsole,
-                    &obj.data,
-                    1,
-                    &charsWritten,
-                    nullptr
-                ))
-                {
-                    std::cerr << "Error writing to console" << std::endl;
-                    return;
-                }*/
             }
         }
 
         ConsumeRenderBuffer();
     }
 
-    void Window::UpdateConsoleMode(DWORD mode, bool enable)
+    void Window::UpdateConsoleMode(DWORD mode, bool bEnable)
     {
-        if (enable)
+        if (bEnable)
         {
             dwMode |= mode;
         }
@@ -143,38 +132,14 @@ namespace Engine
         bHighlightUnchangedPositions = bHighlight;
     }
 
-    void Window::PushSprite(int originX, int originY, int z, Sprite* sprite)
+    int Window::GetWindowXDimension()
     {
-        COORD bufferIndex;
-        for (int y = 0; y < sprite->textureDimensions->y; ++y)
-        {
-            bufferIndex.Y = windowSize.Y - originY - sprite->textureDimensions->y + y;
+        return windowSize.X;
+    }
 
-            if (bufferIndex.Y > windowSize.Y - 1)
-                break;
-
-            if (bufferIndex.Y < 0)
-                continue;
-
-            for (int x = 0; x < sprite->textureDimensions->x; ++x)
-            {
-                bufferIndex.X = x + originX;
-
-                if (bufferIndex.X > windowSize.X - 1)
-                    break;
-
-                if (bufferIndex.X < 0)
-                    continue;
-
-                //std::cout << sprite->texture[y][x];
-
-                //std::cout << "x: " <<bufferIndex.X << " y: " << bufferIndex.Y << " index:" << twoToOneDIndex(bufferIndex.X, bufferIndex.Y, windowSize.X) << std::endl;
-
-                WriteRawIntoRenderBuffer(TwoToOneDIndex(bufferIndex.X, bufferIndex.Y, windowSize.X), z,
-                                         sprite->texture[y][x],
-                                         sprite->color[y][x]);
-            }
-        }
+    int Window::GetWindowYDimension()
+    {
+        return windowSize.Y;
     }
 
     void Window::Init()
@@ -190,7 +155,6 @@ namespace Engine
             return;
         }
 
-
         InitCursor();
 
         if (!GetConsoleMode(hConsole, &dwMode))
@@ -199,6 +163,21 @@ namespace Engine
             return;
         }
         UpdateConsoleMode(ENABLE_VIRTUAL_TERMINAL_PROCESSING, true);
+
+        // Set the size of the screen buffer
+        if (!SetConsoleScreenBufferSize(hConsole, windowSize)) {
+            std::cerr << "Error setting console screen buffer size" << std::endl;
+            return;
+        }
+        // Define the size of the console window
+
+        // Set the size of the console window
+        SMALL_RECT{ 0, 0, (SHORT) windowSize.X - 1, windowSize.Y - 1 };
+
+        if (!SetConsoleWindowInfo(hConsole, TRUE, & )) {
+            std::cerr << "Error setting console window size" << std::endl;
+            return 1;
+        }
 
         InitRenderBuffer();
     }
@@ -218,11 +197,19 @@ namespace Engine
     void Window::ConsumeRenderBuffer()
     {
         memcpy(previousRenderBuffer, renderBuffer, sizeof(RenderObject) * windowSize.X * windowSize.Y);
+
+        delete renderBuffer;
+        renderBuffer = new RenderObject[windowSize.X * windowSize.Y];
+
+        for (int i = 0; i < windowSize.X * windowSize.Y; ++i)
+        {
+            zBufferIndex[i] = 0;
+        }
     }
 
     void Window::WriteRawIntoRenderBuffer(int xy, int z, char data, Color color)
     {
-        if (zBufferIndex[xy] > z)
+        if (zBufferIndex[xy] > z || xy < 0 || xy > windowSize.X * windowSize.Y - 1)
         {
             return;
         }
@@ -245,6 +232,50 @@ namespace Engine
         for (int i = 0; i < windowSize.X * windowSize.Y; ++i)
         {
             zBufferIndex[i] = 0;
+        }
+    }
+
+    void Window::WDrawSprite(Sprite* sprite, int originX, int originY, int z)
+    {
+        //todo might be able to be done in just one loop
+        //todo fix if x is bigger than x dimension that it doesnt loop back one y lower
+        for (int y = 0; y < sprite->textureDimensions->y; ++y)
+        {
+            for (int x = 0; x < sprite->textureDimensions->x; ++x)
+            {
+                WriteRawIntoRenderBuffer(
+                    TranslateToBufferIndex(
+                        x + originX,
+                        windowSize.Y - originY - sprite->textureDimensions->y + y,
+                        windowSize.X
+                    ),
+                    z,
+                    sprite->texture[y][x],
+                    sprite->color[y][x]
+                );
+            }
+        }
+    }
+
+    void Window::WDrawText(const char* text, int originX, int originY, int z)
+    {
+        WDrawText(text, Color::WHT, originX, originY, z);
+    }
+
+    void Window::WDrawText(const char* text, Color color, int originX, int originY, int z)
+    {
+        for (int x = 0; x < strlen(text); ++x)
+        {
+            WriteRawIntoRenderBuffer(
+                TranslateToBufferIndex(
+                    x + originX,
+                    windowSize.Y - originY - 1,
+                    windowSize.X
+                ),
+                z,
+                text[x],
+                color
+            );
         }
     }
 } // Engine

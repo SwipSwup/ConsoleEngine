@@ -5,6 +5,8 @@
 #include "ConsoleEngine.h"
 
 #include <chrono>
+#include <iostream>
+#include <sstream>
 
 #include "Scene/Scene.h"
 #include "Utility/Vector2D.h"
@@ -14,9 +16,9 @@
 namespace Engine {
     ConsoleEngine::ConsoleEngine()
     {
-        this->window = new Window(100, 25, true);
+        this->window = new Window(1000, 250, true);
 
-        ticksPerSecond = 60;
+        ticksPerSecond = 30;
     }
 
     std::chrono::steady_clock::time_point previousTimePoint;
@@ -38,11 +40,9 @@ namespace Engine {
         {
             Tick();
 
-            window->Render();
         }
     }
 
-    float tickTimer;
     void ConsoleEngine::Tick()
     {
         std::chrono::steady_clock::time_point currentTimePoint = std::chrono::steady_clock::now();
@@ -62,22 +62,8 @@ namespace Engine {
     void ConsoleEngine::FixedTick()
     {
         FixTickScene();
-
+        window->Render();
     }
-
-    Engine::Color colors[5] = {Engine::Color::RED, Engine::Color::GRN, Engine::Color::YEL, Engine::Color::BLU, Engine::Color::MAG};
-
-    Engine::Color** color = new Engine::Color*[1]
-    {
-        new Engine::Color[1] {Engine::Color::BLU},
-    };
-
-    char** texture = new char*[1]
-    {
-        new char[1] {'#'},
-    };
-
-    Engine::Sprite* sprite = new Engine::Sprite(texture, color, Engine::Vector2D(1, 1));
 
     int i = 0;
     void ConsoleEngine::TickScene(float deltaTime)
@@ -87,7 +73,7 @@ namespace Engine {
 
     void ConsoleEngine::FixTickScene()
     {
-        /*char** texture = new char*[3]
+        char** texture = new char*[3]
             {
                 new char[3] {'+', '^', '+',},
                 new char[3] {'|', ' ', '>',},
@@ -101,28 +87,38 @@ namespace Engine {
                 new Engine::Color[3] {Engine::Color::BLU, Engine::Color::BLU, Engine::Color::BLU},
             };
 
-            Engine::Color** color2 = new Engine::Color*[3]
-            {
-                new Engine::Color[3] {Engine::Color::WHT, Engine::Color::WHT, Engine::Color::WHT},
-                new Engine::Color[3] {Engine::Color::WHT, Engine::Color::WHT, Engine::Color::WHT},
-                new Engine::Color[3] {Engine::Color::WHT, Engine::Color::WHT, Engine::Color::WHT},
-            };*/
+        Sprite* sprite = new Sprite(texture, color, Vector2D(3, 3));
 
-
-        //window->PushSprite(0, 0, 1, sprite);
-
+        window->WDrawSprite(sprite, i, 0, 2);
         i++;
-        for (int x = 0; x < 100; ++x)
+        Engine::Color colors[5] = {Engine::Color::RED, Engine::Color::GRN, Engine::Color::YEL, Engine::Color::BLU, Engine::Color::MAG};
+
+    Engine::Color** color2 = new Engine::Color*[1]
+    {
+        new Engine::Color[1] {Engine::Color::BLU},
+    };
+
+    char** texture3 = new char*[1]
+    {
+        new char[1] {'#'},
+    };
+
+    Engine::Sprite* sprite2 = new Engine::Sprite(texture3, color2, Engine::Vector2D(1, 1));
+
+        for (int x = 0; x < window->GetWindowXDimension(); ++x)
         {
-            for (int y = 0; y < 25; ++y)
+            for (int y = 0; y < window->GetWindowYDimension(); ++y)
             {
-                Engine::Color** color = new Engine::Color*[1]
+                Engine::Color** color3 = new Engine::Color*[1]
                 {
                     new Engine::Color[1] {colors[((x + i)/25)  % 5]},
                 };
 
-                sprite->Load2DColor(color);
-                window->PushSprite(x, y, 1, sprite);
+                sprite2->Load2DColor(color3);
+                window->WDrawSprite(sprite2, x, y, 1);
+                std::ostringstream ostr;
+                ostr << "x: " << i;
+                window->WDrawText(ostr.str().c_str(), 0, 0, 2);
             }
         }
     }
@@ -144,4 +140,8 @@ namespace Engine {
         return true;
     }
 
+    Vector2D ConsoleEngine::GetWindowDimensions()
+    {
+        return Vector2D(window->GetWindowXDimension(), window->GetWindowYDimension());
+    }
 } // Engine

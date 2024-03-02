@@ -51,6 +51,7 @@ private:
     Window* window;
 
 public:
+    Vector2D GetWindowDimensions();
     //void PushRenderData(char** )
 
 };

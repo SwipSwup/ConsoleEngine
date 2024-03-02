@@ -20,7 +20,6 @@ namespace Engine
         Color color;
     };
 
-
     class Window
     {
     public:
@@ -40,15 +39,19 @@ namespace Engine
 
         void InitCursor();
 
-        int TwoToOneDIndex(int x, int y, int xDimension);
+        int TranslateToBufferIndex(int x, int y, int xDimension);
 
         bool HasRenderObjectUpdated(int xy);
+
     public:
         void Render();
 
-        void UpdateConsoleMode(DWORD mode, bool enable);
+        void UpdateConsoleMode(DWORD mode, bool bEnable);
 
         void HighlightUnchangedPositions(bool bHighlight);
+
+        int GetWindowXDimension();
+        int GetWindowYDimension();
 
     private:
         RenderObject* previousRenderBuffer;
@@ -64,7 +67,11 @@ namespace Engine
         void ForceWriteRawIntoRenderBuffer(int xy, int z, char data, Color color);
 
     public:
-        void PushSprite(int originX, int originY, int z, Sprite* sprite);
+        void WDrawSprite(Sprite* sprite, int originX, int originY, int z);
+
+        void WDrawText(const char* text, int originX, int originY, int z);
+
+        void WDrawText(const char* text, Color color, int originX, int originY, int z);
     };
 } // Engine
 
