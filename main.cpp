@@ -14,10 +14,10 @@ int main()
     Engine::ConsoleEngine engine = Engine::ConsoleEngine();
     Engine::Scene* scene = new Engine::Scene((char*)"untitled");
 
-    Engine::GameObject object = Engine::GameObject(scene);
-    object.position = new Engine::Vector2D(4, 5);
+    //Engine::GameObject object = Engine::GameObject(scene);
+    //object.position = new Engine::Vector2D(4, 5);
 
-    Engine::SpriteRenderComponent* c = object.AddComponent<Engine::SpriteRenderComponent>();
+    //Engine::SpriteRenderComponent* c = object.AddComponent<Engine::SpriteRenderComponent>();
 
     engine.LoadScene(scene);
     engine.Start();

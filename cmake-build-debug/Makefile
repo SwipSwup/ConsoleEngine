@@ -152,6 +152,78 @@ Engine/ConsoleEngine.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ConsoleEngine.dir\build.make CMakeFiles/ConsoleEngine.dir/Engine/ConsoleEngine.cpp.s
 .PHONY : Engine/ConsoleEngine.cpp.s
 
+Engine/Debug/Debug.obj: Engine/Debug/Debug.cpp.obj
+.PHONY : Engine/Debug/Debug.obj
+
+# target to build an object file
+Engine/Debug/Debug.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ConsoleEngine.dir\build.make CMakeFiles/ConsoleEngine.dir/Engine/Debug/Debug.cpp.obj
+.PHONY : Engine/Debug/Debug.cpp.obj
+
+Engine/Debug/Debug.i: Engine/Debug/Debug.cpp.i
+.PHONY : Engine/Debug/Debug.i
+
+# target to preprocess a source file
+Engine/Debug/Debug.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ConsoleEngine.dir\build.make CMakeFiles/ConsoleEngine.dir/Engine/Debug/Debug.cpp.i
+.PHONY : Engine/Debug/Debug.cpp.i
+
+Engine/Debug/Debug.s: Engine/Debug/Debug.cpp.s
+.PHONY : Engine/Debug/Debug.s
+
+# target to generate assembly for a file
+Engine/Debug/Debug.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ConsoleEngine.dir\build.make CMakeFiles/ConsoleEngine.dir/Engine/Debug/Debug.cpp.s
+.PHONY : Engine/Debug/Debug.cpp.s
+
+Engine/Objects/Components/Component.obj: Engine/Objects/Components/Component.cpp.obj
+.PHONY : Engine/Objects/Components/Component.obj
+
+# target to build an object file
+Engine/Objects/Components/Component.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ConsoleEngine.dir\build.make CMakeFiles/ConsoleEngine.dir/Engine/Objects/Components/Component.cpp.obj
+.PHONY : Engine/Objects/Components/Component.cpp.obj
+
+Engine/Objects/Components/Component.i: Engine/Objects/Components/Component.cpp.i
+.PHONY : Engine/Objects/Components/Component.i
+
+# target to preprocess a source file
+Engine/Objects/Components/Component.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ConsoleEngine.dir\build.make CMakeFiles/ConsoleEngine.dir/Engine/Objects/Components/Component.cpp.i
+.PHONY : Engine/Objects/Components/Component.cpp.i
+
+Engine/Objects/Components/Component.s: Engine/Objects/Components/Component.cpp.s
+.PHONY : Engine/Objects/Components/Component.s
+
+# target to generate assembly for a file
+Engine/Objects/Components/Component.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ConsoleEngine.dir\build.make CMakeFiles/ConsoleEngine.dir/Engine/Objects/Components/Component.cpp.s
+.PHONY : Engine/Objects/Components/Component.cpp.s
+
+Engine/Objects/Components/DefaultComponents/SpriteRenderComponent.obj: Engine/Objects/Components/DefaultComponents/SpriteRenderComponent.cpp.obj
+.PHONY : Engine/Objects/Components/DefaultComponents/SpriteRenderComponent.obj
+
+# target to build an object file
+Engine/Objects/Components/DefaultComponents/SpriteRenderComponent.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ConsoleEngine.dir\build.make CMakeFiles/ConsoleEngine.dir/Engine/Objects/Components/DefaultComponents/SpriteRenderComponent.cpp.obj
+.PHONY : Engine/Objects/Components/DefaultComponents/SpriteRenderComponent.cpp.obj
+
+Engine/Objects/Components/DefaultComponents/SpriteRenderComponent.i: Engine/Objects/Components/DefaultComponents/SpriteRenderComponent.cpp.i
+.PHONY : Engine/Objects/Components/DefaultComponents/SpriteRenderComponent.i
+
+# target to preprocess a source file
+Engine/Objects/Components/DefaultComponents/SpriteRenderComponent.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ConsoleEngine.dir\build.make CMakeFiles/ConsoleEngine.dir/Engine/Objects/Components/DefaultComponents/SpriteRenderComponent.cpp.i
+.PHONY : Engine/Objects/Components/DefaultComponents/SpriteRenderComponent.cpp.i
+
+Engine/Objects/Components/DefaultComponents/SpriteRenderComponent.s: Engine/Objects/Components/DefaultComponents/SpriteRenderComponent.cpp.s
+.PHONY : Engine/Objects/Components/DefaultComponents/SpriteRenderComponent.s
+
+# target to generate assembly for a file
+Engine/Objects/Components/DefaultComponents/SpriteRenderComponent.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ConsoleEngine.dir\build.make CMakeFiles/ConsoleEngine.dir/Engine/Objects/Components/DefaultComponents/SpriteRenderComponent.cpp.s
+.PHONY : Engine/Objects/Components/DefaultComponents/SpriteRenderComponent.cpp.s
+
 Engine/Objects/GameObject.obj: Engine/Objects/GameObject.cpp.obj
 .PHONY : Engine/Objects/GameObject.obj
 
@@ -356,6 +428,15 @@ help:
 	@echo ... Engine/ConsoleEngine.obj
 	@echo ... Engine/ConsoleEngine.i
 	@echo ... Engine/ConsoleEngine.s
+	@echo ... Engine/Debug/Debug.obj
+	@echo ... Engine/Debug/Debug.i
+	@echo ... Engine/Debug/Debug.s
+	@echo ... Engine/Objects/Components/Component.obj
+	@echo ... Engine/Objects/Components/Component.i
+	@echo ... Engine/Objects/Components/Component.s
+	@echo ... Engine/Objects/Components/DefaultComponents/SpriteRenderComponent.obj
+	@echo ... Engine/Objects/Components/DefaultComponents/SpriteRenderComponent.i
+	@echo ... Engine/Objects/Components/DefaultComponents/SpriteRenderComponent.s
 	@echo ... Engine/Objects/GameObject.obj
 	@echo ... Engine/Objects/GameObject.i
 	@echo ... Engine/Objects/GameObject.s

@@ -88,6 +88,24 @@
 		<Unit filename="C:/FH/SS2024/PROGR/ConsoleEngine/Engine/ConsoleEngine.h">
 			<Option target="ConsoleEngine"/>
 		</Unit>
+		<Unit filename="C:/FH/SS2024/PROGR/ConsoleEngine/Engine/Debug/Debug.cpp">
+			<Option target="ConsoleEngine"/>
+		</Unit>
+		<Unit filename="C:/FH/SS2024/PROGR/ConsoleEngine/Engine/Debug/Debug.h">
+			<Option target="ConsoleEngine"/>
+		</Unit>
+		<Unit filename="C:/FH/SS2024/PROGR/ConsoleEngine/Engine/Objects/Components/Component.cpp">
+			<Option target="ConsoleEngine"/>
+		</Unit>
+		<Unit filename="C:/FH/SS2024/PROGR/ConsoleEngine/Engine/Objects/Components/Component.h">
+			<Option target="ConsoleEngine"/>
+		</Unit>
+		<Unit filename="C:/FH/SS2024/PROGR/ConsoleEngine/Engine/Objects/Components/DefaultComponents/SpriteRenderComponent.cpp">
+			<Option target="ConsoleEngine"/>
+		</Unit>
+		<Unit filename="C:/FH/SS2024/PROGR/ConsoleEngine/Engine/Objects/Components/DefaultComponents/SpriteRenderComponent.h">
+			<Option target="ConsoleEngine"/>
+		</Unit>
 		<Unit filename="C:/FH/SS2024/PROGR/ConsoleEngine/Engine/Objects/GameObject.cpp">
 			<Option target="ConsoleEngine"/>
 		</Unit>

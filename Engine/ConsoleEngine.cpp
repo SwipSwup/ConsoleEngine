@@ -95,9 +95,41 @@ namespace Engine
     };
     Sprite* sprite2 = new Sprite(texture3, nullptr, Vector2D(1, 1));
 
-
+    int t = 0;
     void ConsoleEngine::FixTickScene()
     {
+    t++;
+        for (int x = 0; x < window->GetWindowXDimension(); ++x)
+        {
+            for (int y = 0; y < window->GetWindowYDimension(); ++y)
+            {
+                double minDistance = DBL_MAX;
+                int closestSeedIndex = -1;
+
+                for (size_t i = 0; i < seedPoints.size(); ++i)
+                {
+                    Vector2D modifiedSeedPoint = seedPoints[i];
+                    modifiedSeedPoint.x += (int)(0.5 + 5.0 * sin(t * .1 + 6.2831 * 0.3 + modifiedSeedPoint.x));
+                    modifiedSeedPoint.y += (int)(0.5 + 5.0 * sin(t * .1 + 6.2831 * 0.7 + modifiedSeedPoint.y));
+
+                    double distance = Vector2D(x, y).Distance(modifiedSeedPoint);
+                    if (distance < minDistance)
+                    {
+                        minDistance = distance;
+                        closestSeedIndex = i;
+                    }
+                }
+
+                Color** color3 = new Color*[1];
+                color3[0] = new Color[1]{
+                    colors[(closestSeedIndex + (std::hash<int>()(seedPoints[closestSeedIndex].x) ^ std::hash<int>()(
+                        seedPoints[closestSeedIndex].y)) / (MAXINT / 2)) % 12]
+                };
+
+                sprite2->Load2DColor(color3);
+                window->WDrawSprite(sprite2, x, y, 1);
+            }
+        }
     }
 
     void ConsoleEngine::SetTicksPerSecond(int tps)
