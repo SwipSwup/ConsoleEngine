@@ -26,6 +26,8 @@ private:
 public:
     void Spawn(GameObject* gameObject);
 
+    ConsoleEngine* GetEngine();
+
 private:
     std::list<GameObject*> loadedGameObjects;
 };

@@ -4,13 +4,13 @@
 
 #include "Component.h"
 
-Engine::Component::Component(GameObject* root)
-{
-    this->root = root;
-}
-
 Engine::Component::~Component()
 {
+}
+
+void Engine::Component::SetRoot(GameObject* root)
+{
+    this->root = root;
 }
 
 void Engine::Component::Tick(float deltaTime)

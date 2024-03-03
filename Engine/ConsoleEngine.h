@@ -4,64 +4,54 @@
 
 #ifndef CONSOLEENGINE_H
 #define CONSOLEENGINE_H
-#include <string>
-
-namespace Engine
-{
-    class Debug;
-}
 
 namespace Engine
 {
     struct Vector2D;
-}
 
-namespace Engine
-{
+    class Debug;
     class Window;
     class Scene;
-}
 
-namespace Engine {
+    class ConsoleEngine
+    {
+    public:
+        ConsoleEngine();
 
-class ConsoleEngine {
-public:
-    ConsoleEngine();
+        void Start();
 
-    void Start();
+    private:
+        void Run();
 
-private:
-    void Run();
+        void Stop();
 
-    void Stop();
+        int ticksPerSecond;
+        void Tick();
 
-    int ticksPerSecond;
-    void Tick();
+        void FixedTick();
 
-    void FixedTick();
+        void TickScene(float deltaTime);
+        void FixTickScene();
 
-    void TickScene(float deltaTime);
-    void FixTickScene();
+    public:
+        void SetTicksPerSecond(int tps);
 
-public:
-    void SetTicksPerSecond(int tps);
+    private:
+        Scene* activeScene;
 
-private:
-    Scene* activeScene;
+    public:
+        bool LoadScene(Scene* scene);
 
-public:
-    bool LoadScene(Scene* scene);
+    private:
+        Window* window;
+        Debug* debugConsole;
 
-private:
-    Window* window;
-    Debug* debugConsole;
+    public:
+        Window* GetWindow();
 
-public:
-    Vector2D GetWindowDimensions();
-    //void PushRenderData(char** )
-
-};
-
+        Vector2D GetWindowDimensions();
+        //void PushRenderData(char** )
+    };
 } // Engine
 
 #endif //CONSOLEENGINE_H

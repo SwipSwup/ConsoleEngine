@@ -6,12 +6,17 @@
 #define SPRITERENDERCOMPONENT_H
 #include "../Component.h"
 
-namespace Engine {
+namespace Engine
+{
+    struct Sprite;
 
-class SpriteRenderComponent : public Component {
+    class SpriteRenderComponent : public Component
+    {
+    public:
+        Sprite* sprite;
 
-};
-
+        void Tick(float deltaTime) override;
+    };
 } // Engine
 
 #endif //SPRITERENDERCOMPONENT_H

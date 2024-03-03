@@ -159,8 +159,8 @@ namespace Engine
         RECT rect;
         GetWindowRect(hwConsole, &rect);
         //todo
-        MoveWindow(hwConsole, rect.left, rect.top, fontInfo.dwFontSize.X * windowSize.X + /*33*/ 300,
-                   fontInfo.dwFontSize.Y * windowSize.Y + /*39*/ 300, TRUE);
+        MoveWindow(hwConsole, rect.left, rect.top, fontInfo.dwFontSize.X * windowSize.X + 33,
+                   fontInfo.dwFontSize.Y * windowSize.Y + 39, TRUE);
 
         if (!GetConsoleMode(hConsole, &dwMode))
         {

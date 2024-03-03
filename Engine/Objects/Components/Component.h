@@ -5,21 +5,19 @@
 #ifndef COMPONENT_H
 #define COMPONENT_H
 
-
 namespace Engine
 {
     class GameObject;
 
     class Component
     {
-    private:
+    protected:
+        virtual ~Component();
         GameObject* root;
 
     public:
-        Component(GameObject* root);
-
-    protected:
-        virtual ~Component();
+        void
+        SetRoot(GameObject* root);
 
     public:
         virtual void Tick(float deltaTime);

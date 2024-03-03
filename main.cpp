@@ -1,10 +1,10 @@
 #include <iostream>
 
 #include "Engine/ConsoleEngine.h"
+#include "Engine/Objects/Components/Component.h"
+#include "Engine/Scene/Scene.h"
 #include "Engine/Objects/GameObject.h"
 #include "Engine/Objects/Components/DefaultComponents/SpriteRenderComponent.h"
-#include "Engine/Scene/Scene.h"
-#include "Engine/Utility/Vector2D.h"
 
 //https://www.charset.org/utf-8
 int main()
@@ -14,10 +14,9 @@ int main()
     Engine::ConsoleEngine engine = Engine::ConsoleEngine();
     Engine::Scene* scene = new Engine::Scene((char*)"untitled");
 
-    //Engine::GameObject object = Engine::GameObject(scene);
-    //object.position = new Engine::Vector2D(4, 5);
+    Engine::GameObject* object = new Engine::GameObject(nullptr);
 
-    //Engine::SpriteRenderComponent* c = object.AddComponent<Engine::SpriteRenderComponent>();
+    Engine::SpriteRenderComponent* c = object->AddComponent<Engine::SpriteRenderComponent>();
 
     engine.LoadScene(scene);
     engine.Start();
@@ -26,6 +25,16 @@ int main()
     while(true);
 }
 /*
+Color colors[] = {
+        Color::RED, Color::GRN, Color::YEL, Color::BLU, Color::MAG, Color::CYN, Color::HRED, Color::HGRN, Color::HYEL,
+        Color::HBLU, Color::HMAG, Color::HCYN
+    };
+    wchar_t** texture3 = new wchar_t*[1]
+    {
+        new wchar_t[1]{L'\u01CA'},
+    };
+    Sprite* sprite2 = new Sprite(texture3, nullptr, Vector2D(1, 1));
+
 int t = 0;
 t++;
 

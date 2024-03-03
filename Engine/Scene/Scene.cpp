@@ -7,7 +7,7 @@
 #include "../Objects/GameObject.h"
 
 namespace Engine {
-    Scene::Scene(char* name = "untitled")
+    Scene::Scene(char* name)
     {
 
     }
@@ -36,5 +36,10 @@ namespace Engine {
     void Scene::Spawn(GameObject* gameObject)
     {
         loadedGameObjects.push_front(gameObject);
+    }
+
+    ConsoleEngine* Scene::GetEngine()
+    {
+        return engine;
     }
 } // Engine

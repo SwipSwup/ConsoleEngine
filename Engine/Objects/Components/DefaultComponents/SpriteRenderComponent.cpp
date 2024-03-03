@@ -4,5 +4,13 @@
 
 #include "SpriteRenderComponent.h"
 
+#include "../../GameObject.h"
+
 namespace Engine {
+    void SpriteRenderComponent::Tick(float deltaTime)
+    {
+        Component::Tick(deltaTime);
+
+        root->GetScene()
+    }
 } // Engine
