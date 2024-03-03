@@ -109,6 +109,18 @@ build CMakeFiles/ConsoleEngine.dir/Engine/Debug/Debug.cpp.obj: CXX_COMPILER__Con
   OBJECT_DIR = CMakeFiles\ConsoleEngine.dir
   OBJECT_FILE_DIR = CMakeFiles\ConsoleEngine.dir\Engine\Debug
 
+build CMakeFiles/ConsoleEngine.dir/Engine/Objects/Components/Component.cpp.obj: CXX_COMPILER__ConsoleEngine_unscanned_Debug G$:/FH/Sem2/PROGR/ConsoleEngine/Engine/Objects/Components/Component.cpp || cmake_object_order_depends_target_ConsoleEngine
+  DEP_FILE = CMakeFiles\ConsoleEngine.dir\Engine\Objects\Components\Component.cpp.obj.d
+  FLAGS = -static-libstdc++ -static-libgcc -g -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\ConsoleEngine.dir
+  OBJECT_FILE_DIR = CMakeFiles\ConsoleEngine.dir\Engine\Objects\Components
+
+build CMakeFiles/ConsoleEngine.dir/Engine/Objects/Components/DefaultComponents/SpriteRenderComponent.cpp.obj: CXX_COMPILER__ConsoleEngine_unscanned_Debug G$:/FH/Sem2/PROGR/ConsoleEngine/Engine/Objects/Components/DefaultComponents/SpriteRenderComponent.cpp || cmake_object_order_depends_target_ConsoleEngine
+  DEP_FILE = CMakeFiles\ConsoleEngine.dir\Engine\Objects\Components\DefaultComponents\SpriteRenderComponent.cpp.obj.d
+  FLAGS = -static-libstdc++ -static-libgcc -g -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\ConsoleEngine.dir
+  OBJECT_FILE_DIR = CMakeFiles\ConsoleEngine.dir\Engine\Objects\Components\DefaultComponents
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target ConsoleEngine
@@ -117,7 +129,7 @@ build CMakeFiles/ConsoleEngine.dir/Engine/Debug/Debug.cpp.obj: CXX_COMPILER__Con
 #############################################
 # Link the executable ConsoleEngine.exe
 
-build ConsoleEngine.exe: CXX_EXECUTABLE_LINKER__ConsoleEngine_Debug CMakeFiles/ConsoleEngine.dir/main.cpp.obj CMakeFiles/ConsoleEngine.dir/Engine/Scene/Scene.cpp.obj CMakeFiles/ConsoleEngine.dir/Engine/Objects/GameObject.cpp.obj CMakeFiles/ConsoleEngine.dir/Engine/ConsoleEngine.cpp.obj CMakeFiles/ConsoleEngine.dir/Engine/Window/Window.cpp.obj CMakeFiles/ConsoleEngine.dir/Engine/Utility/Vector2D.cpp.obj CMakeFiles/ConsoleEngine.dir/Engine/Utility/Sprites/Sprite.cpp.obj CMakeFiles/ConsoleEngine.dir/Engine/Utility/Color.cpp.obj CMakeFiles/ConsoleEngine.dir/Engine/Utility/Vector3D.cpp.obj CMakeFiles/ConsoleEngine.dir/Engine/Debug/Debug.cpp.obj
+build ConsoleEngine.exe: CXX_EXECUTABLE_LINKER__ConsoleEngine_Debug CMakeFiles/ConsoleEngine.dir/main.cpp.obj CMakeFiles/ConsoleEngine.dir/Engine/Scene/Scene.cpp.obj CMakeFiles/ConsoleEngine.dir/Engine/Objects/GameObject.cpp.obj CMakeFiles/ConsoleEngine.dir/Engine/ConsoleEngine.cpp.obj CMakeFiles/ConsoleEngine.dir/Engine/Window/Window.cpp.obj CMakeFiles/ConsoleEngine.dir/Engine/Utility/Vector2D.cpp.obj CMakeFiles/ConsoleEngine.dir/Engine/Utility/Sprites/Sprite.cpp.obj CMakeFiles/ConsoleEngine.dir/Engine/Utility/Color.cpp.obj CMakeFiles/ConsoleEngine.dir/Engine/Utility/Vector3D.cpp.obj CMakeFiles/ConsoleEngine.dir/Engine/Debug/Debug.cpp.obj CMakeFiles/ConsoleEngine.dir/Engine/Objects/Components/Component.cpp.obj CMakeFiles/ConsoleEngine.dir/Engine/Objects/Components/DefaultComponents/SpriteRenderComponent.cpp.obj
   FLAGS = -static-libstdc++ -static-libgcc -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\ConsoleEngine.dir

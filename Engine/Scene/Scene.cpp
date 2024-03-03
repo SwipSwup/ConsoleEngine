@@ -23,9 +23,14 @@ namespace Engine {
         {
             object->Tick(deltaTime);
         }
+    }
 
-        //render data pushen
-
+    void Scene::FixTick()
+    {
+        for (GameObject* object : loadedGameObjects)
+        {
+            object->FixTick();
+        }
     }
 
     void Scene::Spawn(GameObject* gameObject)

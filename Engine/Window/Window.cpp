@@ -18,7 +18,7 @@ namespace Engine
         data = ' ';
     }
 
-    RenderObject::RenderObject(char data, Color color): color(color)
+    RenderObject::RenderObject(wchar_t data, Color color): color(color)
     {
         this->data = data;
     }
@@ -37,11 +37,13 @@ namespace Engine
     Window::~Window()
     {
         delete cursorInfo;
+        delete[] renderBuffer;
+        delete[] previousRenderBuffer;
+        delete[] zBufferIndex;
     }
 
     int Window::TranslateToBufferIndex(int x, int y, int xDimension)
     {
-        //return (x + windowSize.X / 2) + y * xDimension;
         return x + y * xDimension;
     }
 
@@ -55,7 +57,6 @@ namespace Engine
     {
         DWORD charsWritten;
 
-        //todo propably possible with just one loop
         for (int y = 0; y < windowSize.Y; ++y)
         {
             for (int x = 0; x < windowSize.X; ++x)
@@ -77,29 +78,20 @@ namespace Engine
                     }
                 }
 
-                //std::cout << "a";twoToOneDIndex(x, y, windowSize.X)
                 SetConsoleCursorPosition(hConsole, COORD{(SHORT)x, (SHORT)y});
-                //std::cout << obj.color.escapeCode << obj.data;
                 if (!WriteConsoleA(
-                        hConsole,
-                        c.escapeCode,
-                        c.escapeCodeLength,
-                        &charsWritten,
-                        nullptr
-                    ) || !WriteConsoleA(
-                        hConsole,
-                        &obj.data,
-                        1,
-                        &charsWritten,
-                        nullptr
-                    ) ||
-                    !WriteConsoleA(
-                        hConsole,
-                        Color::CRESET.escapeCode,
-                        Color::CRESET.escapeCodeLength,
-                        &charsWritten,
-                        nullptr
-                    ))
+                    hConsole,
+                    c.escapeCode,
+                    c.escapeCodeLength,
+                    &charsWritten,
+                    nullptr
+                ) || !WriteConsoleW(
+                    hConsole,
+                    &obj.data,
+                    1,
+                    &charsWritten,
+                    nullptr
+                ))
                 {
                     std::cerr << "Error writing to console" << std::endl;
                     return;
@@ -155,51 +147,19 @@ namespace Engine
             return;
         }
 
+        hwConsole = GetConsoleWindow();
 
-
-
-        // Set the size of the screen buffer
-        /*if (!SetConsoleScreenBufferSize(hConsole, windowSize)) {
-            std::cerr << "Error setting console screen buffer size" << std::endl;
-            return;
-        }*/
-        // Define the size of the console window
-
-        // Set the size of the console window
-
-        CONSOLE_FONT_INFOEX fontInfo;
         fontInfo.cbSize = sizeof(CONSOLE_FONT_INFOEX);
-
-        if (!GetCurrentConsoleFontEx(hConsole, FALSE, &fontInfo)) {
+        if (!GetCurrentConsoleFontEx(hConsole, FALSE, &fontInfo))
+        {
             std::cerr << "Error getting current console font" << std::endl;
             return;
         }
 
-        // Retrieve the font size
-        DWORD fontIndex = fontInfo.nFont;
-        COORD fontSize = GetConsoleFontSize(hConsole, fontIndex);
-
-        // Define the desired number of characters for width and height
-        int desiredWidthInChars = 80; // Change this value as needed
-        int desiredHeightInChars = 24; // Change this value as needed
-
-        // Calculate the desired console window size based on font size and character dimensions
-        COORD desiredSize;
-        std::cout << fontInfo.dwFontSize.X;
-
-        desiredSize.X = fontInfo.dwFontSize.X * windowSize.X + 33;
-        desiredSize.Y = fontInfo.dwFontSize.Y * windowSize.Y + 39;
-
-        // Set the console window size
-        if (!SetConsoleScreenBufferSize(hConsole, desiredSize)) {
-            std::cerr << "Error setting console screen buffer size" << std::endl;
-            return;
-        }
-        HWND console = GetConsoleWindow();
         RECT rect;
-        GetWindowRect(console, &rect);
-
-        MoveWindow(console, rect.left, rect.top, desiredSize.X, desiredSize.Y, TRUE);
+        GetWindowRect(hwConsole, &rect);
+        MoveWindow(hwConsole, rect.left, rect.top, fontInfo.dwFontSize.X * windowSize.X + 33,
+                   fontInfo.dwFontSize.Y * windowSize.Y + 39, TRUE);
 
         if (!GetConsoleMode(hConsole, &dwMode))
         {
@@ -225,6 +185,18 @@ namespace Engine
         }
     }
 
+    void Window::InitRenderBuffer()
+    {
+        previousRenderBuffer = new RenderObject[windowSize.X * windowSize.Y];
+        renderBuffer = new RenderObject[windowSize.X * windowSize.Y];
+        zBufferIndex = new int[windowSize.X * windowSize.Y];
+
+        for (int i = 0; i < windowSize.X * windowSize.Y; ++i)
+        {
+            zBufferIndex[i] = 0;
+        }
+    }
+
     void Window::ConsumeRenderBuffer()
     {
         memcpy(previousRenderBuffer, renderBuffer, sizeof(RenderObject) * windowSize.X * windowSize.Y);
@@ -238,33 +210,23 @@ namespace Engine
         }
     }
 
-    void Window::WriteRawIntoRenderBuffer(int xy, int z, char data, Color color)
+    void Window::WriteRawIntoRenderBuffer(int xy, int z, wchar_t data, Color color)
     {
         if (zBufferIndex[xy] > z || xy < 0 || xy > windowSize.X * windowSize.Y - 1)
         {
             return;
         }
+
         ForceWriteRawIntoRenderBuffer(xy, z, data, color);
     }
 
-    void Window::ForceWriteRawIntoRenderBuffer(int xy, int z, char data, Color color)
+    void Window::ForceWriteRawIntoRenderBuffer(int xy, int z, wchar_t data, Color color)
     {
         renderBuffer[xy] = RenderObject{data, color};
 
         zBufferIndex[xy] = z;
     }
 
-    void Window::InitRenderBuffer()
-    {
-        previousRenderBuffer = new RenderObject[windowSize.X * windowSize.Y];
-        renderBuffer = new RenderObject[windowSize.X * windowSize.Y];
-        zBufferIndex = new int[windowSize.X * windowSize.Y];
-
-        for (int i = 0; i < windowSize.X * windowSize.Y; ++i)
-        {
-            zBufferIndex[i] = 0;
-        }
-    }
 
     void Window::WDrawSprite(Sprite* sprite, int originX, int originY, int z)
     {

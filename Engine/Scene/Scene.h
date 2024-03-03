@@ -18,6 +18,8 @@ public:
 
     void Tick(float deltaTime);
 
+    void FixTick();
+
 private:
     ConsoleEngine* engine;
 

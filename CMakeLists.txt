@@ -23,5 +23,9 @@ add_executable(ConsoleEngine main.cpp
         Engine/Utility/Vector3D.h
         Engine/Debug/Debug.cpp
         Engine/Debug/Debug.h
+        Engine/Objects/Components/Component.cpp
+        Engine/Objects/Components/Component.h
+        Engine/Objects/Components/DefaultComponents/SpriteRenderComponent.cpp
+        Engine/Objects/Components/DefaultComponents/SpriteRenderComponent.h
 )
 

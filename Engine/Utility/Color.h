@@ -10,6 +10,7 @@ namespace Engine
     struct Color
     {
     public:
+        Color() = default;
         Color(char* escapeCode);
 
         char* escapeCode;

@@ -13,24 +13,24 @@ namespace Engine
     struct Sprite
     {
     public:
-        Sprite(char** texture, Vector2D textureDimensions);
-        Sprite(char** texture, Color** color, Vector2D textureDimensions);
+        Sprite(wchar_t** texture, Vector2D textureDimensions);
+        Sprite(wchar_t** texture, Color** color, Vector2D textureDimensions);
         ~Sprite();
 
-        char** texture;
-        Color** color;
         Vector2D* textureDimensions;
+        wchar_t** texture;
+        Color** color;
 
     private:
-        void Init(char** texture, Color** color, Vector2D textureDimensions);
+        void Init(wchar_t** texture, Color** color, Vector2D textureDimensions);
+
 
     public:
-        void Load2DTexture(char** texture);
+        void Load2DTexture(wchar_t** texture);
 
         void Load2DColor(Color** color);
 
-        void Load2DTextureAndColor(char** texture, Color** color);
-
+        void Load2DTextureAndColor(wchar_t** texture, Color** color);
     private:
     };
 } // Engine

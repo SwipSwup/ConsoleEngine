@@ -4,6 +4,12 @@
 
 #ifndef GAMEOBJECT_H
 #define GAMEOBJECT_H
+#include <list>
+
+namespace Engine
+{
+    class Component;
+}
 
 namespace Engine
 {
@@ -17,19 +23,26 @@ namespace Engine
     {
     public:
         explicit GameObject(Scene* root);
+        Vector2D* position;
 
     private:
         Scene* scene;
+        std::list<Component*> components;
 
-        char** texture;
     public:
-        Vector2D* position;
+        template <typename T>
+        T* AddComponent();
+
 
     public:
         virtual void Tick(float deltaTime);
 
+        virtual void FixTick();
+
         virtual void OnSpawn();
     };
+
+
 } // Engine
 
 #endif //GAMEOBJECT_H

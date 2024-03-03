@@ -14,9 +14,9 @@ namespace Engine
     struct RenderObject
     {
         RenderObject();
-        RenderObject(char data, Color color);
+        RenderObject(wchar_t data, Color color);
 
-        char data;
+        wchar_t data;
         Color color;
     };
 
@@ -29,11 +29,13 @@ namespace Engine
     private:
         bool bDrawBorder;
         bool bHighlightUnchangedPositions;
-        COORD windowSize;
 
-        HANDLE hConsole;
-        CONSOLE_CURSOR_INFO* cursorInfo;
-        DWORD dwMode;
+        HANDLE hConsole{};
+        HWND hwConsole{};
+        COORD windowSize{};
+        DWORD dwMode{};
+        CONSOLE_CURSOR_INFO* cursorInfo{};
+        CONSOLE_FONT_INFOEX fontInfo{};
 
         void Init();
 
@@ -55,17 +57,17 @@ namespace Engine
         int GetWindowYDimension();
 
     private:
-        RenderObject* previousRenderBuffer;
-        RenderObject* renderBuffer;
-        int* zBufferIndex;
-
-        void ConsumeRenderBuffer();
+        RenderObject* previousRenderBuffer{};
+        RenderObject* renderBuffer{};
+        int* zBufferIndex{};
 
         void InitRenderBuffer();
 
-        void WriteRawIntoRenderBuffer(int xy, int z, char data, Color color);
+        void ConsumeRenderBuffer();
 
-        void ForceWriteRawIntoRenderBuffer(int xy, int z, char data, Color color);
+        void WriteRawIntoRenderBuffer(int xy, int z, wchar_t data, Color color);
+
+        void ForceWriteRawIntoRenderBuffer(int xy, int z, wchar_t data, Color color);
 
     public:
         void WDrawSprite(Sprite* sprite, int originX, int originY, int z);
