@@ -4,6 +4,8 @@
 
 #include "Scene.h"
 
+#include <iostream>
+
 #include "../Objects/GameObject.h"
 
 namespace Engine {
@@ -35,7 +37,10 @@ namespace Engine {
 
     void Scene::Spawn(GameObject* gameObject)
     {
-        loadedGameObjects.push_front(gameObject);
+        loadedGameObjects.push_back(gameObject);
+
+        gameObject->SetScene(this);
+        gameObject->OnSpawn();
     }
 
     ConsoleEngine* Scene::GetEngine()

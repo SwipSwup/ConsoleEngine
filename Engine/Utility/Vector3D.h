@@ -11,6 +11,11 @@ struct Vector3D {
     Vector3D(int x, int y, int z);
 
     int x, y, z;
+
+    //Vector3D operator =(Vector3D);
+
+    Vector3D operator+(Vector3D vector);
+    Vector3D* operator+=(Vector3D vector);
 };
 
 } // Engine

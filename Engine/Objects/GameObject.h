@@ -4,7 +4,6 @@
 
 #ifndef GAMEOBJECT_H
 #define GAMEOBJECT_H
-#include <iostream>
 #include <list>
 
 #include "Components/Component.h"
@@ -19,11 +18,12 @@ namespace Engine
     {
     public:
         GameObject(Scene* root);
-        Vector3D* position;
 
+        Vector3D* position;
     private:
         Scene* scene;
         std::list<Component*> components;
+
 
     public:
         template <class T>
@@ -49,6 +49,17 @@ namespace Engine
         }
 
         Scene* GetScene();
+
+        void SetScene(Scene* scene);
+
+        /*Vector3D* GetPosition();
+
+        void SetPosition(Vector3D positon);*/
+
+    private:
+        void TickComponents(float deltaTime);
+
+        void FixTickComponents();
 
     public:
         virtual void Tick(float deltaTime);

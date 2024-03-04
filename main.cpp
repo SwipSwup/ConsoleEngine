@@ -40,6 +40,7 @@ int main()
     c->sprite = sprite;
 
     engine.LoadScene(scene);
+    scene->Spawn(object);
     engine.Start();
 
     //TODO temporary so external window doesnt close;

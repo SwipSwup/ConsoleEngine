@@ -20,3 +20,7 @@ void Engine::Component::Tick(float deltaTime)
 void Engine::Component::FixTick()
 {
 }
+
+void Engine::Component::OnSpawn()
+{
+}

@@ -4,6 +4,8 @@
 
 #include "SpriteRenderComponent.h"
 
+#include <iostream>
+
 #include "../../GameObject.h"
 #include "../../../ConsoleEngine.h"
 #include "../../../Scene/Scene.h"
@@ -16,7 +18,13 @@ namespace Engine
     {
         Component::Tick(deltaTime);
 
-        //todo this is not optimal
-        root->GetScene()->GetEngine()->GetWindow()->WDrawSprite(sprite, root->position->x, root->position->y, root->position->z);
+        window->WDrawSprite(sprite, root->position->x, root->position->y, root->position->z);
+    }
+
+    void SpriteRenderComponent::OnSpawn()
+    {
+        Component::OnSpawn();
+
+        window = root->GetScene()->GetEngine()->GetWindow();
     }
 } // Engine

@@ -24,6 +24,7 @@ private:
     ConsoleEngine* engine;
 
 public:
+
     void Spawn(GameObject* gameObject);
 
     ConsoleEngine* GetEngine();

@@ -8,14 +8,20 @@
 
 namespace Engine
 {
+    class Window;
     struct Sprite;
 
     class SpriteRenderComponent : public Component
     {
+    private:
+        Window* window;
+
     public:
         Sprite* sprite;
 
         void Tick(float deltaTime) override;
+
+        void OnSpawn() override;
     };
 } // Engine
 

@@ -23,6 +23,8 @@ namespace Engine
         virtual void Tick(float deltaTime);
         virtual void FixTick();
 
+        virtual void OnSpawn();
+
 
     };
 }

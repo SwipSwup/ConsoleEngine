@@ -2,7 +2,6 @@ CMakeFiles/ConsoleEngine.dir/Engine/Objects/Components/DefaultComponents/SpriteR
  C:\FH\SS2024\PROGR\ConsoleEngine\Engine\Objects\Components\DefaultComponents\SpriteRenderComponent.cpp \
  C:\FH\SS2024\PROGR\ConsoleEngine\Engine\Objects\Components\DefaultComponents\SpriteRenderComponent.h \
  C:/FH/SS2024/PROGR/ConsoleEngine/Engine/Objects/Components/Component.h \
- C:/FH/SS2024/PROGR/ConsoleEngine/Engine/Objects/GameObject.h \
  C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/iostream \
  C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/requires_hosted.h \
  C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/c++config.h \
@@ -145,6 +144,7 @@ CMakeFiles/ConsoleEngine.dir/Engine/Objects/Components/DefaultComponents/SpriteR
  C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/ostream.tcc \
  C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/istream \
  C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/istream.tcc \
+ C:/FH/SS2024/PROGR/ConsoleEngine/Engine/Objects/GameObject.h \
  C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/list \
  C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_list.h \
  C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/allocated_ptr.h \
