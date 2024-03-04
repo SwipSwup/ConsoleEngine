@@ -11,15 +11,15 @@
 
 namespace Engine
 {
+    struct Vector3D;
     class Component;
     class Scene;
-    struct Vector2D;
 
     class GameObject
     {
     public:
         GameObject(Scene* root);
-        Vector2D* position;
+        Vector3D* position;
 
     private:
         Scene* scene;

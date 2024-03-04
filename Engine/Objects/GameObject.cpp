@@ -6,14 +6,14 @@
 
 #include <iostream>
 
-#include "../Utility/Vector2D.h"
+#include "../Utility/Vector3D.h"
 
 namespace Engine {
     GameObject::GameObject(Scene* root)
     {
         scene = root;
 
-        position = new Vector2D(0, 0);
+        position = new Vector3D(0, 0, 0);
     }
 
     Scene* GameObject::GetScene()

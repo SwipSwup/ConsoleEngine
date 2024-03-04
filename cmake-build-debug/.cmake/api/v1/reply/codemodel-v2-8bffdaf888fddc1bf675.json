@@ -49,8 +49,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "G:/FH/Sem2/PROGR/ConsoleEngine/cmake-build-debug",
-		"source" : "G:/FH/Sem2/PROGR/ConsoleEngine"
+		"build" : "C:/FH/SS2024/PROGR/ConsoleEngine/cmake-build-debug",
+		"source" : "C:/FH/SS2024/PROGR/ConsoleEngine"
 	},
 	"version" : 
 	{

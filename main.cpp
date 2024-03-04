@@ -5,6 +5,9 @@
 #include "Engine/Scene/Scene.h"
 #include "Engine/Objects/GameObject.h"
 #include "Engine/Objects/Components/DefaultComponents/SpriteRenderComponent.h"
+#include "Engine/Utility/Color.h"
+#include "Engine/Utility/Vector2D.h"
+#include "Engine/Utility/Sprites/Sprite.h"
 
 //https://www.charset.org/utf-8
 int main()
@@ -16,7 +19,25 @@ int main()
 
     Engine::GameObject* object = new Engine::GameObject(nullptr);
 
+    wchar_t** texture = new wchar_t*[3]
+    {
+        new wchar_t[3]{'+', '^', '+',},
+        new wchar_t[3]{'|', ' ', '>',},
+        new wchar_t[3]{'+', '-', '+',}
+    };
+
+    Engine::Color** color = new Engine::Color*[3]
+    {
+        new Engine::Color[3]{Engine::Color::BLU, Engine::Color::RED, Engine::Color::BLU},
+        new Engine::Color[3]{Engine::Color::BLU, Engine::Color::BLU, Engine::Color::GRN},
+        new Engine::Color[3]{Engine::Color::BLU, Engine::Color::BLU, Engine::Color::BLU},
+    };
+
+    Engine::Sprite* sprite = new Engine::Sprite(texture, color, Engine::Vector2D(3, 3));
+
     Engine::SpriteRenderComponent* c = object->AddComponent<Engine::SpriteRenderComponent>();
+
+    c->sprite = sprite;
 
     engine.LoadScene(scene);
     engine.Start();

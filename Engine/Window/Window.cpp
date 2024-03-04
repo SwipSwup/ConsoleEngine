@@ -207,7 +207,7 @@ namespace Engine
 
         for (int i = 0; i < windowSize.X * windowSize.Y; ++i)
         {
-            zBufferIndex[i] = 0;
+            zBufferIndex[i] = -1;
         }
     }
 
