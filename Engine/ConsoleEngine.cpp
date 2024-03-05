@@ -108,35 +108,35 @@ namespace Engine
         activeScene->FixTick();
         t++;
 
-        for (int x = 0; x < window->GetWindowXDimension(); ++x)
-        {
-            for (int y = 0; y < window->GetWindowYDimension(); ++y)
-            {
-                double minDistance = DBL_MAX;
-                int closestSeedIndex = -1;
+        int windowX = window->GetWindowXDimension();
+        int windowY = window->GetWindowYDimension();
 
-                for (size_t i = 0; i < seedPoints.size(); ++i)
-                {
-                    Vector2D modifiedSeedPoint = seedPoints[i];
-                    modifiedSeedPoint.x += (int)(0.5 + 5.0 * sin(t * .1 + 6.2831 * 0.3 + modifiedSeedPoint.x));
-                    modifiedSeedPoint.y += (int)(0.5 + 5.0 * sin(t * .1 + 6.2831 * 0.7 + modifiedSeedPoint.y));
+        for (int x = 0; x < windowX; ++x) {
+            for (int y = 0; y < windowY; ++y) {
+                double uvx = static_cast<double>(x) / windowX;
+                double uvy = static_cast<double>(y) / windowY;
 
-                    double distance = Vector2D(x, y).Distance(modifiedSeedPoint);
-                    if (distance < minDistance)
-                    {
-                        minDistance = distance;
-                        closestSeedIndex = i;
-                    }
-                }
+                double r = 0.5 + 0.5 * cos(t * 0.1 + uvx);
+                double g = 0.5 + 0.5 * sin(t * 0.1 + uvy + 2.0);
+                double b = 0.5 + 0.5 * cos(t * 0.1 + uvx + 4.0);
 
-                Color** color3 = new Color*[1];
-                color3[0] = new Color[1]{
-                    colors[(closestSeedIndex + (std::hash<int>()(seedPoints[closestSeedIndex].x) ^ std::hash<int>()(
-                        seedPoints[closestSeedIndex].y)) / (MAXINT / 2)) % 12]
-                };
+                r = std::max(0.0, std::min(r, 1.0));
+                g = std::max(0.0, std::min(g, 1.0));
+                b = std::max(0.0, std::min(b, 1.0));
 
-                sprite2->Load2DColor(color3);
+                int red = static_cast<int>(r * 255);
+                int green = static_cast<int>(g * 255);
+                int blue = static_cast<int>(b * 255);
+
+                Color color = Color(red, green, blue);
+
+                Color** colorArray = new Color*[1];
+                colorArray[0] = new Color[1]{color};
+                sprite2->Load2DColor(colorArray);
                 window->WDrawSprite(sprite2, x, y, 1);
+
+                delete[] colorArray[0];
+                delete[] colorArray;
             }
         }
         window->Render();
