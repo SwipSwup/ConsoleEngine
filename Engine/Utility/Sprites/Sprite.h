@@ -24,7 +24,6 @@ namespace Engine
     private:
         void Init(wchar_t** texture, Color** color, Vector2D textureDimensions);
 
-
     public:
         void Load2DTexture(wchar_t** texture);
 

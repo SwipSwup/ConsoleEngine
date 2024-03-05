@@ -17,6 +17,7 @@ namespace Engine
     {
     public:
         ConsoleEngine();
+        virtual ~ConsoleEngine();
 
         void Start();
 

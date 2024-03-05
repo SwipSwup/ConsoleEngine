@@ -214,7 +214,7 @@ namespace Engine
     void Window::WriteRawIntoRenderBuffer(int xy, int z, wchar_t data, Color color)
     {
         //todo crashes when going to far out of bounds. Guessing the error is somewhere here
-        if (zBufferIndex[xy] > z || xy < 0 || xy > windowSize.X * windowSize.Y)
+        if (xy < 0 || xy > windowSize.X * windowSize.Y || zBufferIndex[xy] > z)
         {
             return;
         }
@@ -234,15 +234,23 @@ namespace Engine
     {
         //todo might be able to be done in just one loop
         //todo fix if x is bigger than x dimension that it doesnt loop back one y lower
-        //todo do bound check here
         for (int y = 0; y < sprite->textureDimensions->y; ++y)
         {
             for (int x = 0; x < sprite->textureDimensions->x; ++x)
             {
+                int buffX = x + originX;
+                int buffY = windowSize.Y - originY - sprite->textureDimensions->y + y;
+
+                //todo not super efficant
+                if(buffX < 0 || buffY < 0 || buffX > windowSize.X - 1 || buffY > windowSize.Y - 1)
+                {
+                    continue;
+                }
+
                 WriteRawIntoRenderBuffer(
                     TranslateToBufferIndex(
-                        x + originX,
-                        windowSize.Y - originY - sprite->textureDimensions->y + y,
+                        buffX,
+                        buffY,
                         windowSize.X
                     ),
                     z,

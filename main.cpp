@@ -18,7 +18,7 @@ int main()
     engine.GetWindow()->HighlightUnchangedPositions(false);
     Engine::Scene* scene = new Engine::Scene((char*)"untitled");
 
-    /*Engine::GameObject* object = new Engine::GameObject(nullptr);
+    Engine::GameObject* object = new Engine::GameObject(nullptr);
 
     wchar_t** texture = new wchar_t*[3]
     {
@@ -29,7 +29,7 @@ int main()
 
     Engine::Color** color = new Engine::Color*[3]
     {
-        new Engine::Color[3]{Engine::Color(0, 0, 0), Engine::Color::RED, Engine::Color::BLU},
+        new Engine::Color[3]{Engine::Color::BLU, Engine::Color::RED, Engine::Color::BLU},
         new Engine::Color[3]{Engine::Color::BLU, Engine::Color::BLU, Engine::Color::GRN},
         new Engine::Color[3]{Engine::Color::BLU, Engine::Color::BLU, Engine::Color::BLU},
     };
@@ -39,9 +39,9 @@ int main()
     Engine::SpriteRenderComponent* c = object->AddComponent<Engine::SpriteRenderComponent>();
 
     c->sprite = sprite;
-*/
+
     engine.LoadScene(scene);
-    //scene->Spawn(object);
+    scene->Spawn(object);
     engine.Start();
 
     //TODO temporary so external window doesnt close;

@@ -427,7 +427,6 @@ CMakeFiles/ConsoleEngine.dir/Engine/ConsoleEngine.cpp.obj: C:/FH/SS2024/PROGR/Co
   C:/FH/SS2024/PROGR/ConsoleEngine/Engine/ConsoleEngine.h \
   C:/FH/SS2024/PROGR/ConsoleEngine/Engine/Debug/Debug.h \
   C:/FH/SS2024/PROGR/ConsoleEngine/Engine/Scene/Scene.h \
-  C:/FH/SS2024/PROGR/ConsoleEngine/Engine/Utility/Sprites/Sprite.h \
   C:/FH/SS2024/PROGR/ConsoleEngine/Engine/Utility/Vector2D.h \
   C:/FH/SS2024/PROGR/ConsoleEngine/Engine/Window/Window.h
 

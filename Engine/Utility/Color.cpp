@@ -21,6 +21,7 @@ namespace Engine
 
     Color::Color(int r, int g, int b)
     {
+        //todo
         std::string code = "\x1b[38;2;";
         code.append(std::to_string(r));
         code.append(";");
@@ -28,11 +29,9 @@ namespace Engine
         code.append(";");
         code.append(std::to_string(b));
         code.append("m");
-        // Allocate memory for the escape code
         escapeCodeLength = code.length();
         escapeCode = new char[escapeCodeLength + 1];
 
-        // Copy the escape code string to allocated memory
         std::strcpy(const_cast<char*>(escapeCode), code.c_str());
     }
 
