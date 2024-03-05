@@ -184,6 +184,7 @@ CMakeFiles/ConsoleEngine.dir/Engine/ConsoleEngine.cpp.obj: \
  C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/ext/aligned_buffer.h \
  C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/list.tcc \
  C:\FH\SS2024\PROGR\ConsoleEngine\Engine\Utility/Vector2D.h \
+ C:\FH\SS2024\PROGR\ConsoleEngine\Engine\Utility/Sprites/Sprite.h \
  C:\FH\SS2024\PROGR\ConsoleEngine\Engine\Window/Window.h \
  C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/x86_64-w64-mingw32/include/windows.h \
  C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/x86_64-w64-mingw32/include/sdkddkver.h \

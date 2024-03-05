@@ -18,7 +18,7 @@ int main()
     engine.GetWindow()->HighlightUnchangedPositions(false);
     Engine::Scene* scene = new Engine::Scene((char*)"untitled");
 
-    Engine::GameObject* object = new Engine::GameObject(nullptr);
+    /*Engine::GameObject* object = new Engine::GameObject(nullptr);
 
     wchar_t** texture = new wchar_t*[3]
     {
@@ -39,9 +39,9 @@ int main()
     Engine::SpriteRenderComponent* c = object->AddComponent<Engine::SpriteRenderComponent>();
 
     c->sprite = sprite;
-
+*/
     engine.LoadScene(scene);
-    scene->Spawn(object);
+    //scene->Spawn(object);
     engine.Start();
 
     //TODO temporary so external window doesnt close;
