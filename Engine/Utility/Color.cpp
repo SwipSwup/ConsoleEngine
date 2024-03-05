@@ -6,6 +6,10 @@
 #include "Color.h"
 
 #include <cstring>
+#include <iostream>
+#include <sstream>
+
+#include "../Window/Window.h"
 
 namespace Engine
 {
@@ -15,7 +19,25 @@ namespace Engine
         this->escapeCodeLength = strlen(escapeCode);
     }
 
+    Color::Color(int r, int g, int b)
+    {
+        std::string code = "\x1b[38;2;";
+        code.append(std::to_string(r));
+        code.append(";");
+        code.append(std::to_string(g));
+        code.append(";");
+        code.append(std::to_string(b));
+        code.append("m");
+        // Allocate memory for the escape code
+        escapeCodeLength = code.length();
+        escapeCode = new char[escapeCodeLength + 1];
+
+        // Copy the escape code string to allocated memory
+        std::strcpy(const_cast<char*>(escapeCode), code.c_str());
+    }
+
     const Color Color::BLK = "\x1b[0;30m";
+    //const Color Color::BLK = "\x1b[38;2;47;186;147m";
     const Color Color::RED = "\x1b[0;31m";
     const Color Color::GRN = "\x1b[0;32m";
     const Color Color::YEL = "\x1b[0;33m";

@@ -4,16 +4,19 @@
 
 #ifndef COLOR_H
 #define COLOR_H
+#include <sstream>
 
 namespace Engine
 {
     struct Color
     {
     public:
+        //todo rewrite to only user rgb;
         Color() = default;
         Color(char* escapeCode);
+        Color(int r, int g, int b);
 
-        char* escapeCode;
+        const char* escapeCode;
         int escapeCodeLength;
 
         //Regular text

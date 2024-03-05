@@ -1,13 +1,13 @@
 #include <iostream>
 
 #include "Engine/ConsoleEngine.h"
-#include "Engine/Objects/Components/Component.h"
 #include "Engine/Scene/Scene.h"
 #include "Engine/Objects/GameObject.h"
 #include "Engine/Objects/Components/DefaultComponents/SpriteRenderComponent.h"
 #include "Engine/Utility/Color.h"
 #include "Engine/Utility/Vector2D.h"
 #include "Engine/Utility/Sprites/Sprite.h"
+#include "Engine/Window/Window.h"
 
 //https://www.charset.org/utf-8
 int main()
@@ -15,6 +15,7 @@ int main()
     srand (time(nullptr));
 
     Engine::ConsoleEngine engine = Engine::ConsoleEngine();
+    engine.GetWindow()->HighlightUnchangedPositions(false);
     Engine::Scene* scene = new Engine::Scene((char*)"untitled");
 
     Engine::GameObject* object = new Engine::GameObject(nullptr);
@@ -28,7 +29,7 @@ int main()
 
     Engine::Color** color = new Engine::Color*[3]
     {
-        new Engine::Color[3]{Engine::Color::BLU, Engine::Color::RED, Engine::Color::BLU},
+        new Engine::Color[3]{Engine::Color(0, 0, 0), Engine::Color::RED, Engine::Color::BLU},
         new Engine::Color[3]{Engine::Color::BLU, Engine::Color::BLU, Engine::Color::GRN},
         new Engine::Color[3]{Engine::Color::BLU, Engine::Color::BLU, Engine::Color::BLU},
     };

@@ -13,7 +13,6 @@
 #include "Debug/Debug.h"
 #include "Scene/Scene.h"
 #include "Utility/Vector2D.h"
-#include "Utility/Sprites/Sprite.h"
 #include "Window/Window.h"
 
 namespace Engine
@@ -83,6 +82,10 @@ namespace Engine
     void ConsoleEngine::TickScene(float deltaTime)
     {
         activeScene->Tick(deltaTime);
+
+        std::ostringstream ostr;
+        ostr << "DeltaTime: " << deltaTime / 1000.f;
+        window->WDrawText(ostr.str().c_str(), 0, 0, 2);
     }
 
     void ConsoleEngine::FixTickScene()

@@ -5,8 +5,11 @@
 #include "GameObject.h"
 
 #include <iostream>
+#include <conio.h>
+#include <sstream>
 
 #include "../Utility/Vector3D.h"
+#include "../Window/Window.h"
 
 namespace Engine {
     GameObject::GameObject(Scene* root)
@@ -56,14 +59,33 @@ namespace Engine {
     void GameObject::Tick(float deltaTime)
     {
         TickComponents(deltaTime);
-
     }
 
     void GameObject::FixTick()
     {
         FixTickComponents();
 
-        //*position += Vector3D(1, 1, 0);
+        if(kbhit())
+        {
+        char nextMove = _getch();
+        switch (nextMove)
+        {
+        case 'w':
+        *position += Vector3D(0, 1, 0);
+            break;
+        case 'a':
+            *position += Vector3D(-1, 0, 0);
+            break;
+        case 's':
+            *position += Vector3D(0, -1, 0);
+            break;
+        case 'd':
+            *position += Vector3D(1, 0, 0);
+            break;
+        }
+
+        }
+
     }
 
     void GameObject::OnSpawn()
