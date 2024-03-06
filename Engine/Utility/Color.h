@@ -4,7 +4,7 @@
 
 #ifndef COLOR_H
 #define COLOR_H
-#include <sstream>
+#include <string>
 
 namespace Engine
 {
@@ -13,12 +13,22 @@ namespace Engine
     public:
         //todo rewrite to only user rgb;
         Color() = default;
-        Color(char* escapeCode);
-        Color(int r, int g, int b);
+        Color(std::string escapeCode);
+        Color(int r, int g, int b, bool bIsBackground);
 
-        const char* escapeCode;
+        const char* GetEscapeCode();
+        const int GetEscapeCodeLength();
+
+        Color operator+(Color color);
+        Color* operator+=(Color color);
+        bool operator==(Color color);
+        bool operator!=(Color color);
+
+    private:
+        std::string escapeCode;
         int escapeCodeLength;
 
+    public:
         //Regular text
         static const Color BLK;
         static const Color RED;
@@ -94,8 +104,6 @@ namespace Engine
         static const Color CRESET;
         static const Color COLOR_RESET;
     };
-
-
 } // Engine
 
 #endif //COLOR_H

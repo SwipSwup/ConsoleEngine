@@ -400,6 +400,4 @@ CMakeFiles/ConsoleEngine.dir/Engine/Objects/Components/DefaultComponents/SpriteR
  C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/x86_64-w64-mingw32/include/winsvc.h \
  C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/x86_64-w64-mingw32/include/mcx.h \
  C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/x86_64-w64-mingw32/include/imm.h \
- C:/FH/SS2024/PROGR/ConsoleEngine/Engine/Utility/Color.h \
- C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/sstream \
- C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/sstream.tcc
+ C:/FH/SS2024/PROGR/ConsoleEngine/Engine/Utility/Color.h

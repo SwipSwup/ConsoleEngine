@@ -11,7 +11,7 @@
 namespace Engine {
     Scene::Scene(char* name)
     {
-
+        this->name = name;
     }
 
     void Scene::OnSceneLoad(ConsoleEngine* engine)
@@ -46,5 +46,10 @@ namespace Engine {
     ConsoleEngine* Scene::GetEngine()
     {
         return engine;
+    }
+
+    const char* Scene::GetName()
+    {
+        return name;
     }
 } // Engine

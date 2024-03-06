@@ -23,14 +23,17 @@ public:
 private:
     ConsoleEngine* engine;
 
+    const char* name;
+
 public:
-
-    void Spawn(GameObject* gameObject);
-
     ConsoleEngine* GetEngine();
 
+    const char* GetName();
 private:
     std::list<GameObject*> loadedGameObjects;
+
+public:
+    void Spawn(GameObject* gameObject);
 };
 
 } // Engine

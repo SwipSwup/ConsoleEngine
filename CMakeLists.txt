@@ -27,5 +27,7 @@ add_executable(ConsoleEngine main.cpp
         Engine/Objects/Components/Component.h
         Engine/Objects/Components/DefaultComponents/SpriteRenderComponent.cpp
         Engine/Objects/Components/DefaultComponents/SpriteRenderComponent.h
+        Engine/Objects/Components/DefaultComponents/TextRenderComponent.cpp
+        Engine/Objects/Components/DefaultComponents/TextRenderComponent.h
 )
 

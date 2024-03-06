@@ -4,11 +4,8 @@
 
 #include "ConsoleEngine.h"
 
-#include <cfloat>
 #include <chrono>
-#include <cmath>
 #include <sstream>
-#include <vector>
 
 #include "Debug/Debug.h"
 #include "Scene/Scene.h"
@@ -19,10 +16,12 @@ namespace Engine
 {
     ConsoleEngine::ConsoleEngine()
     {
-        this->window = new Window(100, 30, true);
+        this->window = new Window(100, 30);
         this->debugConsole = new Debug();
 
-        ticksPerSecond = 30;
+        activeScene = nullptr;
+        settings = EngineSettings();
+
     }
 
     ConsoleEngine::~ConsoleEngine()
@@ -36,6 +35,11 @@ namespace Engine
     void ConsoleEngine::Start()
     {
         previousTimePoint = std::chrono::steady_clock::now();
+
+        if(activeScene == nullptr)
+            LoadDefaultScene();
+
+        LoadSettings();
 
         Run();
     }
@@ -56,11 +60,16 @@ namespace Engine
 
     void ConsoleEngine::Tick()
     {
+        if(activeScene == nullptr)
+        {
+            return;
+        }
+
         std::chrono::steady_clock::time_point currentTimePoint = std::chrono::steady_clock::now();
         TickScene((float)(currentTimePoint - previousTimePoint).count());
 
         if ((currentTimePoint - previousTimePoint).count() < std::chrono::duration_cast<
-            std::chrono::steady_clock::duration>(std::chrono::duration<float>(1.0f / ticksPerSecond)).count())
+            std::chrono::steady_clock::duration>(std::chrono::duration<float>(1.0f / settings.ticksPerSecond)).count())
         {
             return;
         }
@@ -73,12 +82,15 @@ namespace Engine
     void ConsoleEngine::FixedTick()
     {
         FixTickScene();
+
+        window->UpdateConsoleTitle(activeScene->GetName());
     }
 
     void ConsoleEngine::TickScene(float deltaTime)
     {
         activeScene->Tick(deltaTime);
 
+        //todo do this in the title
         std::ostringstream ostr;
         ostr << "DeltaTime: " << deltaTime / 1000.f;
         window->WDrawText(ostr.str().c_str(), 0, 0, 2);
@@ -89,9 +101,26 @@ namespace Engine
         activeScene->FixTick();
     }
 
-    void ConsoleEngine::SetTicksPerSecond(int tps)
+    EngineSettings* ConsoleEngine::GetSettings()
     {
-        ticksPerSecond = tps;
+        return &settings;
+    }
+
+    void ConsoleEngine::LoadSettings()
+    {
+        window->ShowRenderUpdates(settings.showRenderUpdates);
+
+    }
+
+    void ConsoleEngine::LoadSettings(EngineSettings settings)
+    {
+        this->settings = settings;
+        LoadSettings();
+    }
+
+    void ConsoleEngine::LoadDefaultScene()
+    {
+        LoadScene(new Scene("default"));
     }
 
     bool ConsoleEngine::LoadScene(Scene* scene)

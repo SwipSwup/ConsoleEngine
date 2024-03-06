@@ -10,7 +10,7 @@ Engine::Component::~Component()
 
 void Engine::Component::SetRoot(GameObject* root)
 {
-    this->root = root;
+    this->root_ref = root;
 }
 
 void Engine::Component::Tick(float deltaTime)

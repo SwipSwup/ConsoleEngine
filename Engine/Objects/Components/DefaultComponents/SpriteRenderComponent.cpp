@@ -18,13 +18,13 @@ namespace Engine
     {
         Component::Tick(deltaTime);
 
-        window->WDrawSprite(sprite, root->position->x, root->position->y, root->position->z);
+        window_ref->WDrawSprite(sprite_ref, root_ref->position->x, root_ref->position->y, root_ref->position->z);
     }
 
     void SpriteRenderComponent::OnSpawn()
     {
         Component::OnSpawn();
 
-        window = root->GetScene()->GetEngine()->GetWindow();
+        window_ref = root_ref->GetScene()->GetEngine()->GetWindow();
     }
 } // Engine

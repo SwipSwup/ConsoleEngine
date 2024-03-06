@@ -21,7 +21,7 @@ namespace Engine
 
         Vector3D* position;
     private:
-        Scene* scene;
+        Scene* scene_ref;
         std::list<Component*> components;
 
 
@@ -51,11 +51,6 @@ namespace Engine
         Scene* GetScene();
 
         void SetScene(Scene* scene);
-
-        /*Vector3D* GetPosition();
-
-        void SetPosition(Vector3D positon);*/
-
     private:
         void TickComponents(float deltaTime);
 

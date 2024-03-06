@@ -15,10 +15,10 @@ int main()
     srand (time(nullptr));
 
     Engine::ConsoleEngine engine = Engine::ConsoleEngine();
-    engine.GetWindow()->HighlightUnchangedPositions(false);
-    Engine::Scene* scene = new Engine::Scene((char*)"untitled");
+    engine.GetWindow()->ShowRenderUpdates(false);
+    //Engine::Scene* scene = new Engine::Scene((char*)"untitled");
 
-    Engine::GameObject* object = new Engine::GameObject(nullptr);
+    //Engine::GameObject* object = new Engine::GameObject(nullptr);
 
     wchar_t** texture = new wchar_t*[3]
     {
@@ -27,21 +27,21 @@ int main()
         new wchar_t[3]{'+', '-', '+',}
     };
 
-    Engine::Color** color = new Engine::Color*[3]
+    /*Engine::Color** color = new Engine::Color*[3]
     {
         new Engine::Color[3]{Engine::Color::BLU, Engine::Color::RED, Engine::Color::BLU},
         new Engine::Color[3]{Engine::Color::BLU, Engine::Color::BLU, Engine::Color::GRN},
         new Engine::Color[3]{Engine::Color::BLU, Engine::Color::BLU, Engine::Color::BLU},
-    };
+    };*/
 
-    Engine::Sprite* sprite = new Engine::Sprite(texture, color, Engine::Vector2D(3, 3));
+    //Engine::Sprite* sprite = new Engine::Sprite(texture, color, Engine::Vector2D(3, 3));
 
-    Engine::SpriteRenderComponent* c = object->AddComponent<Engine::SpriteRenderComponent>();
+    //Engine::SpriteRenderComponent* c = object->AddComponent<Engine::SpriteRenderComponent>();
 
-    c->sprite = sprite;
+    //c->sprite_ref = sprite;
 
-    engine.LoadScene(scene);
-    scene->Spawn(object);
+    //engine.LoadScene(scene);
+    //scene->Spawn(object);
     engine.Start();
 
     //TODO temporary so external window doesnt close;

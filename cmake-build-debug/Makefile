@@ -224,6 +224,30 @@ Engine/Objects/Components/DefaultComponents/SpriteRenderComponent.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ConsoleEngine.dir\build.make CMakeFiles/ConsoleEngine.dir/Engine/Objects/Components/DefaultComponents/SpriteRenderComponent.cpp.s
 .PHONY : Engine/Objects/Components/DefaultComponents/SpriteRenderComponent.cpp.s
 
+Engine/Objects/Components/DefaultComponents/TextRenderComponent.obj: Engine/Objects/Components/DefaultComponents/TextRenderComponent.cpp.obj
+.PHONY : Engine/Objects/Components/DefaultComponents/TextRenderComponent.obj
+
+# target to build an object file
+Engine/Objects/Components/DefaultComponents/TextRenderComponent.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ConsoleEngine.dir\build.make CMakeFiles/ConsoleEngine.dir/Engine/Objects/Components/DefaultComponents/TextRenderComponent.cpp.obj
+.PHONY : Engine/Objects/Components/DefaultComponents/TextRenderComponent.cpp.obj
+
+Engine/Objects/Components/DefaultComponents/TextRenderComponent.i: Engine/Objects/Components/DefaultComponents/TextRenderComponent.cpp.i
+.PHONY : Engine/Objects/Components/DefaultComponents/TextRenderComponent.i
+
+# target to preprocess a source file
+Engine/Objects/Components/DefaultComponents/TextRenderComponent.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ConsoleEngine.dir\build.make CMakeFiles/ConsoleEngine.dir/Engine/Objects/Components/DefaultComponents/TextRenderComponent.cpp.i
+.PHONY : Engine/Objects/Components/DefaultComponents/TextRenderComponent.cpp.i
+
+Engine/Objects/Components/DefaultComponents/TextRenderComponent.s: Engine/Objects/Components/DefaultComponents/TextRenderComponent.cpp.s
+.PHONY : Engine/Objects/Components/DefaultComponents/TextRenderComponent.s
+
+# target to generate assembly for a file
+Engine/Objects/Components/DefaultComponents/TextRenderComponent.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ConsoleEngine.dir\build.make CMakeFiles/ConsoleEngine.dir/Engine/Objects/Components/DefaultComponents/TextRenderComponent.cpp.s
+.PHONY : Engine/Objects/Components/DefaultComponents/TextRenderComponent.cpp.s
+
 Engine/Objects/GameObject.obj: Engine/Objects/GameObject.cpp.obj
 .PHONY : Engine/Objects/GameObject.obj
 
@@ -437,6 +461,9 @@ help:
 	@echo ... Engine/Objects/Components/DefaultComponents/SpriteRenderComponent.obj
 	@echo ... Engine/Objects/Components/DefaultComponents/SpriteRenderComponent.i
 	@echo ... Engine/Objects/Components/DefaultComponents/SpriteRenderComponent.s
+	@echo ... Engine/Objects/Components/DefaultComponents/TextRenderComponent.obj
+	@echo ... Engine/Objects/Components/DefaultComponents/TextRenderComponent.i
+	@echo ... Engine/Objects/Components/DefaultComponents/TextRenderComponent.s
 	@echo ... Engine/Objects/GameObject.obj
 	@echo ... Engine/Objects/GameObject.i
 	@echo ... Engine/Objects/GameObject.s

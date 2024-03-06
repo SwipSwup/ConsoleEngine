@@ -106,6 +106,12 @@
 		<Unit filename="C:/FH/SS2024/PROGR/ConsoleEngine/Engine/Objects/Components/DefaultComponents/SpriteRenderComponent.h">
 			<Option target="ConsoleEngine"/>
 		</Unit>
+		<Unit filename="C:/FH/SS2024/PROGR/ConsoleEngine/Engine/Objects/Components/DefaultComponents/TextRenderComponent.cpp">
+			<Option target="ConsoleEngine"/>
+		</Unit>
+		<Unit filename="C:/FH/SS2024/PROGR/ConsoleEngine/Engine/Objects/Components/DefaultComponents/TextRenderComponent.h">
+			<Option target="ConsoleEngine"/>
+		</Unit>
 		<Unit filename="C:/FH/SS2024/PROGR/ConsoleEngine/Engine/Objects/GameObject.cpp">
 			<Option target="ConsoleEngine"/>
 		</Unit>

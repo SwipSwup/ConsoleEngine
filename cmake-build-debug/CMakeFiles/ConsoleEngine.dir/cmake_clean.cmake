@@ -7,6 +7,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/ConsoleEngine.dir/Engine/Objects/Components/Component.cpp.obj.d"
   "CMakeFiles/ConsoleEngine.dir/Engine/Objects/Components/DefaultComponents/SpriteRenderComponent.cpp.obj"
   "CMakeFiles/ConsoleEngine.dir/Engine/Objects/Components/DefaultComponents/SpriteRenderComponent.cpp.obj.d"
+  "CMakeFiles/ConsoleEngine.dir/Engine/Objects/Components/DefaultComponents/TextRenderComponent.cpp.obj"
+  "CMakeFiles/ConsoleEngine.dir/Engine/Objects/Components/DefaultComponents/TextRenderComponent.cpp.obj.d"
   "CMakeFiles/ConsoleEngine.dir/Engine/Objects/GameObject.cpp.obj"
   "CMakeFiles/ConsoleEngine.dir/Engine/Objects/GameObject.cpp.obj.d"
   "CMakeFiles/ConsoleEngine.dir/Engine/Scene/Scene.cpp.obj"

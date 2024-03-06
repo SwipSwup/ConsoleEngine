@@ -13,7 +13,7 @@ namespace Engine
     {
     protected:
         virtual ~Component();
-        GameObject* root;
+        GameObject* root_ref;
 
     public:
         void
@@ -24,8 +24,6 @@ namespace Engine
         virtual void FixTick();
 
         virtual void OnSpawn();
-
-
     };
 }
 

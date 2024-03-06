@@ -144,6 +144,4 @@ CMakeFiles/ConsoleEngine.dir/Engine/Utility/Sprites/Sprite.cpp.obj: \
  C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/istream \
  C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/istream.tcc \
  C:/FH/SS2024/PROGR/ConsoleEngine/Engine/Utility/Vector2D.h \
- C:/FH/SS2024/PROGR/ConsoleEngine/Engine/Utility/Color.h \
- C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/sstream \
- C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/sstream.tcc
+ C:/FH/SS2024/PROGR/ConsoleEngine/Engine/Utility/Color.h

@@ -23,11 +23,9 @@ namespace Engine
         this->data = data;
     }
 
-    Window::Window(SHORT x, SHORT y, bool bDrawBorder)
+    Window::Window(SHORT x, SHORT y)
     {
         this->windowSize = COORD{x, y};
-
-        this->bDrawBorder = bDrawBorder;
 
         bHighlightUnchangedPositions = false;
 
@@ -49,8 +47,8 @@ namespace Engine
 
     bool Window::HasRenderObjectUpdated(int xy)
     {
-        return previousRenderBuffer[xy].data == renderBuffer[xy].data &&
-            !strcmp(previousRenderBuffer[xy].color.escapeCode, renderBuffer[xy].color.escapeCode);
+        return previousRenderBuffer[xy].data != renderBuffer[xy].data ||
+            previousRenderBuffer[xy].color != renderBuffer[xy].color;
     }
 
     void Window::Render()
@@ -66,7 +64,7 @@ namespace Engine
 
                 Color c = obj.color;
 
-                if (HasRenderObjectUpdated(bufferIndex))
+                if (!HasRenderObjectUpdated(bufferIndex))
                 {
                     if (bHighlightUnchangedPositions)
                     {
@@ -81,8 +79,8 @@ namespace Engine
                 SetConsoleCursorPosition(hConsole, COORD{(SHORT)x, (SHORT)y});
                 if (!WriteConsoleA(
                     hConsole,
-                    c.escapeCode,
-                    c.escapeCodeLength,
+                    c.GetEscapeCode(),
+                    c.GetEscapeCodeLength(),
                     &charsWritten,
                     nullptr
                 ) || !WriteConsoleW(
@@ -102,6 +100,11 @@ namespace Engine
         ConsumeRenderBuffer();
     }
 
+    void Window::UpdateConsoleTitle(const char* title)
+    {
+        SetConsoleTitleA(title);
+    }
+
     void Window::UpdateConsoleMode(DWORD mode, bool bEnable)
     {
         if (bEnable)
@@ -119,7 +122,7 @@ namespace Engine
         }
     }
 
-    void Window::HighlightUnchangedPositions(bool bHighlight)
+    void Window::ShowRenderUpdates(bool bHighlight)
     {
         bHighlightUnchangedPositions = bHighlight;
     }
@@ -202,7 +205,7 @@ namespace Engine
     {
         memcpy(previousRenderBuffer, renderBuffer, sizeof(RenderObject) * windowSize.X * windowSize.Y);
 
-        delete renderBuffer;
+        delete[] renderBuffer;
         renderBuffer = new RenderObject[windowSize.X * windowSize.Y];
 
         for (int i = 0; i < windowSize.X * windowSize.Y; ++i)

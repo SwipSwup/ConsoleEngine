@@ -12,19 +12,19 @@ namespace Engine
 {
     GameObject::GameObject(Scene* root)
     {
-        scene = root;
+        scene_ref = root;
 
         position = new Vector3D(0, 0, 0);
     }
 
     Scene* GameObject::GetScene()
     {
-        return scene;
+        return scene_ref;
     }
 
     void GameObject::SetScene(Scene* scene)
     {
-        this->scene = scene;
+        this->scene_ref = scene;
     }
 
     /*Vector3D* GameObject::GetPosition()

@@ -14,10 +14,10 @@ namespace Engine
     class SpriteRenderComponent : public Component
     {
     private:
-        Window* window;
+        Window* window_ref;
 
     public:
-        Sprite* sprite;
+        Sprite* sprite_ref;
 
         void Tick(float deltaTime) override;
 

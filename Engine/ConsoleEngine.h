@@ -13,6 +13,15 @@ namespace Engine
     class Window;
     class Scene;
 
+    struct EngineSettings
+    {
+        bool showFps = false;
+        bool showRenderUpdates = false;
+
+        int ticksPerSecond = 30;
+        int fpsUpdateIntervalTick = 10;
+    };
+
     class ConsoleEngine
     {
     public:
@@ -20,13 +29,13 @@ namespace Engine
         virtual ~ConsoleEngine();
 
         void Start();
-
-    private:
-        void Run();
-
         void Stop();
 
-        int ticksPerSecond;
+    private:
+        EngineSettings settings;
+
+        void Run();
+
         void Tick();
 
         void FixedTick();
@@ -35,10 +44,14 @@ namespace Engine
         void FixTickScene();
 
     public:
-        void SetTicksPerSecond(int tps);
+        EngineSettings* GetSettings();
+        void LoadSettings();
+        void LoadSettings(EngineSettings settings);
 
     private:
         Scene* activeScene;
+
+        void LoadDefaultScene();
 
     public:
         bool LoadScene(Scene* scene);
@@ -51,7 +64,6 @@ namespace Engine
         Window* GetWindow();
 
         Vector2D GetWindowDimensions();
-        //void PushRenderData(char** )
     };
 } // Engine
 

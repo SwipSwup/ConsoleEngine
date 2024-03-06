@@ -23,11 +23,10 @@ namespace Engine
     class Window
     {
     public:
-        Window(SHORT x, SHORT y, bool bDrawBoarder);
+        Window(SHORT x, SHORT y);
         virtual ~Window();
 
     private:
-        bool bDrawBorder;
         bool bHighlightUnchangedPositions;
 
         HANDLE hConsole{};
@@ -48,9 +47,11 @@ namespace Engine
     public:
         void Render();
 
+        void UpdateConsoleTitle(const char* title);
+
         void UpdateConsoleMode(DWORD mode, bool bEnable);
 
-        void HighlightUnchangedPositions(bool bHighlight);
+        void ShowRenderUpdates(bool bHighlight);
 
         int GetWindowXDimension();
 

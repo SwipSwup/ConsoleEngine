@@ -154,8 +154,6 @@ CMakeFiles/ConsoleEngine.dir/main.cpp.obj: \
  C:\FH\SS2024\PROGR\ConsoleEngine\Engine/Objects/Components/DefaultComponents/SpriteRenderComponent.h \
  C:/FH/SS2024/PROGR/ConsoleEngine/Engine/Objects/Components/Component.h \
  C:\FH\SS2024\PROGR\ConsoleEngine\Engine/Utility/Color.h \
- C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/sstream \
- C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/sstream.tcc \
  C:\FH\SS2024\PROGR\ConsoleEngine\Engine/Utility/Vector2D.h \
  C:\FH\SS2024\PROGR\ConsoleEngine\Engine/Utility/Sprites/Sprite.h \
  C:\FH\SS2024\PROGR\ConsoleEngine\Engine/Window/Window.h \

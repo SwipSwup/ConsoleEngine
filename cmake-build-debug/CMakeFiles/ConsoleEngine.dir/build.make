@@ -236,6 +236,20 @@ CMakeFiles/ConsoleEngine.dir/Engine/Objects/Components/DefaultComponents/SpriteR
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ConsoleEngine.dir/Engine/Objects/Components/DefaultComponents/SpriteRenderComponent.cpp.s"
 	C:\Users\david\AppData\Local\Programs\CLIONN~1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\FH\SS2024\PROGR\ConsoleEngine\Engine\Objects\Components\DefaultComponents\SpriteRenderComponent.cpp -o CMakeFiles\ConsoleEngine.dir\Engine\Objects\Components\DefaultComponents\SpriteRenderComponent.cpp.s
 
+CMakeFiles/ConsoleEngine.dir/Engine/Objects/Components/DefaultComponents/TextRenderComponent.cpp.obj: CMakeFiles/ConsoleEngine.dir/flags.make
+CMakeFiles/ConsoleEngine.dir/Engine/Objects/Components/DefaultComponents/TextRenderComponent.cpp.obj: C:/FH/SS2024/PROGR/ConsoleEngine/Engine/Objects/Components/DefaultComponents/TextRenderComponent.cpp
+CMakeFiles/ConsoleEngine.dir/Engine/Objects/Components/DefaultComponents/TextRenderComponent.cpp.obj: CMakeFiles/ConsoleEngine.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\FH\SS2024\PROGR\ConsoleEngine\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/ConsoleEngine.dir/Engine/Objects/Components/DefaultComponents/TextRenderComponent.cpp.obj"
+	C:\Users\david\AppData\Local\Programs\CLIONN~1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ConsoleEngine.dir/Engine/Objects/Components/DefaultComponents/TextRenderComponent.cpp.obj -MF CMakeFiles\ConsoleEngine.dir\Engine\Objects\Components\DefaultComponents\TextRenderComponent.cpp.obj.d -o CMakeFiles\ConsoleEngine.dir\Engine\Objects\Components\DefaultComponents\TextRenderComponent.cpp.obj -c C:\FH\SS2024\PROGR\ConsoleEngine\Engine\Objects\Components\DefaultComponents\TextRenderComponent.cpp
+
+CMakeFiles/ConsoleEngine.dir/Engine/Objects/Components/DefaultComponents/TextRenderComponent.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/ConsoleEngine.dir/Engine/Objects/Components/DefaultComponents/TextRenderComponent.cpp.i"
+	C:\Users\david\AppData\Local\Programs\CLIONN~1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\FH\SS2024\PROGR\ConsoleEngine\Engine\Objects\Components\DefaultComponents\TextRenderComponent.cpp > CMakeFiles\ConsoleEngine.dir\Engine\Objects\Components\DefaultComponents\TextRenderComponent.cpp.i
+
+CMakeFiles/ConsoleEngine.dir/Engine/Objects/Components/DefaultComponents/TextRenderComponent.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ConsoleEngine.dir/Engine/Objects/Components/DefaultComponents/TextRenderComponent.cpp.s"
+	C:\Users\david\AppData\Local\Programs\CLIONN~1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\FH\SS2024\PROGR\ConsoleEngine\Engine\Objects\Components\DefaultComponents\TextRenderComponent.cpp -o CMakeFiles\ConsoleEngine.dir\Engine\Objects\Components\DefaultComponents\TextRenderComponent.cpp.s
+
 # Object files for target ConsoleEngine
 ConsoleEngine_OBJECTS = \
 "CMakeFiles/ConsoleEngine.dir/main.cpp.obj" \
@@ -249,7 +263,8 @@ ConsoleEngine_OBJECTS = \
 "CMakeFiles/ConsoleEngine.dir/Engine/Utility/Vector3D.cpp.obj" \
 "CMakeFiles/ConsoleEngine.dir/Engine/Debug/Debug.cpp.obj" \
 "CMakeFiles/ConsoleEngine.dir/Engine/Objects/Components/Component.cpp.obj" \
-"CMakeFiles/ConsoleEngine.dir/Engine/Objects/Components/DefaultComponents/SpriteRenderComponent.cpp.obj"
+"CMakeFiles/ConsoleEngine.dir/Engine/Objects/Components/DefaultComponents/SpriteRenderComponent.cpp.obj" \
+"CMakeFiles/ConsoleEngine.dir/Engine/Objects/Components/DefaultComponents/TextRenderComponent.cpp.obj"
 
 # External object files for target ConsoleEngine
 ConsoleEngine_EXTERNAL_OBJECTS =
@@ -266,11 +281,12 @@ ConsoleEngine.exe: CMakeFiles/ConsoleEngine.dir/Engine/Utility/Vector3D.cpp.obj
 ConsoleEngine.exe: CMakeFiles/ConsoleEngine.dir/Engine/Debug/Debug.cpp.obj
 ConsoleEngine.exe: CMakeFiles/ConsoleEngine.dir/Engine/Objects/Components/Component.cpp.obj
 ConsoleEngine.exe: CMakeFiles/ConsoleEngine.dir/Engine/Objects/Components/DefaultComponents/SpriteRenderComponent.cpp.obj
+ConsoleEngine.exe: CMakeFiles/ConsoleEngine.dir/Engine/Objects/Components/DefaultComponents/TextRenderComponent.cpp.obj
 ConsoleEngine.exe: CMakeFiles/ConsoleEngine.dir/build.make
 ConsoleEngine.exe: CMakeFiles/ConsoleEngine.dir/linkLibs.rsp
 ConsoleEngine.exe: CMakeFiles/ConsoleEngine.dir/objects1.rsp
 ConsoleEngine.exe: CMakeFiles/ConsoleEngine.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\FH\SS2024\PROGR\ConsoleEngine\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Linking CXX executable ConsoleEngine.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\FH\SS2024\PROGR\ConsoleEngine\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Linking CXX executable ConsoleEngine.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\ConsoleEngine.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
