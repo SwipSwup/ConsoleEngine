@@ -83,17 +83,15 @@ namespace Engine
     {
         FixTickScene();
 
-        window->UpdateConsoleTitle(activeScene->GetName());
+        window->SetConsoleTitle(activeScene->GetName());
     }
 
     void ConsoleEngine::TickScene(float deltaTime)
     {
         activeScene->Tick(deltaTime);
 
-        //todo do this in the title
-        std::ostringstream ostr;
-        ostr << "DeltaTime: " << deltaTime / 1000.f;
-        window->WDrawText(ostr.str().c_str(), 0, 0, 2);
+        if(settings.showFps)
+            UpdateConsoleTitle();
     }
 
     void ConsoleEngine::FixTickScene()
@@ -121,6 +119,14 @@ namespace Engine
     void ConsoleEngine::LoadDefaultScene()
     {
         LoadScene(new Scene("default"));
+    }
+
+    void ConsoleEngine::UpdateConsoleTitle()
+    {
+        //todo do this in the title
+        std::ostringstream ostr;
+        //ostr << "DeltaTime: " << deltaTime / 1000.f;
+        window->WDrawText(ostr.str().c_str(), 0, 0, 2);
     }
 
     bool ConsoleEngine::LoadScene(Scene* scene)

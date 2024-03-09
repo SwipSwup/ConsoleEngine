@@ -47,7 +47,7 @@ namespace Engine
     public:
         void Render();
 
-        void UpdateConsoleTitle(const char* title);
+        void SetConsoleTitle(const char* title);
 
         void UpdateConsoleMode(DWORD mode, bool bEnable);
 

@@ -100,7 +100,7 @@ namespace Engine
         ConsumeRenderBuffer();
     }
 
-    void Window::UpdateConsoleTitle(const char* title)
+    void Window::SetConsoleTitle(const char* title)
     {
         SetConsoleTitleA(title);
     }

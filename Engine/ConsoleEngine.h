@@ -53,6 +53,8 @@ namespace Engine
 
         void LoadDefaultScene();
 
+        void UpdateConsoleTitle();
+
     public:
         bool LoadScene(Scene* scene);
 
