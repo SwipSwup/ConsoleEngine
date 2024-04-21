@@ -1,4 +1,7 @@
 #include <iostream>
+#include <cstdint>
+#include <functional>
+#include <map>
 
 #include "Engine/ConsoleEngine.h"
 #include "Engine/Scene/Scene.h"
@@ -10,17 +13,35 @@
 #include "Engine/Window/Window.h"
 
 //https://www.charset.org/utf-8
+
+
 int main()
 {
     srand (time(nullptr));
 
-    Engine::ConsoleEngine engine = Engine::ConsoleEngine();
+    /*Engine::ConsoleEngine engine = Engine::ConsoleEngine();
     engine.GetWindow()->ShowRenderUpdates(false);
-    //Engine::Scene* scene = new Engine::Scene((char*)"untitled");
+    Engine::Scene* scene = new Engine::Scene((char*)"untitled");
+    engine.Start();*/
+
+    // Message loop
+    MSG msg;
+    while (GetMessage(&msg, NULL, 0, 0)) {
+        // Process keyboard input
+        if (msg.message == WM_KEYDOWN) {
+            int keyCode = msg.wParam;
+            std::cout << "Key pressed: " << keyCode << std::endl;
+        }
+
+        // Translate and dispatch messages
+        TranslateMessage(&msg);
+        DispatchMessage(&msg);
+    }
+
 
     //Engine::GameObject* object = new Engine::GameObject(nullptr);
 
-    wchar_t** texture = new wchar_t*[3]
+    /*wchar_t** texture = new wchar_t*[3]
     {
         new wchar_t[3]{'+', '^', '+',},
         new wchar_t[3]{'|', ' ', '>',},
@@ -42,7 +63,6 @@ int main()
 
     //engine.LoadScene(scene);
     //scene->Spawn(object);
-    engine.Start();
 
     //TODO temporary so external window doesnt close;
     while(true);

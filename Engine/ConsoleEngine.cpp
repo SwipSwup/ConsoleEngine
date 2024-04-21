@@ -5,6 +5,7 @@
 #include "ConsoleEngine.h"
 
 #include <chrono>
+#include <iostream>
 #include <sstream>
 
 #include "Debug/Debug.h"
@@ -21,7 +22,6 @@ namespace Engine
 
         activeScene = nullptr;
         settings = EngineSettings();
-
     }
 
     ConsoleEngine::~ConsoleEngine()
@@ -31,12 +31,14 @@ namespace Engine
     }
 
     std::chrono::steady_clock::time_point previousTimePoint;
+    std::chrono::steady_clock::time_point fixedTickTimePoint;
+
 
     void ConsoleEngine::Start()
     {
-        previousTimePoint = std::chrono::steady_clock::now();
+        previousTimePoint = fixedTickTimePoint = std::chrono::steady_clock::now();
 
-        if(activeScene == nullptr)
+        if (activeScene == nullptr)
             LoadDefaultScene();
 
         LoadSettings();
@@ -60,21 +62,21 @@ namespace Engine
 
     void ConsoleEngine::Tick()
     {
-        if(activeScene == nullptr)
-        {
-            return;
-        }
-
         std::chrono::steady_clock::time_point currentTimePoint = std::chrono::steady_clock::now();
-        TickScene((float)(currentTimePoint - previousTimePoint).count());
-
-        if ((currentTimePoint - previousTimePoint).count() < std::chrono::duration_cast<
-            std::chrono::steady_clock::duration>(std::chrono::duration<float>(1.0f / settings.ticksPerSecond)).count())
-        {
-            return;
-        }
+        TickScene((float )(currentTimePoint - previousTimePoint).count() / 1000000000);
 
         previousTimePoint = currentTimePoint;
+
+        //std::cout << (currentTimePoint - previousTimePoint).count() << std::endl;
+
+        //TODO fix
+        if ((currentTimePoint - fixedTickTimePoint).count() < std::chrono::duration_cast<
+            std::chrono::steady_clock::duration>(std::chrono::duration<float>(1.0f / settings.ticksPerSecond)).count())
+        {
+            fixedTickTimePoint = std::chrono::steady_clock::now();
+            return;
+        }
+
         FixedTick();
         //std::cout << currentTimePoint.time_since_epoch().count();
     }
@@ -82,16 +84,19 @@ namespace Engine
     void ConsoleEngine::FixedTick()
     {
         FixTickScene();
-
-        window->SetConsoleTitle(activeScene->GetName());
     }
+
+    float tCounter = 0;
 
     void ConsoleEngine::TickScene(float deltaTime)
     {
         activeScene->Tick(deltaTime);
 
-        if(settings.showFps)
-            UpdateConsoleTitle();
+        if ((tCounter += deltaTime) >= settings.fpsUpdateInterval)
+        {
+            tCounter = 0;
+            UpdateConsoleTitle(deltaTime);
+        }
     }
 
     void ConsoleEngine::FixTickScene()
@@ -107,7 +112,6 @@ namespace Engine
     void ConsoleEngine::LoadSettings()
     {
         window->ShowRenderUpdates(settings.showRenderUpdates);
-
     }
 
     void ConsoleEngine::LoadSettings(EngineSettings settings)
@@ -121,12 +125,16 @@ namespace Engine
         LoadScene(new Scene("default"));
     }
 
-    void ConsoleEngine::UpdateConsoleTitle()
+    void ConsoleEngine::UpdateConsoleTitle(float deltaTime)
     {
         //todo do this in the title
-        std::ostringstream ostr;
-        //ostr << "DeltaTime: " << deltaTime / 1000.f;
-        window->WDrawText(ostr.str().c_str(), 0, 0, 2);
+        std::string title = activeScene->GetName();
+
+        if (settings.showFps)
+        {
+            title += " | FPS: " + std::to_string((int)(1 / deltaTime));
+        }
+        window->UpdateConsoleTitle(title.c_str());
     }
 
     bool ConsoleEngine::LoadScene(Scene* scene)
@@ -138,6 +146,7 @@ namespace Engine
 
         scene->OnSceneLoad(this);
         activeScene = scene;
+        UpdateConsoleTitle();
         return true;
     }
 

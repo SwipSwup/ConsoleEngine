@@ -15,11 +15,11 @@ namespace Engine
 
     struct EngineSettings
     {
-        bool showFps = false;
+        bool showFps = true;
         bool showRenderUpdates = false;
 
         int ticksPerSecond = 30;
-        int fpsUpdateIntervalTick = 10;
+        float fpsUpdateInterval = .1;
     };
 
     class ConsoleEngine
@@ -53,7 +53,7 @@ namespace Engine
 
         void LoadDefaultScene();
 
-        void UpdateConsoleTitle();
+        void UpdateConsoleTitle(float deltaTime = 0);
 
     public:
         bool LoadScene(Scene* scene);
