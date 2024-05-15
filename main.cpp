@@ -14,8 +14,10 @@ int main()
 {
     srand (time(nullptr));
 
-    Engine::ConsoleEngine engine = Engine::ConsoleEngine();
-    engine.GetWindow()->ShowRenderUpdates(false);
+
+
+    //Engine::ConsoleEngine engine = Engine::ConsoleEngine();
+    //engine.GetWindow()->ShowRenderUpdates(false);
     //Engine::Scene* scene = new Engine::Scene((char*)"untitled");
 
     //Engine::GameObject* object = new Engine::GameObject(nullptr);
@@ -42,10 +44,13 @@ int main()
 
     //engine.LoadScene(scene);
     //scene->Spawn(object);
-    engine.Start();
+    //engine.Start();
 
     //TODO temporary so external window doesnt close;
-    while(true);
+    while(true) {
+
+            }
+    }
 }
 /*
 Color colors[] = {

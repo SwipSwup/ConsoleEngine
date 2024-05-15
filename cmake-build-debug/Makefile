@@ -176,6 +176,54 @@ Engine/Debug/Debug.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ConsoleEngine.dir\build.make CMakeFiles/ConsoleEngine.dir/Engine/Debug/Debug.cpp.s
 .PHONY : Engine/Debug/Debug.cpp.s
 
+Engine/InputSystem/InputAction.obj: Engine/InputSystem/InputAction.cpp.obj
+.PHONY : Engine/InputSystem/InputAction.obj
+
+# target to build an object file
+Engine/InputSystem/InputAction.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ConsoleEngine.dir\build.make CMakeFiles/ConsoleEngine.dir/Engine/InputSystem/InputAction.cpp.obj
+.PHONY : Engine/InputSystem/InputAction.cpp.obj
+
+Engine/InputSystem/InputAction.i: Engine/InputSystem/InputAction.cpp.i
+.PHONY : Engine/InputSystem/InputAction.i
+
+# target to preprocess a source file
+Engine/InputSystem/InputAction.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ConsoleEngine.dir\build.make CMakeFiles/ConsoleEngine.dir/Engine/InputSystem/InputAction.cpp.i
+.PHONY : Engine/InputSystem/InputAction.cpp.i
+
+Engine/InputSystem/InputAction.s: Engine/InputSystem/InputAction.cpp.s
+.PHONY : Engine/InputSystem/InputAction.s
+
+# target to generate assembly for a file
+Engine/InputSystem/InputAction.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ConsoleEngine.dir\build.make CMakeFiles/ConsoleEngine.dir/Engine/InputSystem/InputAction.cpp.s
+.PHONY : Engine/InputSystem/InputAction.cpp.s
+
+Engine/InputSystem/InputSystem.obj: Engine/InputSystem/InputSystem.cpp.obj
+.PHONY : Engine/InputSystem/InputSystem.obj
+
+# target to build an object file
+Engine/InputSystem/InputSystem.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ConsoleEngine.dir\build.make CMakeFiles/ConsoleEngine.dir/Engine/InputSystem/InputSystem.cpp.obj
+.PHONY : Engine/InputSystem/InputSystem.cpp.obj
+
+Engine/InputSystem/InputSystem.i: Engine/InputSystem/InputSystem.cpp.i
+.PHONY : Engine/InputSystem/InputSystem.i
+
+# target to preprocess a source file
+Engine/InputSystem/InputSystem.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ConsoleEngine.dir\build.make CMakeFiles/ConsoleEngine.dir/Engine/InputSystem/InputSystem.cpp.i
+.PHONY : Engine/InputSystem/InputSystem.cpp.i
+
+Engine/InputSystem/InputSystem.s: Engine/InputSystem/InputSystem.cpp.s
+.PHONY : Engine/InputSystem/InputSystem.s
+
+# target to generate assembly for a file
+Engine/InputSystem/InputSystem.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ConsoleEngine.dir\build.make CMakeFiles/ConsoleEngine.dir/Engine/InputSystem/InputSystem.cpp.s
+.PHONY : Engine/InputSystem/InputSystem.cpp.s
+
 Engine/Objects/Components/Component.obj: Engine/Objects/Components/Component.cpp.obj
 .PHONY : Engine/Objects/Components/Component.obj
 
@@ -320,6 +368,30 @@ Engine/Utility/Color.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ConsoleEngine.dir\build.make CMakeFiles/ConsoleEngine.dir/Engine/Utility/Color.cpp.s
 .PHONY : Engine/Utility/Color.cpp.s
 
+Engine/Utility/EventSystem/Event.obj: Engine/Utility/EventSystem/Event.cpp.obj
+.PHONY : Engine/Utility/EventSystem/Event.obj
+
+# target to build an object file
+Engine/Utility/EventSystem/Event.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ConsoleEngine.dir\build.make CMakeFiles/ConsoleEngine.dir/Engine/Utility/EventSystem/Event.cpp.obj
+.PHONY : Engine/Utility/EventSystem/Event.cpp.obj
+
+Engine/Utility/EventSystem/Event.i: Engine/Utility/EventSystem/Event.cpp.i
+.PHONY : Engine/Utility/EventSystem/Event.i
+
+# target to preprocess a source file
+Engine/Utility/EventSystem/Event.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ConsoleEngine.dir\build.make CMakeFiles/ConsoleEngine.dir/Engine/Utility/EventSystem/Event.cpp.i
+.PHONY : Engine/Utility/EventSystem/Event.cpp.i
+
+Engine/Utility/EventSystem/Event.s: Engine/Utility/EventSystem/Event.cpp.s
+.PHONY : Engine/Utility/EventSystem/Event.s
+
+# target to generate assembly for a file
+Engine/Utility/EventSystem/Event.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ConsoleEngine.dir\build.make CMakeFiles/ConsoleEngine.dir/Engine/Utility/EventSystem/Event.cpp.s
+.PHONY : Engine/Utility/EventSystem/Event.cpp.s
+
 Engine/Utility/Sprites/Sprite.obj: Engine/Utility/Sprites/Sprite.cpp.obj
 .PHONY : Engine/Utility/Sprites/Sprite.obj
 
@@ -455,6 +527,12 @@ help:
 	@echo ... Engine/Debug/Debug.obj
 	@echo ... Engine/Debug/Debug.i
 	@echo ... Engine/Debug/Debug.s
+	@echo ... Engine/InputSystem/InputAction.obj
+	@echo ... Engine/InputSystem/InputAction.i
+	@echo ... Engine/InputSystem/InputAction.s
+	@echo ... Engine/InputSystem/InputSystem.obj
+	@echo ... Engine/InputSystem/InputSystem.i
+	@echo ... Engine/InputSystem/InputSystem.s
 	@echo ... Engine/Objects/Components/Component.obj
 	@echo ... Engine/Objects/Components/Component.i
 	@echo ... Engine/Objects/Components/Component.s
@@ -473,6 +551,9 @@ help:
 	@echo ... Engine/Utility/Color.obj
 	@echo ... Engine/Utility/Color.i
 	@echo ... Engine/Utility/Color.s
+	@echo ... Engine/Utility/EventSystem/Event.obj
+	@echo ... Engine/Utility/EventSystem/Event.i
+	@echo ... Engine/Utility/EventSystem/Event.s
 	@echo ... Engine/Utility/Sprites/Sprite.obj
 	@echo ... Engine/Utility/Sprites/Sprite.i
 	@echo ... Engine/Utility/Sprites/Sprite.s
