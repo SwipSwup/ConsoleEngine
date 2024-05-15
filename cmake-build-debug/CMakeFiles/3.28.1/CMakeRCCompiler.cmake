@@ -1,4 +1,4 @@
-set(CMAKE_RC_COMPILER "G:/IDEs/JetBrains/apps/CLion/ch-0/241.15989.121/bin/mingw/bin/windres.exe")
+set(CMAKE_RC_COMPILER "G:/IDEs/JetBrains/apps/CLion/ch-1/241.15989.121/bin/mingw/bin/windres.exe")
 set(CMAKE_RC_COMPILER_ARG1 "")
 set(CMAKE_RC_COMPILER_LOADED 1)
 set(CMAKE_RC_SOURCE_FILE_EXTENSIONS rc;RC)

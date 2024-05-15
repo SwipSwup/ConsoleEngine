@@ -59,7 +59,10 @@ int main()
     //scene->Spawn(object);
 
     //TODO temporary so external window doesnt close;
-    while(true);
+    while(true) {
+
+            }
+    }
 }
 /*
 Color colors[] = {
