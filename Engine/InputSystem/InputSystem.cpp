@@ -2,13 +2,30 @@
 // Created by david on 15/05/2024.
 //
 
+#include <windows.h>
+#include <winuser.h>
+#include <iostream>
 #include "InputSystem.h"
+#include "../ConsoleEngine.h"
 
-namespace InputSystem
+namespace Engine
 {
     void InputSystem::Run()
     {
-        while (true) {
+        while (1)
+        {
+
+            // Check if the 'A' key is currently pressed
+            if (GetAsyncKeyState('A') & 0x8000) {
+                std::cout << "'A' key is pressed." << std::endl;
+            } else {
+                std::cout << "'A' key is not pressed." << std::endl;
+            }
+            Sleep(100);
+
+        }
+
+        /*while (true) {
             // Check if the console window is the foreground window
             if (GetForegroundWindow() == consoleWindow) {
                 // Check for keyboard input
@@ -40,6 +57,47 @@ namespace InputSystem
 
             // Add a short delay to reduce CPU usage
             Sleep(100);
+        }*/
+    }
+
+
+    InputAction* InputSystem::FindInputAction(const std::string &identifier)
+    {
+        for (InputAction* item: inputActions)
+        {
+            if (item->GetIdentifier() == identifier)
+                return item;
+        }
+
+        return nullptr;
+    }
+
+    InputSystem::~InputSystem()
+    {
+        // free all input actions
+        for (const InputAction* item: inputActions)
+        {
+            delete item;
         }
     }
-} // InputSystem
+
+    void InputSystem::ConsumeKeyBoardEvents()
+    {
+        for (int i = 0; !keyBoardEvents.empty() && i < ConsoleEngine::settings->maxInputActionsPerFrame; ++i)
+        {
+            auto inputAction = registeredInputActions.find(keyBoardEvents.front());
+
+            keyBoardEvents.pop();
+        }
+    }
+
+    void InputSystem::AddInputAction(InputAction* action)
+    {
+
+    }
+
+    InputSystem::InputSystem()
+    {
+
+    }
+} // Engine

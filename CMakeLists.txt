@@ -35,5 +35,9 @@ add_executable(ConsoleEngine main.cpp
         Engine/InputSystem/InputAction.h
         Engine/Utility/EventSystem/Event.cpp
         Engine/Utility/EventSystem/Event.h
+        Engine/InputSystem/InputActionListener.cpp
+        Engine/InputSystem/InputActionListener.h
+        Engine/InputSystem/KeyBind.cpp
+        Engine/InputSystem/KeyBind.h
 )
 

@@ -12,6 +12,7 @@ namespace Engine
     class Debug;
     class Window;
     class Scene;
+    class InputSystem;
 
     struct EngineSettings
     {
@@ -20,6 +21,8 @@ namespace Engine
 
         int ticksPerSecond = 30;
         float fpsUpdateInterval = .1;
+
+        unsigned int maxInputActionsPerFrame = 10;
     };
 
     class ConsoleEngine
@@ -31,8 +34,9 @@ namespace Engine
         void Start();
         void Stop();
 
+        static EngineSettings* settings;
+
     private:
-        EngineSettings settings;
 
         void Run();
 
@@ -44,7 +48,6 @@ namespace Engine
         void FixTickScene();
 
     public:
-        EngineSettings* GetSettings();
         void LoadSettings();
         void LoadSettings(EngineSettings settings);
 
@@ -66,6 +69,11 @@ namespace Engine
         Window* GetWindow();
 
         Vector2D GetWindowDimensions();
+
+        void LoadSettings(EngineSettings* settings);
+
+    private:
+        InputSystem* inputSystem;
     };
 } // Engine
 

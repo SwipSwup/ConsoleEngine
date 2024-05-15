@@ -11,6 +11,8 @@
 #include "Engine/Utility/Vector2D.h"
 #include "Engine/Utility/Sprites/Sprite.h"
 #include "Engine/Window/Window.h"
+#include "Engine/InputSystem/InputAction.h"
+#include "Engine/InputSystem/InputSystem.h"
 
 //https://www.charset.org/utf-8
 
@@ -19,6 +21,11 @@ int main()
 {
     srand(time(nullptr));
 
+    Engine::InputAction action = Engine::InputAction("Move forward");
+
+    Engine::InputSystem system = Engine::InputSystem();
+
+    system.Run();
     /*Engine::ConsoleEngine engine = Engine::ConsoleEngine();
     engine.GetWindow()->ShowRenderUpdates(false);
     Engine::Scene* scene = new Engine::Scene((char*)"untitled");

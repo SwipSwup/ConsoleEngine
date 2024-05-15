@@ -4,10 +4,32 @@
 
 #include "InputAction.h"
 
-namespace InputSystem
+namespace Engine
 {
-    InputAction::InputAction(int keyCode)
+    std::string InputAction::GetIdentifier()
     {
-        this->keyCode = keyCode;
+        return identifier;
     }
-} // InputSystem
+
+    InputAction::InputAction(std::string identifier)
+    {
+        this->identifier = identifier;
+    }
+
+    void InputAction::AddKeyBind(KeyBind* bind)
+    {
+        keyBinds.push_back(bind);
+    }
+
+    void InputAction::RemoveKeyBind(char bind)
+    {
+        for (int i = 0; i < keyBinds.size(); ++i)
+        {
+            if(keyBinds[i]->keyChar == bind) {
+                delete keyBinds[i];
+                keyBinds.erase(keyBinds.begin() + i);
+                return;
+            }
+        }
+    }
+} // Engine

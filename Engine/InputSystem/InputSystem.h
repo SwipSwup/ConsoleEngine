@@ -2,33 +2,54 @@
 // Created by david on 15/05/2024.
 //
 
-#ifndef CONSOLEENGINE_INPUTSYSTEM_H
-#define CONSOLEENGINE_INPUTSYSTEM_H
+#ifndef INPUTSYSTEM_H
+#define INPUTSYSTEM_H
 
 #include <queue>
+#include <string>
+#include <map>
+#include <ntdef.h>
+#include "InputAction.h"
 
 /*
  * ############ Resources ############
  * Keycodes: https://learn.microsoft.com/en-us/windows/win32/inputdev/virtual-key-codes
  */
 
-namespace InputSystem
+namespace Engine
 {
-
     class InputSystem
     {
     public:
-        void Initialize();
+        InputSystem();
+
+        InputSystem(HANDLE window)
+        {
+            this->window = window;
+        }
+
+        virtual ~InputSystem();
 
         void Run();
 
 
     private:
+        std::vector<InputAction*> inputActions;
+
+        std::unordered_map<int, std::vector<InputAction*>> registeredInputActions;
+
+        std::queue<int> keyBoardEvents;
+
+        HANDLE window;
 
     public:
-        bool TryGetInputAction(wchar_t keyCode);
+        void AddInputAction(InputAction* action);
+
+        void ConsumeKeyBoardEvents();
+
+        InputAction* FindInputAction(const std::string& identifier);
     };
 
-} // InputSystem
+} // Engine
 
-#endif //CONSOLEENGINE_INPUTSYSTEM_H
+#endif //INPUTSYSTEM_H

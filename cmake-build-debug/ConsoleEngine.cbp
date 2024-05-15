@@ -100,10 +100,22 @@
 		<Unit filename="C:/FH/SS2024/PROGR/ConsoleEngine/Engine/InputSystem/InputAction.h">
 			<Option target="ConsoleEngine"/>
 		</Unit>
+		<Unit filename="C:/FH/SS2024/PROGR/ConsoleEngine/Engine/InputSystem/InputActionListener.cpp">
+			<Option target="ConsoleEngine"/>
+		</Unit>
+		<Unit filename="C:/FH/SS2024/PROGR/ConsoleEngine/Engine/InputSystem/InputActionListener.h">
+			<Option target="ConsoleEngine"/>
+		</Unit>
 		<Unit filename="C:/FH/SS2024/PROGR/ConsoleEngine/Engine/InputSystem/InputSystem.cpp">
 			<Option target="ConsoleEngine"/>
 		</Unit>
 		<Unit filename="C:/FH/SS2024/PROGR/ConsoleEngine/Engine/InputSystem/InputSystem.h">
+			<Option target="ConsoleEngine"/>
+		</Unit>
+		<Unit filename="C:/FH/SS2024/PROGR/ConsoleEngine/Engine/InputSystem/KeyBind.cpp">
+			<Option target="ConsoleEngine"/>
+		</Unit>
+		<Unit filename="C:/FH/SS2024/PROGR/ConsoleEngine/Engine/InputSystem/KeyBind.h">
 			<Option target="ConsoleEngine"/>
 		</Unit>
 		<Unit filename="C:/FH/SS2024/PROGR/ConsoleEngine/Engine/Objects/Components/Component.cpp">
