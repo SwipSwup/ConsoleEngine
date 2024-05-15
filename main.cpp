@@ -25,18 +25,12 @@ int main()
     engine.Start();*/
 
     // Message loop
-    MSG msg;
-    while (GetMessage(&msg, NULL, 0, 0)) {
-        // Process keyboard input
-        if (msg.message == WM_KEYDOWN) {
-            int keyCode = msg.wParam;
-            std::cout << "Key pressed: " << keyCode << std::endl;
-        }
+    HANDLE hStdin;
+    INPUT_RECORD irInBuf[128];
+    DWORD cNumRead;
 
-        // Translate and dispatch messages
-        TranslateMessage(&msg);
-        DispatchMessage(&msg);
-    }
+    hStdin = GetStdHandle(STD_INPUT_HANDLE);
+
 
 
     //Engine::GameObject* object = new Engine::GameObject(nullptr);

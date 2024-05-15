@@ -10,7 +10,14 @@ namespace Engine
 
     class InputSystem
     {
+    public:
+        void Initialize();
 
+
+
+
+    private:
+        void Run();
     };
 
 } // Engine
