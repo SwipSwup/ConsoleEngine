@@ -6,4 +6,8 @@
 
 namespace InputSystem
 {
+    InputAction::InputAction(int keyCode)
+    {
+        this->keyCode = keyCode;
+    }
 } // InputSystem

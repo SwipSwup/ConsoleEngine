@@ -18,11 +18,9 @@ namespace InputSystem
     class InputAction
     {
     public:
-        void AddListener(std::function<void>);
+        InputAction(int keyCode);
     private:
-        wchar_t key;
-
-        std::vector<std::function<void>> listeners;
+        int keyCode;
     };
 
 } // InputSystem

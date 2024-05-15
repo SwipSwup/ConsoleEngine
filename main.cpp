@@ -17,19 +17,13 @@
 
 int main()
 {
-    srand (time(nullptr));
+    srand(time(nullptr));
 
     /*Engine::ConsoleEngine engine = Engine::ConsoleEngine();
     engine.GetWindow()->ShowRenderUpdates(false);
     Engine::Scene* scene = new Engine::Scene((char*)"untitled");
     engine.Start();*/
 
-    // Message loop
-    HANDLE hStdin;
-    INPUT_RECORD irInBuf[128];
-    DWORD cNumRead;
-
-    hStdin = GetStdHandle(STD_INPUT_HANDLE);
 
 
 
@@ -59,9 +53,9 @@ int main()
     //scene->Spawn(object);
 
     //TODO temporary so external window doesnt close;
-    while(true) {
+    while (true)
+    {
 
-            }
     }
 }
 /*
