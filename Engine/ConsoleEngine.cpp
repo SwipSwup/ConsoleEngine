@@ -21,7 +21,6 @@ namespace Engine
 
         activeScene = nullptr;
         settings = EngineSettings();
-
     }
 
     ConsoleEngine::~ConsoleEngine()
