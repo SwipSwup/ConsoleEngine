@@ -10,6 +10,7 @@
 #include <map>
 #include <ntdef.h>
 #include "InputAction.h"
+#include "mutex"
 
 /*
  * ############ Resources ############
@@ -18,6 +19,12 @@
 
 namespace Engine
 {
+    struct KeyEvent
+    {
+        WPARAM wParam;
+        DWORD vkCode;
+    };
+
     class InputSystem
     {
     public:
@@ -32,13 +39,18 @@ namespace Engine
 
         void Run();
 
+        void Stop();
+
 
     private:
         std::vector<InputAction*> inputActions;
 
         std::unordered_map<int, std::vector<InputAction*>> registeredInputActions;
 
-        std::queue<int> keyBoardEvents;
+
+        static LRESULT CALLBACK KeyboardProc(int nCode, WPARAM wParam, LPARAM lParam);
+
+        HHOOK hHook;
 
         HANDLE window;
 
@@ -47,7 +59,14 @@ namespace Engine
 
         void ConsumeKeyBoardEvents();
 
-        InputAction* FindInputAction(const std::string& identifier);
+        InputAction* FindInputAction(const std::string &identifier);
+
+    private:
+        static std::mutex keyboardEventsMutex;
+
+        static std::queue<KeyEvent> keyboardEvents;
+
+        void ProcessInputEvents();
     };
 
 } // Engine

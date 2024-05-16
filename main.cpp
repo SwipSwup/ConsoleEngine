@@ -26,6 +26,12 @@ int main()
     Engine::InputSystem system = Engine::InputSystem();
 
     system.Run();
+
+    MSG msg;
+    while (GetMessage(&msg, NULL, 0, 0)) {
+        TranslateMessage(&msg);
+        DispatchMessage(&msg);
+    }
     /*Engine::ConsoleEngine engine = Engine::ConsoleEngine();
     engine.GetWindow()->ShowRenderUpdates(false);
     Engine::Scene* scene = new Engine::Scene((char*)"untitled");

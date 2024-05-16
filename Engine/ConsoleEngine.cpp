@@ -57,6 +57,8 @@ namespace Engine
 
     void ConsoleEngine::Run()
     {
+
+
         while (true)
         {
             Tick();

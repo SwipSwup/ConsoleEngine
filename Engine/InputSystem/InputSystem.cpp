@@ -1,103 +1,106 @@
-//
-// Created by david on 15/05/2024.
-//
-
 #include <windows.h>
-#include <winuser.h>
 #include <iostream>
+#include <thread>
+#include <mutex>
 #include "InputSystem.h"
-#include "../ConsoleEngine.h"
 
 namespace Engine
 {
+    bool bInputProcessingThreadActive = true;
+
+    std::queue<KeyEvent> InputSystem::keyboardEvents;
+    std::mutex InputSystem::keyboardEventsMutex;
+
+    LRESULT CALLBACK InputSystem::KeyboardProc(int nCode, WPARAM wParam, LPARAM lParam)
+    {
+        if (nCode >= 0)
+        {
+            if (wParam == WM_KEYDOWN || wParam == WM_KEYUP)
+            {
+                KBDLLHOOKSTRUCT* param = (KBDLLHOOKSTRUCT*)lParam;
+                DWORD vkCode = param->vkCode;
+
+                // Acquire mutex lock before accessing shared resource (key events queue)
+                //std::lock_guard<std::mutex> lock(keyboardEventsMutex);
+                keyboardEventsMutex.lock();
+
+                // Add the key event to the queue for asynchronous processing
+                keyboardEvents.push({ wParam, vkCode });
+                keyboardEventsMutex.unlock();
+            }
+        }
+
+        // Call the next hook in the hook chain
+        return CallNextHookEx(NULL, nCode, wParam, lParam);
+    }
+
     void InputSystem::Run()
     {
-        while (1)
-        {
-
-            // Check if the 'A' key is currently pressed
-            if (GetAsyncKeyState('A') & 0x8000) {
-                std::cout << "'A' key is pressed." << std::endl;
-            } else {
-                std::cout << "'A' key is not pressed." << std::endl;
-            }
-            Sleep(100);
-
+        hHook = SetWindowsHookEx(WH_KEYBOARD_LL, InputSystem::KeyboardProc, NULL, 0);
+        if (hHook == nullptr) {
+            std::cerr << "Failed to install hook" << std::endl;
+            return;
         }
 
-        /*while (true) {
-            // Check if the console window is the foreground window
-            if (GetForegroundWindow() == consoleWindow) {
-                // Check for keyboard input
-                for (int i = 0; i < 256; ++i) {
-                    short keyState = GetAsyncKeyState(i);
-                    if (keyState & 0x8000) {
-                        // Key is pressed
-                        eventQueue.push({ i, true });
-                    }
-                    else if (keyState & 0x1) {
-                        // Key was released
-                        eventQueue.push({ i, false });
-                    }
+        // Create a separate thread for input processing
+        std::thread inputProcessingThread(&InputSystem::ProcessInputEvents, this);
+
+        // Main loop for message processing
+        MSG msg;
+        while (GetMessage(&msg, NULL, 0, 0)) {
+            TranslateMessage(&msg);
+            DispatchMessage(&msg);
+        }
+
+        // Stop the input processing thread
+        bInputProcessingThreadActive = false;
+        inputProcessingThread.join();
+
+        Stop();
+    }
+
+    void InputSystem::ProcessInputEvents()
+    {
+        while (bInputProcessingThreadActive)
+        {
+            // Acquire mutex lock before accessing shared resource (key events queue)
+            //std::lock_guard<std::mutex> lock(keyboardEventsMutex);
+            keyboardEventsMutex.lock();
+
+            // Process input events asynchronously
+            while (!keyboardEvents.empty()) {
+                std::cout << "Size: " << keyboardEvents.size() << std::endl;
+                KeyEvent keyEvent = keyboardEvents.front();
+                keyboardEvents.pop();
+                std::cout << "Key down: " << keyEvent.vkCode << std::endl;
+
+                // Handle key event
+                if (keyEvent.wParam == WM_KEYDOWN) {
+                    std::cout << "Key down: " << keyEvent.vkCode << std::endl;
+                } else if (keyEvent.wParam == WM_KEYUP) {
+                    std::cout << "Key up: " << keyEvent.vkCode << std::endl;
                 }
             }
+            keyboardEventsMutex.unlock();
 
-            // Process input events
-            while (!eventQueue.empty()) {
-                InputEvent event = eventQueue.front();
-                eventQueue.pop();
-
-                if (event.isKeyDown) {
-                    std::cout << "Key " << static_cast<char>(event.keyCode) << " is pressed" << std::endl;
-                }
-                else {
-                    std::cout << "Key " << static_cast<char>(event.keyCode) << " is released" << std::endl;
-                }
-            }
-
-            // Add a short delay to reduce CPU usage
-            Sleep(100);
-        }*/
-    }
-
-
-    InputAction* InputSystem::FindInputAction(const std::string &identifier)
-    {
-        for (InputAction* item: inputActions)
-        {
-            if (item->GetIdentifier() == identifier)
-                return item;
-        }
-
-        return nullptr;
-    }
-
-    InputSystem::~InputSystem()
-    {
-        // free all input actions
-        for (const InputAction* item: inputActions)
-        {
-            delete item;
+            // Add a short delay to prevent high CPU usage
+            std::this_thread::sleep_for(std::chrono::milliseconds(10));
         }
     }
 
-    void InputSystem::ConsumeKeyBoardEvents()
+    void InputSystem::Stop()
     {
-        for (int i = 0; !keyBoardEvents.empty() && i < ConsoleEngine::settings->maxInputActionsPerFrame; ++i)
-        {
-            auto inputAction = registeredInputActions.find(keyBoardEvents.front());
-
-            keyBoardEvents.pop();
-        }
-    }
-
-    void InputSystem::AddInputAction(InputAction* action)
-    {
-
+        UnhookWindowsHookEx(hHook);
     }
 
     InputSystem::InputSystem()
     {
 
     }
+
+    InputSystem::~InputSystem()
+    {
+
+    }
+
 } // Engine

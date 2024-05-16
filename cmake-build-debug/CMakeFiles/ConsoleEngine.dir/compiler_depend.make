@@ -102,6 +102,7 @@ CMakeFiles/ConsoleEngine.dir/Engine/ConsoleEngine.cpp.obj: C:/FH/SS2024/PROGR/Co
   C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/sstream.tcc \
   C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/std_abs.h \
   C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/std_function.h \
+  C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/std_mutex.h \
   C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_algo.h \
   C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_algobase.h \
   C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_bvector.h \
@@ -126,6 +127,7 @@ CMakeFiles/ConsoleEngine.dir/Engine/ConsoleEngine.cpp.obj: C:/FH/SS2024/PROGR/Co
   C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/string_view.tcc \
   C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stringfwd.h \
   C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/uniform_int_dist.h \
+  C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/unique_lock.h \
   C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/unordered_map.h \
   C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/uses_allocator.h \
   C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/uses_allocator_args.h \
@@ -162,6 +164,7 @@ CMakeFiles/ConsoleEngine.dir/Engine/ConsoleEngine.cpp.obj: C:/FH/SS2024/PROGR/Co
   C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/limits \
   C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/list \
   C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/map \
+  C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/mutex \
   C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/new \
   C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/ostream \
   C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/pstl/pstl_config.h \
@@ -847,7 +850,6 @@ CMakeFiles/ConsoleEngine.dir/Engine/InputSystem/InputActionListener.cpp.obj: C:/
   C:/FH/SS2024/PROGR/ConsoleEngine/Engine/InputSystem/InputActionListener.h
 
 CMakeFiles/ConsoleEngine.dir/Engine/InputSystem/InputSystem.cpp.obj: C:/FH/SS2024/PROGR/ConsoleEngine/Engine/InputSystem/InputSystem.cpp \
-  C:/FH/SS2024/PROGR/ConsoleEngine/Engine/ConsoleEngine.h \
   C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/adxintrin.h \
   C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/ammintrin.h \
   C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/amxbf16intrin.h \
@@ -903,6 +905,7 @@ CMakeFiles/ConsoleEngine.dir/Engine/InputSystem/InputSystem.cpp.obj: C:/FH/SS202
   C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/basic_string.tcc \
   C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/char_traits.h \
   C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/charconv.h \
+  C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/chrono.h \
   C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/concept_check.h \
   C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/cpp_type_traits.h \
   C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/cxxabi_forced.h \
@@ -934,6 +937,7 @@ CMakeFiles/ConsoleEngine.dir/Engine/InputSystem/InputSystem.cpp.obj: C:/FH/SS202
   C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/node_handle.h \
   C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/ostream.tcc \
   C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/ostream_insert.h \
+  C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/parse_numbers.h \
   C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/postypes.h \
   C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/predefined_ops.h \
   C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/ptr_traits.h \
@@ -942,6 +946,8 @@ CMakeFiles/ConsoleEngine.dir/Engine/InputSystem/InputSystem.cpp.obj: C:/FH/SS202
   C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/requires_hosted.h \
   C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/std_abs.h \
   C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/std_function.h \
+  C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/std_mutex.h \
+  C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/std_thread.h \
   C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_algo.h \
   C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_algobase.h \
   C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_bvector.h \
@@ -964,7 +970,10 @@ CMakeFiles/ConsoleEngine.dir/Engine/InputSystem/InputSystem.cpp.obj: C:/FH/SS202
   C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/streambuf_iterator.h \
   C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/string_view.tcc \
   C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stringfwd.h \
+  C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/this_thread_sleep.h \
   C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/uniform_int_dist.h \
+  C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/unique_lock.h \
+  C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/unique_ptr.h \
   C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/unordered_map.h \
   C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/uses_allocator.h \
   C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/uses_allocator_args.h \
@@ -975,8 +984,10 @@ CMakeFiles/ConsoleEngine.dir/Engine/InputSystem/InputSystem.cpp.obj: C:/FH/SS202
   C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/clocale \
   C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/compare \
   C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/cstddef \
+  C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/cstdint \
   C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/cstdio \
   C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/cstdlib \
+  C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/ctime \
   C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/cwchar \
   C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/cwctype \
   C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/debug/assertions.h \
@@ -995,17 +1006,21 @@ CMakeFiles/ConsoleEngine.dir/Engine/InputSystem/InputSystem.cpp.obj: C:/FH/SS202
   C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/iosfwd \
   C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/iostream \
   C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/istream \
+  C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/limits \
   C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/map \
+  C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/mutex \
   C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/new \
   C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/ostream \
   C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/pstl/pstl_config.h \
   C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/queue \
+  C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/ratio \
   C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/stdexcept \
   C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/stdlib.h \
   C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/streambuf \
   C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/string \
   C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/string_view \
   C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/system_error \
+  C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/thread \
   C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/tuple \
   C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/type_traits \
   C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/typeinfo \
@@ -1063,6 +1078,7 @@ CMakeFiles/ConsoleEngine.dir/Engine/InputSystem/InputSystem.cpp.obj: C:/FH/SS202
   C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/smmintrin.h \
   C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/stdarg.h \
   C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/stddef.h \
+  C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/stdint.h \
   C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/syslimits.h \
   C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/tbmintrin.h \
   C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/tmmintrin.h \
@@ -1212,6 +1228,7 @@ CMakeFiles/ConsoleEngine.dir/Engine/InputSystem/InputSystem.cpp.obj: C:/FH/SS202
   C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/x86_64-w64-mingw32/include/specstrings.h \
   C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/x86_64-w64-mingw32/include/stdarg.h \
   C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/x86_64-w64-mingw32/include/stddef.h \
+  C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/x86_64-w64-mingw32/include/stdint.h \
   C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/x86_64-w64-mingw32/include/stdio.h \
   C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/x86_64-w64-mingw32/include/stdlib.h \
   C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/x86_64-w64-mingw32/include/stralign.h \
@@ -2793,6 +2810,7 @@ CMakeFiles/ConsoleEngine.dir/main.cpp.obj: C:/FH/SS2024/PROGR/ConsoleEngine/main
   C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/basic_string.tcc \
   C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/char_traits.h \
   C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/charconv.h \
+  C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/chrono.h \
   C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/concept_check.h \
   C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/cpp_type_traits.h \
   C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/cxxabi_forced.h \
@@ -2825,6 +2843,7 @@ CMakeFiles/ConsoleEngine.dir/main.cpp.obj: C:/FH/SS2024/PROGR/ConsoleEngine/main
   C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/node_handle.h \
   C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/ostream.tcc \
   C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/ostream_insert.h \
+  C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/parse_numbers.h \
   C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/postypes.h \
   C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/predefined_ops.h \
   C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/ptr_traits.h \
@@ -2833,6 +2852,7 @@ CMakeFiles/ConsoleEngine.dir/main.cpp.obj: C:/FH/SS2024/PROGR/ConsoleEngine/main
   C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/requires_hosted.h \
   C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/std_abs.h \
   C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/std_function.h \
+  C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/std_mutex.h \
   C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_algo.h \
   C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_algobase.h \
   C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_bvector.h \
@@ -2857,6 +2877,7 @@ CMakeFiles/ConsoleEngine.dir/main.cpp.obj: C:/FH/SS2024/PROGR/ConsoleEngine/main
   C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/string_view.tcc \
   C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stringfwd.h \
   C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/uniform_int_dist.h \
+  C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/unique_lock.h \
   C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/unordered_map.h \
   C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/uses_allocator.h \
   C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/uses_allocator_args.h \
@@ -2870,6 +2891,7 @@ CMakeFiles/ConsoleEngine.dir/main.cpp.obj: C:/FH/SS2024/PROGR/ConsoleEngine/main
   C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/cstdint \
   C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/cstdio \
   C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/cstdlib \
+  C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/ctime \
   C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/cwchar \
   C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/cwctype \
   C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/debug/assertions.h \
@@ -2888,12 +2910,15 @@ CMakeFiles/ConsoleEngine.dir/main.cpp.obj: C:/FH/SS2024/PROGR/ConsoleEngine/main
   C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/iosfwd \
   C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/iostream \
   C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/istream \
+  C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/limits \
   C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/list \
   C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/map \
+  C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/mutex \
   C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/new \
   C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/ostream \
   C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/pstl/pstl_config.h \
   C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/queue \
+  C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/ratio \
   C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/stdexcept \
   C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/stdlib.h \
   C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/streambuf \
@@ -3231,6 +3256,8 @@ C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-m
 
 C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/stdint.h:
 
+C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/std_mutex.h:
+
 C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/amxtileintrin.h:
 
 C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/smmintrin.h:
@@ -3329,6 +3356,8 @@ C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/x86_64-w64-mingw32/i
 
 C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/vaesintrin.h:
 
+C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/mutex:
+
 C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/backward/binders.h:
 
 C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/x86_64-w64-mingw32/include/ctype.h:
@@ -3336,6 +3365,8 @@ C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/x86_64-w64-mingw32/i
 C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/avx512vlintrin.h:
 
 C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/avx512vnnivlintrin.h:
+
+C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/thread:
 
 C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/predefined_ops.h:
 
@@ -3573,6 +3604,8 @@ C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-m
 
 C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/uniform_int_dist.h:
 
+C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/unique_lock.h:
+
 C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/unordered_map.h:
 
 C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/tbmintrin.h:
@@ -3749,6 +3782,8 @@ C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-m
 
 C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/hresetintrin.h:
 
+C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/std_thread.h:
+
 C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/immintrin.h:
 
 C:/FH/SS2024/PROGR/ConsoleEngine/Engine/InputSystem/InputAction.cpp:
@@ -3810,6 +3845,8 @@ C:/FH/SS2024/PROGR/ConsoleEngine/Engine/InputSystem/InputActionListener.h:
 C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/x86_64-w64-mingw32/include/dlgs.h:
 
 C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/uintrintrin.h:
+
+C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/unique_ptr.h:
 
 C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/vpclmulqdqintrin.h:
 
@@ -4102,6 +4139,8 @@ C:/FH/SS2024/PROGR/ConsoleEngine/Engine/Window/Window.h:
 C:/FH/SS2024/PROGR/ConsoleEngine/Engine/InputSystem/InputActionListener.cpp:
 
 C:/FH/SS2024/PROGR/ConsoleEngine/Engine/InputSystem/InputSystem.cpp:
+
+C:/Users/david/AppData/Local/Programs/CLion\ Nova/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/this_thread_sleep.h:
 
 C:/FH/SS2024/PROGR/ConsoleEngine/Engine/Objects/GameObject.h:
 
